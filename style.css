@@ -69,3 +69,14 @@ p{
     display: none;
   }
 }
+a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  > img { 
+    height: 1em; 
+    border-radius: 1rem;
+  }
+}
