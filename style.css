@@ -59,11 +59,18 @@ a {
 p{
   color: lightgray;
 }
+p2{
+  color:lightgray;
+  font-size: x-small;
+  font-style: italic;
+}
+
 .profilePic {
   width: 97%;
   height: 97%;
   border-radius: 0.5rem;
 }
+
 @media (max-width: 600px) {
   .piContainer {
     display: none;
