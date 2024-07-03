@@ -14,6 +14,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  backdrop-filter: brightness(75%);
 }
 ul {
   list-style: none;
