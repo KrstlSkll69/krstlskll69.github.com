@@ -59,10 +59,9 @@ p{
   color: lightgray;
 }
 d{
-  color: lightgray;
-  font-size: smaller;
+  font-size: small;
 }
-
+/*------------Proflie Pic------------*/
 .profilePic {
   width: 8rem;
   border-radius: 0.5rem;
@@ -71,12 +70,15 @@ d{
   width: 8.2rem !important;
 }
 
+/*hide on moblie*/
 @media (max-width: 600px) {
   .piContainer {
     display: none;
   }
 }
 
+
+/*------------Discord Server(s) Panel------------*/
 a {
   display: flex;
   flex-direction: row;
@@ -89,6 +91,7 @@ a {
   }
 }
 
+/*Discord @ Hover*/
 .discord {
   position: relative;
   > span {
