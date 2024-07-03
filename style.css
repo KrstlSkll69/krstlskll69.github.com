@@ -58,7 +58,10 @@ a {
 p{
   color: lightgray;
 }
-
+d{
+  color: lightgray;
+  font-size: smaller;
+}
 
 .profilePic {
   width: 8rem;
