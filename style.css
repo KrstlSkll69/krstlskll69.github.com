@@ -34,6 +34,8 @@ li {
   &:active {scale: 1.05; }
   transition: scale 0.6s cubic-bezier(0.34, 1.54, 0.64, 1);
   cursor: pointer;
+
+
 }
 a {
   text-decoration: unset;
@@ -53,14 +55,25 @@ a {
   width: 20rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
+  
+  /*
+  border-style: solid;
+  border-color: #0f0a0c;
+  */
+
+  max-width: 20rem;
 }
 
+
+/*------------Title Panel Formatting------------*/
 p{
   color: lightgray;
 }
 d{
   font-size: small;
 }
+
+
 /*------------Proflie Pic------------*/
 .profilePic {
   width: 8rem;
