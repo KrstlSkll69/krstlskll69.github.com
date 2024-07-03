@@ -6,8 +6,9 @@
 }
 body {
   font-family: sans-serif;
-  height: 100vh;
-  margin: 0;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,21 +50,22 @@ a {
 
   background-color: rgba(0, 0, 0, 0.5) !important;
   backdrop-filter: blur(32px) !important;
-  width: 20rem !important;
+  width: 20rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-
-  max-width: 20rem;
 }
 
 p{
   color: lightgray;
 }
 
+
 .profilePic {
-  width: 97%;
-  height: 97%;
+  width: 8rem;
   border-radius: 0.5rem;
+}
+.piContainer{
+  width: 8.2rem !important;
 }
 
 @media (max-width: 600px) {
@@ -71,6 +73,7 @@ p{
     display: none;
   }
 }
+
 a {
   display: flex;
   flex-direction: row;
