@@ -121,3 +121,10 @@ a {
   }
   &:hover > span { display: unset; }
 }
+
+/*------------Back Arrow Panel------------*/
+
+.backPanel{
+  width: 2.1rem !important;
+  border-radius: 20rem;
+}
