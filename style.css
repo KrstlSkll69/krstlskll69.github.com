@@ -69,10 +69,17 @@ a {
 p{
   color: lightgray;
 }
+
 d{
   font-size: small;
 }
 
+/*Friends Tab Adding Message*/
+d2{
+  color: gray;
+  font-size: 0.8rem;
+  font-style: italic;
+}
 
 /*------------Proflie Pic------------*/
 .profilePic {
@@ -125,6 +132,6 @@ a {
 /*------------Back Arrow Panel------------*/
 
 .backPanel{
-  width: 2.1rem !important;
+  width: 2rem !important;
   border-radius: 20rem;
 }
