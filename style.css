@@ -144,6 +144,22 @@ a {
   }
   &:hover > span { display: unset; }
 }
+.discord3 {
+  position: relative;
+  > span {
+    position: absolute;
+    right: 1rem;
+    translate: 25% 0%;
+    top: 2rem;
+    background-color: black;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    font-family: "Comic Neue", cursive;
+    font-weight: 700;
+    display: none;
+  }
+  &:hover > span { display: unset; }
+}
 /*------------Back Arrow Panel------------*/
 
 .backPanel{
