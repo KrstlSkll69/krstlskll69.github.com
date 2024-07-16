@@ -80,7 +80,11 @@ d2{
   font-size: 0.8rem;
   font-style: italic;
 }
-
+d3{
+  color: gray;
+  font-size: 0.6rem;
+  font-style: italic;
+}
 /*------------Proflie Pic------------*/
 .profilePic {
   width: 8rem;
