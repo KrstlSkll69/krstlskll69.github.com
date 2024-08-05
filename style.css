@@ -16,6 +16,7 @@ body {
   gap: 1rem;
   backdrop-filter: brightness(75%);
 }
+
 ul {
   list-style: none;
   padding: 0;
@@ -64,7 +65,16 @@ a {
   max-width: 20rem;
 }
 
-
+.backPanel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(32px) !important;
+  border-radius: 2rem;
+  padding: 0.5rem
+}
 /*------------Title Panel Formatting------------*/
 p{
   color: lightgray;
@@ -83,6 +93,9 @@ d2{
 d3{
   font-size: 0.6rem;
   font-style: italic
+}
+h3{
+  padding: 0.4rem;
 }
 /*------------Proflie Pic------------*/
 .profilePic {
@@ -162,10 +175,4 @@ a {
     display: none;
   }
   &:hover > span { display: unset; }
-}
-/*------------Back Arrow Panel------------*/
-
-.backPanel{
-  width: 2rem !important;
-  border-radius: 20rem;
 }
