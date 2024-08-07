@@ -144,3 +144,12 @@ a {
   }
   &:hover > span { display: unset; }
 }
+
+
+/*------------source code styles------------*/
+.sourcecode{
+  font-size: 0.7rem; 
+  color: black; 
+  font-style: italic;
+  font-family: 'Courier New', Courier, monospace;
+}
