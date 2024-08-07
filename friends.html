@@ -6,6 +6,9 @@
   <title>Friends</title>
   <link rel="icon" type="image/x-icon" href="Images/VeryillegalContent/among-us.ico">
   <link rel="stylesheet" href="cssfiles/style.css"><link rel="stylesheet" href="cssfiles/Icon.css">
+  
+  <script src="//unpkg.com/lodash" defer></script>
+  <script src="//unpkg.com/alpinejs" defer></script> 
 </head>
 <body>
   <div class="panel">
@@ -17,89 +20,118 @@
   </div>
 
   <div class="panel">
-    <h2><h3>Main </h3></h2>
-    <ul>
-          <li class="discord2">
+    <h2><h3>Main</h3></h2>
+    <ul x-data="{
+      friends:[
+      { 
+        url: 'https://f53.dev/', 
+        img: 'https://f53.dev/android-chrome-512x512.png', 
+        alt: 'f53', 
+        name: 'Code',
+      },
+      { 
+        url: 'https://byeoon.github.io/', 
+        img: 'https://pixelvault.co/cly6fm15a005dsng6llt66pa7/direct', 
+        alt: 'Byeoon', 
+        name: 'Bryon',
+      },
+      { 
+        url: 'https://catboys.zip/', 
+        img: 'https://pixelvault.co/cly6kerwq005nsng6rdsmsitz/direct', 
+        alt: 'ToastedPotato', 
+        name: 'Toast',
+      },
+      { 
+        url: 'https://tesk.page/', 
+        img: 'https://tesk.page/assets/logo-512x512.webp', 
+        alt: 'EvilSkeleton', 
+        name: 'EvilSkeleton',
+      },
+      { 
+        url: 'https://alphexo.dev/', 
+        img: 'https://alphexo.dev/assets/avatar-KRaXIg7v.png', 
+        alt: 'Alphexo', 
+        name: 'Alphexo',
+      },
+      { 
+        url: 'https://zaynedrift.com/', 
+        img: '/Images/catgirl.png', 
+        alt: 'Zaynedrift', 
+        name: 'Zayne',
+      },
+      { 
+        url: 'https://shoritsu.xyz/', 
+        img: '/Images/sho.jpg', 
+        alt: 'Sho', 
+        name: 'Sho',
+      },
+      { 
+        url: 'https://samwich.dev/', 
+        img: 'https://pixelvault.co/cly7vka3d0087sng6xbbeg1pv/direct', 
+        alt: 'Samwich', 
+        name: 'Samwich',
+      },
+      { 
+        url: 'https://nin0.dev/', 
+        img: 'https://pixelvault.co/cly7lppvt006vsng60kztbrdm/direct', 
+        alt: 'nin0 dev', 
+        name: 'nin0dev',
+      },
+      { 
+        url: 'https://elh.gay/', 
+        img: 'https://pixelvault.co/cly7rahjm007vsng69m7yjant/direct', 
+        alt: 'Stellaluna', 
+        name: 'Stellaluna',
+      },
+      { 
+        url: 'https://github.com/Jair4x', 
+        img: 'https://pixelvault.co/cly7rk97n007xsng6tts0zd9x/direct', 
+        alt: 'Jairo', 
+        name: 'Jair4x',
+      },
+      { 
+        url: 'https://zoey-on-github.github.io/', 
+        img: 'https://pixelvault.co/clyadcarf00b1sng64d7rmlfp/direct', 
+        alt: 'juliethefoxcoon', 
+        name: 'JulieFox',
+      },
+      ]
+    }"> 
+
+          <li class="discord">
             <a target="_blank" href="https://x.com/videbiveoffical"> <img src="https://pixelvault.co/cly6ip8ji005lsng6urntln0c/direct" alt="VideBiveOffcial Twitter">
             videbiveoffcial</a>
             <span>Twitter</span>
-          </li>
-          <li><a target="_blank"
-            href="https://f53.dev/">
-            <img src="https://f53.dev/android-chrome-512x512.png" alt="f53">
-            f53
-            </a></li>
-          <li class="discord2">
+          </li> 
+
+          <li class="discord">
             <a target="_blank" href="https://www.youtube.com/@mamearcadeplaythroughs"> <img src="Images/Adonis.jpg" alt="Adonis">
             adonisthegamehead</a>
             <span>Youtube Channel </span>
           </li>
-          <li><a target="_blank"
-            href="https://byeoon.github.io/">
-            <img src="https://pixelvault.co/cly6fm15a005dsng6llt66pa7/direct" alt="Byeoon">
-            Byeoon
-          </a></li>
-          <li><a target="_blank"
-            href="https://catboys.zip/">
-            <img src="https://pixelvault.co/cly6kerwq005nsng6rdsmsitz/direct" alt="ToastedPotato">
-            ToastedPotato
-          </a></li>
-          <li><a target="_blank"
-            href="https://tesk.page/">
-            <img src="https://tesk.page/assets/logo-512x512.webp" alt="EvilSkeleton">
-            EvilSkeleton
-          </a></li>
-          <li><a target="_blank"
-            href="https://alphexo.dev/">
-            <img src="https://alphexo.dev/assets/avatar-KRaXIg7v.png" alt="Alphexo">
-            Alphexo
-          </a></li>
-         <li><a target="_blank"
-            href="https://zaynedrift.com/">
-            <img src="/Images/catgirl.png" alt="Zaynedrift" >
-            Zaynedrift
-        </a></li>  <li><a target="_blank"
-            href="https://shoritsu.xyz/">
-            <img src="/Images/sho.jpg" alt="Sho" >
-           sho
-        </a></li>
-        </a></li>  <li><a target="_blank"
-            href="https://samwich.dev/">
-            <img src="https://pixelvault.co/cly7vka3d0087sng6xbbeg1pv/direct" alt="Samwich" >
-           Samwich
-        </a></li>
-        </a></li>  <li><a target="_blank"
-            href="https://nin0.dev/">
-            <img src="https://pixelvault.co/cly7lppvt006vsng60kztbrdm/direct" alt="nin0 dev" >
-           nin0dev
-          </a></li>
-        </a></li>  <li><a target="_blank"
-            href="https://elh.gay/">
-            <img src="https://pixelvault.co/cly7rahjm007vsng69m7yjant/direct" alt="Stellaluna" >
-           Stellaluna
-        </a></li>
-        </a></li>  <li><a target="_blank"
-            href="https://github.com/Jair4x">
-            <img src="https://pixelvault.co/cly7rk97n007xsng6tts0zd9x/direct" alt="Jairo" >
-          Jair4x
-        </a></li>
-        <li class="discord3">
+
+          <template x-for="friend in _.shuffle(friends)">
+            <li>
+              <a target="_blank" :href="friend.url">
+                <img :src="friend.img" :alt="friend.alt">
+                <span x-text="friend.name"></span>
+              </a>
+            </li>
+          </template>
+
+          <li class="discord">
             <a target="_blank" href="https://www.tiktok.com/@user82737381921"> <img src="https://pixelvault.co/cly84smmn008dsng6ugnf6ged/direct" alt="MJ">
           MJ</a>
           <span>TikTok</span>
-        </li>
-        </a></li>  <li><a target="_blank"
-            href="https://zoey-on-github.github.io/">
-            <img src="https://pixelvault.co/clyadcarf00b1sng64d7rmlfp/direct" alt="juliethefoxcoon" >
-            JulieFox 
-        </a></li>
-        </ul>
+          </li>
+
+    </ul>
   </div>
 
   <div class="panel">
     <h2><h3>Secondary</d3></h2>
     <ul>
-        <li class="discord2">
+        <li class="discord">
             <a target="_blank" href="https://www.instagram.com/videbiveoffical/"> <img src="https://pixelvault.co/cly6ip8ji005lsng6urntln0c/direct" alt="VideBiveOffcial Instagram">
             videbiveoffcial</a>
             <span>Instagram</span>
