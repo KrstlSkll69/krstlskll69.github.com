@@ -5,7 +5,7 @@
   background-size: 30rem;
 }
 body {
-  font-family: sans-serif;
+  font-family: 'Courier New', Courier, monospace;
   min-height: 100vh;
   box-sizing: border-box;
   padding: 1rem;
@@ -151,5 +151,4 @@ a {
   font-size: 0.7rem; 
   color: black; 
   font-style: italic;
-  font-family: 'Courier New', Courier, monospace;
 }
