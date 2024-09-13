@@ -1,2 +1,6 @@
-# krstlskll69.github.com
-NEW REPO FOR MY WEBSITE SINCE THE LAST ONE GOT RUINED
+# This is just the stuff for my Website
+🗣️GE-‼️‼️‼️
+
+----
+
+https://krstlskll69.github.io/
