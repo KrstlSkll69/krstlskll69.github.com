@@ -180,11 +180,11 @@
     mask-size: 100% 100%;
   }
 
-  .ph--matrix-logo-bold {
+  .mdi--gift-outline {
     display: inline-block;
     width: 1em;
     height: 1em;
-    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%23000' d='M76 216a12 12 0 0 1-12 12H40a12 12 0 0 1-12-12V40a12 12 0 0 1 12-12h24a12 12 0 0 1 0 24H52v152h12a12 12 0 0 1 12 12M216 28h-24a12 12 0 0 0 0 24h12v152h-12a12 12 0 0 0 0 24h24a12 12 0 0 0 12-12V40a12 12 0 0 0-12-12m-28 132v-40a36 36 0 0 0-60-26.8a35.91 35.91 0 0 0-39.51-5.68A12 12 0 0 0 68 96v64a12 12 0 0 0 24 0v-40a12 12 0 0 1 24 0v40a12 12 0 0 0 24 0v-40a12 12 0 0 1 24 0v40a12 12 0 0 0 24 0'/%3E%3C/svg%3E");
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M22 12v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8a1 1 0 0 1-1-1V8a2 2 0 0 1 2-2h3.17A3 3 0 0 1 6 5a3 3 0 0 1 3-3c1 0 1.88.5 2.43 1.24v-.01L12 4l.57-.77v.01C13.12 2.5 14 2 15 2a3 3 0 0 1 3 3a3 3 0 0 1-.17 1H21a2 2 0 0 1 2 2v3a1 1 0 0 1-1 1M4 20h7v-8H4zm16 0v-8h-7v8zM9 4a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1m6 0a1 1 0 0 0-1 1a1 1 0 0 0 1 1a1 1 0 0 0 1-1a1 1 0 0 0-1-1M3 8v2h8V8zm10 0v2h8V8z'/%3E%3C/svg%3E");
     background-color: currentColor;
     -webkit-mask-image: var(--svg);
     mask-image: var(--svg);
@@ -194,7 +194,32 @@
     mask-size: 100% 100%;
   }
 
-  /* ----↓- Telegram and Signal have links but are commented out on index.html -↓---- */
+  .icon-park-outline--source-code {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cg fill='none'%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='M23 40H7a3 3 0 0 1-3-3V11a3 3 0 0 1 3-3h34a3 3 0 0 1 3 3v14.882'/%3E%3Cpath stroke='%23000' stroke-width='4' d='M4 11a3 3 0 0 1 3-3h34a3 3 0 0 1 3 3v9H4z'/%3E%3Cpath stroke='%23000' stroke-linecap='round' stroke-linejoin='round' stroke-width='4' d='m34 33l-4 4l4 4m6-8l4 4l-4 4'/%3E%3Ccircle r='2' fill='%23000' transform='matrix(0 -1 -1 0 10 14)'/%3E%3Ccircle r='2' fill='%23000' transform='matrix(0 -1 -1 0 16 14)'/%3E%3C/g%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+
+  .emojione--cat-face {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='%234c5359' d='M4.5 2.2c-3.5 2.2-3.4 25.5.8 33l26.1-16c-4-7.1-23.6-19-26.9-17'/%3E%3Cpath fill='%23f7a4a4' d='M9.5 11.3c-1.5.9-2.2 16.2.4 21l16.7-10.2c-2.4-4.6-15.7-11.6-17.1-10.8'/%3E%3Cpath fill='%234c5359' d='M59.5 2.2c3.5 2.2 3.4 25.5-.7 33l-26.1-16c3.9-7.1 23.5-19 26.8-17'/%3E%3Cpath fill='%23f7a4a4' d='M54.5 11.3c1.5.9 2.2 16.2-.4 21L37.3 22.1c2.5-4.6 15.8-11.6 17.2-10.8'/%3E%3Cpath fill='%234c5359' d='M31.8 13.1C4.7 13.1 2.2 32.5 2.2 43.5C2.2 48 15.4 62 31.8 62s29.6-14 29.6-18.5c0-11-2.5-30.4-29.6-30.4'/%3E%3Cpath fill='%23bfffab' d='M24.2 38.7s-3.1 4.8-8.8 3.3s-6-7.2-6-7.2s3.1-4.8 8.8-3.3c5.8 1.5 6 7.2 6 7.2'/%3E%3Cpath fill='%2393e67f' d='M23.6 36.2s-2.7 3-6.5 3c-4.1 0-6.5-5.9-6.5-5.9s2.7-3.1 7.6-1.9c4.5 1.2 5.4 4.8 5.4 4.8'/%3E%3Cpath fill='%234c5359' d='M19.4 36.1c0 6.6-3.2 6.6-3.2 0c.1-6.6 3.2-6.6 3.2 0'/%3E%3Cpath fill='%23bfffab' d='M39.4 38.7s3.1 4.8 8.8 3.3s6-7.2 6-7.2s-3.1-4.8-8.8-3.3c-5.8 1.5-6 7.2-6 7.2'/%3E%3Cpath fill='%2393e67f' d='M39.9 36.2s2.7 3 6.5 3c4.1 0 6.5-5.9 6.5-5.9s-2.7-3.1-7.6-1.9c-4.5 1.2-5.4 4.8-5.4 4.8'/%3E%3Cpath fill='%234c5359' d='M44.1 36.1c0 6.6 3.2 6.6 3.2 0s-3.2-6.6-3.2 0'/%3E%3Cpath fill='%23fff' d='M40.4 44c-2.6-2-5.4-8.7-8.6-8.7S25.7 42 23.1 44c-4.1 3.2-15 6.8-15 6.8S19.7 61 31.7 61s23.6-10.2 23.6-10.2c.1 0-10.8-3.6-14.9-6.8'/%3E%3Cellipse cx='31.8' cy='54.5' fill='%23ff94a4' rx='1.7' ry='2.5'/%3E%3Cg fill='%234c5359'%3E%3Cpath d='M40.2 53.1c-1 .6-2.1.8-3.1.8c-1.1-.1-2.1-.4-2.9-1.1c-.8-.6-1.4-1.5-1.6-2.6l-.8-4.5l-.8 4.5c-.2 1-.8 1.9-1.6 2.6s-1.9 1-2.9 1.1c-1.1 0-2.2-.2-3.1-.8c-1-.6-1.8-1.5-2.2-2.7c.1 1.3.7 2.5 1.7 3.4s2.3 1.4 3.5 1.4c1.4.1 2.7-.3 3.8-1.1c.6-.4 1.1-1 1.5-1.6c.4.6.9 1.2 1.5 1.6c1.1.8 2.5 1.2 3.8 1.1s2.6-.6 3.6-1.4c1-.9 1.7-2.1 1.7-3.4c-.3 1.1-1.1 2.1-2.1 2.7'/%3E%3Cpath d='M35.8 44.8c-.8-1-3.3-1.1-4-1.1s-3.2.1-4 1.1c-.6.7-.1 2.5 1.4 4c1 1 1.9 1.3 2.6 1.3s1.7-.3 2.6-1.3c1.5-1.6 2-3.3 1.4-4'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* ----↓- Signal, Matrix have links but are commented out on index.html -↓---- */
+  /* ----↓- 09/16/2024 ~ 9:58am - Bring back Telegram (might remove later, we'll see -↓----*/
+
 
   .fa6-brands--telegram {
     display: inline-block;
@@ -216,6 +241,22 @@
     width: 1rem;
     height: 1rem;
     --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill='%23000' d='m6.08.234l.179.727a7.3 7.3 0 0 0-2.01.832l-.383-.643A7.9 7.9 0 0 1 6.079.234zm3.84 0L9.742.96a7.3 7.3 0 0 1 2.01.832l.388-.643A8 8 0 0 0 9.92.234m-8.77 3.63a8 8 0 0 0-.916 2.215l.727.18a7.3 7.3 0 0 1 .832-2.01l-.643-.386zM.75 8a7 7 0 0 1 .081-1.086L.091 6.8a8 8 0 0 0 0 2.398l.74-.112A7 7 0 0 1 .75 8m11.384 6.848l-.384-.64a7.2 7.2 0 0 1-2.007.831l.18.728a8 8 0 0 0 2.211-.919M15.251 8q0 .547-.082 1.086l.74.112a8 8 0 0 0 0-2.398l-.74.114q.082.54.082 1.086m.516 1.918l-.728-.18a7.3 7.3 0 0 1-.832 2.012l.643.387a8 8 0 0 0 .917-2.219m-6.68 5.25c-.72.11-1.453.11-2.173 0l-.112.742a8 8 0 0 0 2.396 0l-.112-.741zm4.75-2.868a7.2 7.2 0 0 1-1.537 1.534l.446.605a8 8 0 0 0 1.695-1.689zM12.3 2.163c.587.432 1.105.95 1.537 1.537l.604-.45a8 8 0 0 0-1.69-1.691zM2.163 3.7A7.2 7.2 0 0 1 3.7 2.163l-.45-.604a8 8 0 0 0-1.691 1.69l.604.45zm12.688.163l-.644.387c.377.623.658 1.3.832 2.007l.728-.18a8 8 0 0 0-.916-2.214M6.913.831a7.3 7.3 0 0 1 2.172 0l.112-.74a8 8 0 0 0-2.396 0zM2.547 14.64L1 15l.36-1.549l-.729-.17l-.361 1.548a.75.75 0 0 0 .9.902l1.548-.357zM.786 12.612l.732.168l.25-1.073A7.2 7.2 0 0 1 .96 9.74l-.727.18a8 8 0 0 0 .736 1.902l-.184.79zm3.5 1.623l-1.073.25l.17.731l.79-.184c.6.327 1.239.574 1.902.737l.18-.728a7.2 7.2 0 0 1-1.962-.811zM8 1.5a6.5 6.5 0 0 0-6.498 6.502a6.5 6.5 0 0 0 .998 3.455l-.625 2.668L4.54 13.5a6.502 6.502 0 0 0 6.93-11A6.5 6.5 0 0 0 8 1.5'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  */
+
+  /*
+  .ph--matrix-logo-bold {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'%3E%3Cpath fill='%23000' d='M76 216a12 12 0 0 1-12 12H40a12 12 0 0 1-12-12V40a12 12 0 0 1 12-12h24a12 12 0 0 1 0 24H52v152h12a12 12 0 0 1 12 12M216 28h-24a12 12 0 0 0 0 24h12v152h-12a12 12 0 0 0 0 24h24a12 12 0 0 0 12-12V40a12 12 0 0 0-12-12m-28 132v-40a36 36 0 0 0-60-26.8a35.91 35.91 0 0 0-39.51-5.68A12 12 0 0 0 68 96v64a12 12 0 0 0 24 0v-40a12 12 0 0 1 24 0v40a12 12 0 0 0 24 0v-40a12 12 0 0 1 24 0v40a12 12 0 0 0 24 0'/%3E%3C/svg%3E");
     background-color: currentColor;
     -webkit-mask-image: var(--svg);
     mask-image: var(--svg);
