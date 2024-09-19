@@ -135,7 +135,11 @@ d3{
 h3{
   padding: 0.4rem;
 }
-
+d4{
+  font-size: 0.5rem;
+  font-style: italic;
+  color: darkgray;
+}
 /*------------Proflie Pic------------*/
 .profilePic {
   width: 8rem;
