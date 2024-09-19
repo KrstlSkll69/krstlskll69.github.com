@@ -91,6 +91,10 @@ p{
   color: lightgray;
 }
 
+.a2{
+  display: unset !important;
+}
+
 d{
   font-size: small;
 }
