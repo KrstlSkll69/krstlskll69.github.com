@@ -82,16 +82,6 @@ a {
   padding: 0.5rem
 }
 
-.spacer{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent !important;
-  backdrop-filter: blur(32px) !important;
-  border-radius: 2rem;
-  padding: 0.5rem
-}
 
 .backPanel{
   display: flex;
