@@ -79,11 +79,11 @@ a {
   background-color: rgba(0, 0, 0, 0.5) !important;
   backdrop-filter: blur(32px) !important;
   border-radius: 1rem;
-  padding: 0.5rem
+  padding: 0.5rem;
 }
 
 .portphoto{
-  border-radius: 20rem;
+  border-radius: 1rem;
 }
 
 
