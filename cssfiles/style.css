@@ -82,6 +82,10 @@ a {
   padding: 0.5rem
 }
 
+.portphoto{
+  border-radius: 20rem;
+}
+
 
 .backPanel{
   display: flex;
