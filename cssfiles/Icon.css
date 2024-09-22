@@ -82,20 +82,6 @@
     mask-size: 100% 100%;
   }
 
-  .bi--twitch {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23000'%3E%3Cpath d='M3.857 0L1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0zm9.714 7.429l-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142z'/%3E%3Cpath d='M11.857 3.143h-1.143V6.57h1.143zm-3.143 0H7.571V6.57h1.143z'/%3E%3C/g%3E%3C/svg%3E");
-    background-color: currentColor;
-    -webkit-mask-image: var(--svg);
-    mask-image: var(--svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-  }
-
   .fa6-brands--bluesky {
     display: inline-block;
     width: 1.13em;
@@ -235,6 +221,8 @@
   /* ----↓- 09/16/2024 ~ Bring back Telegram Account -↓---- */
   /* ----↓- 90/19/2024 ~ Bring back Matrix Account  -↓---- */
   /* ----↓- 90/20/2024 ~ Bring back Mastodon Account(Now a social.poketube.fun account)  -↓---- */
+  /* ----↓- 90/21/2024 ~ Hide Twitch Account  -↓---- */
+  /* ----↓- 90/21/2024 ~ Hide Signal Account  -↓---- */
 
 
   .fa6-brands--telegram {
@@ -279,6 +267,7 @@
     mask-size: 100% 100%;
   }
 
+  /*
   .bi--signal {
     display: inline-block;
     width: 1rem;
@@ -292,6 +281,7 @@
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
   }
+  */
 
   .bi--mastodon {
     display: inline-block;
@@ -308,7 +298,7 @@
   }
 
 
-  /*
+  
   .mage--tiktok-circle {
     display: inline-block;
     width: 1em;
@@ -322,7 +312,7 @@
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
   }
-  */
+  
 
   /*
   .ri--blogger-line {
@@ -330,6 +320,22 @@
     width: 1em;
     height: 1em;
     --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M3 9.009a6.01 6.01 0 0 1 6.01-6.01H12a6.01 6.01 0 0 1 6.01 5.982h.943c1.15 0 2.047.896 2.047 2.047v3.962A6.01 6.01 0 0 1 14.99 21H9.01A6.01 6.01 0 0 1 3 14.99zm6.01-4.01A4.01 4.01 0 0 0 5 9.01v5.981A4.01 4.01 0 0 0 9.01 19h5.98A4.01 4.01 0 0 0 19 14.99V11h-1c-1.076 0-2-.924-2-2c0-2.214-1.786-4-4-4zM8 9a1 1 0 0 1 1-1h3.5a1 1 0 1 1 0 2H9a1 1 0 0 1-1-1m1 5a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
+  */
+
+  /*
+  .bi--twitch {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cg fill='%23000'%3E%3Cpath d='M3.857 0L1 2.857v10.286h3.429V16l2.857-2.857H9.57L14.714 8V0zm9.714 7.429l-2.285 2.285H9l-2 2v-2H4.429V1.143h9.142z'/%3E%3Cpath d='M11.857 3.143h-1.143V6.57h1.143zm-3.143 0H7.571V6.57h1.143z'/%3E%3C/g%3E%3C/svg%3E");
     background-color: currentColor;
     -webkit-mask-image: var(--svg);
     mask-image: var(--svg);
