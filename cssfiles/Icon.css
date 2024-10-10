@@ -219,10 +219,10 @@
 
   /* ----↓- If its commented out here then its commented out on index.html -↓---- */
   /* ----↓- 09/16/2024 ~ Bring back Telegram Account -↓---- */
-  /* ----↓- 90/19/2024 ~ Bring back Matrix Account  -↓---- */
   /* ----↓- 90/21/2024 ~ Hide Twitch Account  -↓---- */
   /* ----↓- 90/21/2024 ~ Hide Signal Account  -↓---- */
-  /* ----↓- 90/24/2024 ~ Hide Mastodon Account  -↓---- */
+  /* ----↓- 10/10/2024 ~ Bring back Mastodom Account  -↓---- */
+  /* ----↓- 10/10/2024 ~ Hide Matrix Account  -↓---- */
 
 
   .fa6-brands--telegram {
@@ -239,6 +239,7 @@
     mask-size: 100% 100%;
   }
 
+  /*
   .ph--matrix-logo-bold {
     display: inline-block;
     width: 1em;
@@ -252,6 +253,7 @@
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
   }
+  */
 
   .fa6-brands--lastfm {
     display: inline-block;
@@ -283,7 +285,7 @@
   }
   */
 
-  /*
+
   .bi--mastodon {
     display: inline-block;
     width: 1em;
@@ -297,7 +299,7 @@
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
   }
-  */
+
 
 
   
