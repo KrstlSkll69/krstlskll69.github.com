@@ -1,32 +1,44 @@
-[class*=maxwell]::after{
+.maxwell::after{
     content: "";
     width: 50px;
-    height: 90px;
+    height: 65px;
     left: 40px;
-    margin-top: -96px;
+    margin-top: -72px;
     position: absolute;
-    background-image: url('https://r2.e-z.host/0d6d243c-fab1-41de-8ee7-252d5fae7f12/0f9pfr0i.avif')
+    background-image: url('https://r2.e-z.host/0d6d243c-fab1-41de-8ee7-252d5fae7f12/ohv785n1.avif')
 }
 
-[class*=maxwell]::before{
+
+
+.maxwell::before{
     content: "";
     width: 50px;
-    height: 90px;
+    height: 65px;
     left: 243px;
-    margin-top: -96px;
+    margin-top: -72px;
     position: absolute;
-    background-image: url('https://r2.e-z.host/0d6d243c-fab1-41de-8ee7-252d5fae7f12/0f9pfr0i.avif')
+    background-image: url('https://r2.e-z.host/0d6d243c-fab1-41de-8ee7-252d5fae7f12/ohv785n1.avif')
 }
 
 /*------------*/
 
-.emojione--cat-face {
+.fa6-solid--cat {
     display: inline-block;
-    width: 1em;
+    color: white !important;
+    width: 1.13em;
     height: 1em;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cpath fill='black' d='M4.5 2.2c-3.5 2.2-3.4 25.5.8 33l26.1-16c-4-7.1-23.6-19-26.9-17'/%3E%3Cpath fill='%23f7a4a4' d='M9.5 11.3c-1.5.9-2.2 16.2.4 21l16.7-10.2c-2.4-4.6-15.7-11.6-17.1-10.8'/%3E%3Cpath fill='black' d='M59.5 2.2c3.5 2.2 3.4 25.5-.7 33l-26.1-16c3.9-7.1 23.5-19 26.8-17'/%3E%3Cpath fill='%23f7a4a4' d='M54.5 11.3c1.5.9 2.2 16.2-.4 21L37.3 22.1c2.5-4.6 15.8-11.6 17.2-10.8'/%3E%3Cpath fill='black' d='M31.8 13.1C4.7 13.1 2.2 32.5 2.2 43.5C2.2 48 15.4 62 31.8 62s29.6-14 29.6-18.5c0-11-2.5-30.4-29.6-30.4'/%3E%3Cpath fill='%23bfffab' d='M24.2 38.7s-3.1 4.8-8.8 3.3s-6-7.2-6-7.2s3.1-4.8 8.8-3.3c5.8 1.5 6 7.2 6 7.2'/%3E%3Cpath fill='%2393e67f' d='M23.6 36.2s-2.7 3-6.5 3c-4.1 0-6.5-5.9-6.5-5.9s2.7-3.1 7.6-1.9c4.5 1.2 5.4 4.8 5.4 4.8'/%3E%3Cpath fill='black' d='M19.4 36.1c0 6.6-3.2 6.6-3.2 0c.1-6.6 3.2-6.6 3.2 0'/%3E%3Cpath fill='%23bfffab' d='M39.4 38.7s3.1 4.8 8.8 3.3s6-7.2 6-7.2s-3.1-4.8-8.8-3.3c-5.8 1.5-6 7.2-6 7.2'/%3E%3Cpath fill='%2393e67f' d='M39.9 36.2s2.7 3 6.5 3c4.1 0 6.5-5.9 6.5-5.9s-2.7-3.1-7.6-1.9c-4.5 1.2-5.4 4.8-5.4 4.8'/%3E%3Cpath fill='black' d='M44.1 36.1c0 6.6 3.2 6.6 3.2 0s-3.2-6.6-3.2 0'/%3E%3Cpath fill='%23fff' d='M40.4 44c-2.6-2-5.4-8.7-8.6-8.7S25.7 42 23.1 44c-4.1 3.2-15 6.8-15 6.8S19.7 61 31.7 61s23.6-10.2 23.6-10.2c.1 0-10.8-3.6-14.9-6.8'/%3E%3Cellipse cx='31.8' cy='54.5' fill='%23ff94a4' rx='1.7' ry='2.5'/%3E%3Cg fill='black'%3E%3Cpath d='M40.2 53.1c-1 .6-2.1.8-3.1.8c-1.1-.1-2.1-.4-2.9-1.1c-.8-.6-1.4-1.5-1.6-2.6l-.8-4.5l-.8 4.5c-.2 1-.8 1.9-1.6 2.6s-1.9 1-2.9 1.1c-1.1 0-2.2-.2-3.1-.8c-1-.6-1.8-1.5-2.2-2.7c.1 1.3.7 2.5 1.7 3.4s2.3 1.4 3.5 1.4c1.4.1 2.7-.3 3.8-1.1c.6-.4 1.1-1 1.5-1.6c.4.6.9 1.2 1.5 1.6c1.1.8 2.5 1.2 3.8 1.1s2.6-.6 3.6-1.4c1-.9 1.7-2.1 1.7-3.4c-.3 1.1-1.1 2.1-2.1 2.7'/%3E%3Cpath d='M35.8 44.8c-.8-1-3.3-1.1-4-1.1s-3.2.1-4 1.1c-.6.7-.1 2.5 1.4 4c1 1 1.9 1.3 2.6 1.3s1.7-.3 2.6-1.3c1.5-1.6 2-3.3 1.4-4'/%3E%3C/g%3E%3C/svg%3E");
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 576 512'%3E%3Cpath fill='%23000' d='M320 192h17.1c22.1 38.3 63.5 64 110.9 64c11 0 21.8-1.4 32-4v228c0 17.7-14.3 32-32 32s-32-14.3-32-32V339.2L280 448h56c17.7 0 32 14.3 32 32s-14.3 32-32 32H192c-53 0-96-43-96-96V192.5c0-16.1-12-29.8-28-31.8l-7.9-1c-17.5-2.2-30-18.2-27.8-35.7S50.5 94 68 96.2l7.9 1c48 6 84.1 46.8 84.1 95.3v85.3c34.4-51.7 93.2-85.8 160-85.8m160 26.5c-10 3.5-20.8 5.5-32 5.5c-28.4 0-54-12.4-71.6-32q-5.55-6.15-9.9-13.2C357.3 164 352 146.6 352 128V10.7C352 4.8 356.7.1 362.6 0h.2c3.3 0 6.4 1.6 8.4 4.2v.1l12.8 17l27.2 36.3L416 64h64l4.8-6.4L512 21.3l12.8-17v-.1c2-2.6 5.1-4.2 8.4-4.2h.2c5.9.1 10.6 4.8 10.6 10.7V128c0 17.3-4.6 33.6-12.6 47.6c-11.3 19.8-29.6 35.2-51.4 42.9M432 128a16 16 0 1 0-32 0a16 16 0 1 0 32 0m48 16a16 16 0 1 0 0-32a16 16 0 1 0 0 32'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+.flipped {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
 }
 
 /*------------*/
