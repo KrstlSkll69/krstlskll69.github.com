@@ -20,6 +20,11 @@
     background-image: url('https://r2.e-z.host/0d6d243c-fab1-41de-8ee7-252d5fae7f12/ohv785n1.avif')
 }
 
+@media (max-width: 600px) {
+    .maxwell {
+        display: none;
+    }
+}
 /*------------*/
 
 .fa6-solid--cat {
