@@ -102,6 +102,12 @@ a {
 
 }
 
+.warning{
+  color: oklch(60% 0.1759 29.23);
+  position: relative !important;
+  top: -.50em !important;
+}
+
 /*------------Title Panel Formatting------------*/
 p{
   color: lightgray;
