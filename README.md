@@ -4,3 +4,5 @@
 ----
 
 https://krstlskll69.github.io/
+
+https://krstlskll69.pages.gay/
