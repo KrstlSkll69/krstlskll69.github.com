@@ -1,0 +1,212 @@
+:root {
+  color-scheme: dark !important;
+  background: url('/Images/background-min.jpg');
+  background-position: center;
+  background-size: 30rem;
+}
+/*
+:root {
+  cursor: url(https://r2.e-z.host/0d6d243c-fab1-41de-8ee7-252d5fae7f12/uv6x8354.png), auto;
+}
+*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  backdrop-filter: brightness(75%);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+li {
+  text-align: center;
+  padding: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.342);
+  border-radius: 1rem;
+  &:hover {scale: 0.95; background-color: black; z-index: 99999999; }
+  &:active {scale: 1.05; }
+  transition: scale 0.6s cubic-bezier(0.34, 1.54, 0.64, 1);
+}
+
+
+a {
+  text-decoration: unset;
+  color: white;
+}
+
+* { margin: unset; }
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(32px) !important;
+  width: 20rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  
+  /*
+  border-style: solid;
+  border-color: #0f0a0c;
+  */
+
+  max-width: 20rem;
+}
+
+.portPanel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(32px) !important;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.portphoto{
+  border-radius: 1rem;
+}
+
+
+.backPanel{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(32px) !important;
+  border-radius: 2rem;
+  padding: 0.5rem
+}
+
+.mexwell{
+
+}
+
+.warning{
+  color: oklch(60% 0.1759 29.23);
+  position: relative !important;
+  top: -.50em !important;
+}
+
+/*------------Title Panel Formatting------------*/
+p{
+  color: lightgray;
+}
+
+.a2{
+  display: unset !important;
+}
+
+d{
+  font-size: small;
+}
+
+/*Friends Tab Adding Message*/
+d2{
+  color: gray;
+  font-size: 0.8rem;
+  font-style: italic;
+}
+d3{
+  font-size: 0.6rem;
+  font-style: italic;
+  color: darkgray;
+}
+h3{
+  padding: 0.4rem;
+}
+d4{
+  font-size: 0.5rem;
+  font-style: italic;
+  color: darkgray;
+}
+/*------------Proflie Pic------------*/
+.profilePic {
+  width: 8rem;
+  border-radius: 0.5rem;
+}
+.piContainer{
+  width: 8.2rem !important;
+}
+
+/*hide on moblie*/
+@media (max-width: 600px) {
+  .piContainer {
+    display: none;
+  }
+}
+
+
+/*------------Discord Server(s) Panel------------*/
+a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  > img {
+    height: 1em;
+    border-radius: 1rem;
+  }
+}
+
+/*Discord @ Hover*/
+.discord {
+  position: relative;
+  > span {
+    position: absolute;
+    white-space: nowrap;
+    translate: -50% 0%;
+    top: 2rem;
+    background-color: black;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    font-family: "Comic Neue", cursive;
+    font-weight: 700;
+    display: none;
+  }
+  &:hover > span { display: unset; }
+}
+
+/*------------Custom Panels------------*/
+.vencordPanel{
+  text-align: center;
+  padding: 0.5rem;
+  background-color: rgb(255,182,193);
+  color: black;
+  border-radius: 1rem;
+  &:hover {scale: 0.95; background-color: rgb(252,108,133); z-index: 99999999; }
+  &:active {scale: 1.05; }
+  transition: scale 0.6s cubic-bezier(0.34, 1.54, 0.64, 1);
+}
+
+.equicordPanel{
+  text-align: center;
+  padding: 0.5rem;
+  background-color: rgb(166,231,255);
+  color: black;
+  border-radius: 1rem;
+  &:hover {scale: 0.95; background-color: rgb(0,183,235); z-index: 99999999; }
+  &:active {scale: 1.05; }
+  transition: scale 0.6s cubic-bezier(0.34, 1.54, 0.64, 1);
+}
