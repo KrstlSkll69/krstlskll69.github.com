@@ -48,7 +48,7 @@ a {
   color: white;
 }
 
-* { margin: unset;}
+* { margin: unset; }
 
 .panel {
   display: flex;
