@@ -217,13 +217,19 @@
     mask-size: 100% 100%;
   }
 
-  /* ----↓- If its commented out here then its commented out on index.html -↓---- */
-  /* ----↓- 09/16/2024 ~ Bring back Telegram Account -↓---- */
-  /* ----↓- 90/21/2024 ~ Hide Twitch Account  -↓---- */
-  /* ----↓- 90/21/2024 ~ Hide Signal Account  -↓---- */
-  /* ----↓- 10/10/2024 ~ Bring back Mastodom Account  -↓---- */
-  /* ----↓- 10/17/2024 ~ Bring back Matrix Account  -↓---- */
-  /* ----↓- 10/17/2024 ~ Hide TickTok Account  -↓---- */
+  .bxl--venmo {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M14 3.27a7.5 7.5 0 0 1 .66 3.35c0 2.72-1.93 6.72-3.49 9.27L9.53 2.44l-6.91.65L5.79 22h7.88c3.45-4.54 7.71-11 7.71-16a7.3 7.3 0 0 0-1.06-4z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+  }
 
   .formkit--twitter {
     display: inline-block;
@@ -340,7 +346,7 @@
     mask-size: 100% 100%;
   }
 
-  /*
+
   .bi--signal {
     display: inline-block;
     color: white !important;
@@ -355,8 +361,7 @@
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
   }
-  */
-  
+
 
   .bi--mastodon {
     display: inline-block;
@@ -373,7 +378,6 @@
     mask-size: 100% 100%;
   }
 
-  /*
   .fa6-brands--guilded {
     display: inline-block;
     width: 0.88em;
@@ -387,9 +391,7 @@
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
   }
-  */
 
-  /*
   .mage--tiktok-circle {
     display: inline-block;
     color: white !important;
@@ -404,26 +406,8 @@
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
   }
-  */
 
-  /*
-  .ri--blogger-line {
-    display: inline-block;
-    color: white !important;
-    width: 1em;
-    height: 1em;
-    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M3 9.009a6.01 6.01 0 0 1 6.01-6.01H12a6.01 6.01 0 0 1 6.01 5.982h.943c1.15 0 2.047.896 2.047 2.047v3.962A6.01 6.01 0 0 1 14.99 21H9.01A6.01 6.01 0 0 1 3 14.99zm6.01-4.01A4.01 4.01 0 0 0 5 9.01v5.981A4.01 4.01 0 0 0 9.01 19h5.98A4.01 4.01 0 0 0 19 14.99V11h-1c-1.076 0-2-.924-2-2c0-2.214-1.786-4-4-4zM8 9a1 1 0 0 1 1-1h3.5a1 1 0 1 1 0 2H9a1 1 0 0 1-1-1m1 5a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2z'/%3E%3C/svg%3E");
-    background-color: currentColor;
-    -webkit-mask-image: var(--svg);
-    mask-image: var(--svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-  }
-  */
 
-  /*
   .bi--twitch {
     display: inline-block;
     color: white !important;
@@ -438,9 +422,7 @@
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
   }
-  */
 
-  /*
   .simple-icons--pixiv {
     display: inline-block;
     color: white !important;
@@ -455,9 +437,7 @@
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
   }
-  */
 
-  /*
   .mdi--xmpp {
     display: inline-block;
     width: 1em;
