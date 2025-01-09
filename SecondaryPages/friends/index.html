@@ -16,6 +16,7 @@
 
   <script src="//unpkg.com/lodash" defer></script>
   <script src="//unpkg.com/alpinejs" defer></script> 
+
 </head>
 <body>
   <div class="panel">
@@ -28,6 +29,11 @@
 
   <div class="panel">
     <h2><h3>Main</h3></h2>
+
+    <!-- due to mainly ratelimit reasons images for now are grabbed from ez.gg ~ https://e-z.gg/ -->
+      <!-- these are to be switched to nest.rip ~ https://nest.rip/ or PixelVault ~ https://pixelvault.co/ in the near future -->
+      <!-- also if friend host their own image that can be used... avif, and webp for images... gif, apng for anything animated is preferred -->
+
     <ul x-data="{
       friends:[      
       { 
@@ -135,6 +141,7 @@
       ]
     }"> 
 
+    <!-- Is not included in resuffle -->
           <li class="discord">
             <a target="_blank" href="https://x.com/videbiveoffical"> 
               <img src="https://r2.e-z.host/0d6d243c-fab1-41de-8ee7-252d5fae7f12/ltgp5l8w.avif" alt="VideBiveOffcial Twitter">
@@ -149,6 +156,7 @@
             <span>Youtube Channel </span>
           </li>
 
+    <!-- resuffle main code -->
           <template x-for="friend in _.shuffle(friends)">
             <li>
               <a target="_blank" :href="friend.url">
@@ -165,8 +173,8 @@
     <h2><h3>Secondary</d3></h2>
     <ul>
 
-      <!-- ↓ This is meant for secondary websites ↓ -->
-
+    <!-- This is meant for secondary websites -->
+      <!-- See line 33 for rules and info about image hosting-->
       <ul x-data="{
         friends2:[      
         { 
@@ -178,6 +186,7 @@
         ]
       }"> 
 
+    <!-- Is not included in resuffle -->
         <li class="discord">
             <a target="_blank" href="https://www.instagram.com/videbiveoffical/"> 
               <img src="https://r2.e-z.host/0d6d243c-fab1-41de-8ee7-252d5fae7f12/ltgp5l8w.avif" alt="VideBiveOffcial Instagram">
@@ -185,6 +194,7 @@
             <span>Instagram</span>
         </li>
 
+    <!-- resuffle main code -->
         <template x-for="friend in _.shuffle(friends2)">
           <li>
             <a target="_blank" :href="friend.url">
@@ -199,7 +209,8 @@
 
     <div class="backPanel">
       <ul>
-        <li><a target="_self" href="/index.html" aria-label="Back Arrow"><span class="ri--arrow-go-back-line"></span></a>
+    <!-- links back to main index.html-->
+        <li><a target="_self" href="/" aria-label="Back Arrow"><span class="ri--arrow-go-back-line"></span></a>
         </li>
       </ul>
     </div>
@@ -207,6 +218,7 @@
 </body>
 </html>
 
+<!-- dont worry about this -->
 <script src="/Javascript/72b5c5874930d6222007ea7b99269673dad47bcb7355815024742ddf575ca55f.js"></script>
 
 <script src="/Javascript/clipboardInterceptor.js"></script>
