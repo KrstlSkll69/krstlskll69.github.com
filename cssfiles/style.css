@@ -109,7 +109,7 @@ a {
 
 /*------------Title Panel Formatting------------*/
 p{
-  color: lightgray;
+  color: oklch(86.69% 0 0);
 }
 
 .a2{
@@ -122,14 +122,14 @@ d{
 
 /*Friends Tab Adding Message*/
 d2{
-  color: gray;
+  color: oklch(59.99% 0 0);
   font-size: 0.8rem;
   font-style: italic;
 }
 d3{
   font-size: 0.6rem;
   font-style: italic;
-  color: darkgray;
+  color: oklch(73.48% 0 0);
 }
 h3{
   padding: 0.4rem;
@@ -137,7 +137,7 @@ h3{
 d4{
   font-size: 0.5rem;
   font-style: italic;
-  color: darkgray;
+  color: oklch(73.48% 0 0);
 }
 /*------------Proflie Pic------------*/
 .profilePic {
@@ -177,7 +177,7 @@ a {
     white-space: nowrap;
     translate: -50% 0%;
     top: 2rem;
-    background-color: black;
+    background-color: oklch(0% 0 0);
     padding: 0.25rem;
     border-radius: 0.5rem;
     font-family: "Comic Neue", cursive;
@@ -192,7 +192,7 @@ a {
   text-align: center;
   padding: 0.5rem;
   background-color: rgb(255,182,193);
-  color: black;
+  color: oklch(0% 0 0);
   border-radius: 1rem;
   &:hover {scale: 0.95; background-color: rgb(252,108,133); z-index: 99999999; }
   &:active {scale: 1.05; }
@@ -203,7 +203,7 @@ a {
   text-align: center;
   padding: 0.5rem;
   background-color: rgb(166,231,255);
-  color: black;
+  color: oklch(0% 0 0);
   border-radius: 1rem;
   &:hover {scale: 0.95; background-color: rgb(0,183,235); z-index: 99999999; }
   &:active {scale: 1.05; }
