@@ -7,6 +7,10 @@
   --OnekoHearts:  oklch(0% 0 0);
 }
 
+div[id*=oneko]{
+  cursor: pointer;
+}
+
 body {
 
     cursor: default;
