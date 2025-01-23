@@ -1,3 +1,7 @@
+:root{
+    --OnekoHearts:  oklch(0% 0 0);
+}
+
 .maxwell::after{
     content: "";
     width: 50px;
@@ -7,8 +11,6 @@
     position: absolute;
     background-image: url('https://cdn.nest.rip/uploads/68a291dc-6740-480a-a902-7e88fe102d68 ')
 }
-
-
 
 .maxwell::before{
     content: "";
