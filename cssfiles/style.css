@@ -3,6 +3,8 @@
   background: url('/ImagesV2/background-min.jpg');
   background-position: center;
   background-size: 30rem;
+
+  --OnekoHearts:  oklch(0% 0 0);
 }
 
 body {
