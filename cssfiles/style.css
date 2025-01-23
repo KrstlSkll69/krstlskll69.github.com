@@ -45,7 +45,7 @@ li {
 
 a {
   text-decoration: unset;
-  color: white;
+  color: oklch(100% 0 0);
 }
 
 * { margin: unset; }
