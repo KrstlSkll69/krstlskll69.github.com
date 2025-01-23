@@ -43,7 +43,7 @@ li {
   padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.342);
   border-radius: 1rem;
-  &:hover {scale: 0.95; background-color: black; z-index: 99999999; }
+  &:hover {scale: 0.95; background-color: oklch(0% 0 0); z-index: 99999999; }
   &:active {scale: 1.05; }
   transition: scale 0.6s cubic-bezier(0.34, 1.54, 0.64, 1);
 }
