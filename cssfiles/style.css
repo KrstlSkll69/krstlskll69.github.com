@@ -23,9 +23,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  gap: 0.5rem;
-
+  gap: 1rem;
   backdrop-filter: brightness(75%);
 }
 
@@ -66,7 +64,7 @@ a {
 
   background-color: rgba(0, 0, 0, 0.5) !important;
   backdrop-filter: blur(32px) !important;
-  width: 325px;
+  width: 20rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
   
@@ -75,7 +73,7 @@ a {
   border-color: #0f0a0c;
   */
 
-  max-width: 325px;
+  max-width: 20rem;
 }
 
 .portPanel{
@@ -114,11 +112,6 @@ a {
   position: relative !important;
   top: -.50em !important;
 }
-
-.DiscordAccount{
-  border-radius: 0.5rem;
-}
-
 
 /*------------Title Panel Formatting------------*/
 p{
