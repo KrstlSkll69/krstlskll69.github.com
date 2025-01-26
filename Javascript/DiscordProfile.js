@@ -242,6 +242,8 @@ async function updateClanBadge() {
 }
 
 const DISCORD_BADGES = {
+    // We cannot get the Nitro badges due limitations
+    // But you can add an function to check if the user has an animated profile picture and add the Nitro badge
     DISCORD_EMPLOYEE: 1 << 0,
     PARTNERED_SERVER_OWNER: 1 << 1,
     HYPESQUAD_EVENTS: 1 << 2,
@@ -257,6 +259,7 @@ const DISCORD_BADGES = {
 };
 
 const DISCORD_BADGE_DETAILS = {
+    // If you're adding more badges, make sure to add them below
     DISCORD_EMPLOYEE: {
         tooltip: "Discord Staff",
         icon: "https://cdn.discordapp.com/badge-icons/5e74e9b61934fc1f67c65515d1f7e60d.png"
@@ -396,7 +399,8 @@ async function fetchBadges() {
             });
         }
 
-        // // Handle BadgeVault badges
+        // Handle BadgeVault badges
+        // You can change BadgeVault to Vencord or any other client mod that's supported @ https://github.com/domi-btnr/ClientModBadges-API?tab=readme-ov-file#supported-client-mods just make sure it's in the right format
         // if (clientModBadgesApiData?.BadgeVault?.length > 0) {
         //     clientModBadgesApiData.BadgeVault.forEach(badge => {
         //         userBadges.push({
