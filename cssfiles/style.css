@@ -216,19 +216,6 @@ d4{
 
     font-size: x-small;
     padding: 0.5rem;
-
-/*--- This is for the backdrop ---*
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-
-    background-color: rgba(0, 0, 0, 0.5) !important;
-    backdrop-filter: blur(32px) !important;
-    width: 20rem;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
-    */
 }
 
 .activity-info {
