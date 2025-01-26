@@ -170,7 +170,9 @@ d4{
   width: 8.89rem !important;
   height: 8.89rem !important;
   position: relative;
-
+  margin-bottom: -2.4rem !important;
+  margin-left: 1rem;
+  z-index: 1 !important;
 }
 
 .status-indicator {
@@ -213,10 +215,8 @@ d4{
 #activities-list {
     transition: opacity 0.3s ease-in-out;
     opacity: 1;
-
     font-size: x-small;
     padding: 0.5rem;
-    
 
     width: unset !important;
     max-width: 100rem;
@@ -332,10 +332,6 @@ d4{
   }
 
   .activity-item-1{
-    display: none !important;
-  }
-
-  .clan-badge {
     display: none !important;
   }
 }
