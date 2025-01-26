@@ -146,7 +146,7 @@ async function updateActivities() {
             : await encodeBase64('https://lanyard-profile-readme.vercel.app/assets/unknown.png');
 
         const listItem = document.createElement('li');
-        listItem.classList.add('activity-item');
+        listItem.classList.add('activity-item-1');
         listItem.id = 'activity-0';
 
         listItem.innerHTML = `

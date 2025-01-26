@@ -216,6 +216,10 @@ d4{
 
     font-size: x-small;
     padding: 0.5rem;
+    
+
+    width: unset !important;
+    max-width: 100rem;
 }
 
 .activity-info {
@@ -243,28 +247,37 @@ d4{
 }
 
 .activity-small-img {
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 55px;
-    margin-top: -30px;
+    position: absolute !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin-left: 55px !important;
+    margin-top: -30px !important;
 }
 
 .activity-small-img img {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    width: 30px !important;
+    height: 30px !important;
+    border-radius: 50% !important;
 }
 
 .activity-text {
     flex-grow: 1;
     color: #ffffff;
+
+    padding: .9rem;
 }
 
 .activity-text h4 {
     font-size: 1rem;
     font-weight: bold;
+
+    position: relative;
+}
+
+.activity-item{
+  display: flex !important;
+
 }
 
 .activity-item > span {
