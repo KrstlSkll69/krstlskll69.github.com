@@ -21,7 +21,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
+  gap: 0.5rem;
   backdrop-filter: brightness(75%);
 }
 
@@ -190,29 +190,45 @@ d4{
 }
 
 .status-idle {
-  background-image: url('https://cdn.nest.rip/uploads/2856a7a7-4844-43e8-8b58-1fc17dc229ca.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  content: url('https://cdn.nest.rip/uploads/f1e26ee6-21c5-4042-84a2-00f747c1bc55.svg');
+  background-color: rgba(0, 0, 0, 0.63);
+  backdrop-filter: blur(32px) !important;  
+  padding: 1.9px;
 }
 
 .status-dnd {
-  background-image: url('https://cdn.nest.rip/uploads/53584004-9290-42ff-b45b-3af141bb49d7.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  content: url('https://cdn.nest.rip/uploads/fd1b3736-785b-4273-a45c-f96bcd166e88.svg');
+  background-color: rgba(0, 0, 0, 0.63);
+  backdrop-filter: blur(32px) !important;  
+  padding: 1.9px;
 }
 
 .status-offline {
-  background-image: url('https://cdn.nest.rip/uploads/827cdfb8-07bb-402b-9645-87521a3b18e0.svg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  content: url('https://cdn.nest.rip/uploads/c75312ed-0bc0-4fad-987e-4466b84e1782.svg');
+  background-color: rgba(0, 0, 0, 0.63);
+  backdrop-filter: blur(32px) !important;  
+  padding: 1.9px;
 }
 
 #activities-list {
     transition: opacity 0.3s ease-in-out;
     opacity: 1;
+
+    font-size: x-small;
+    padding: 0.5rem;
+
+/*--- This is for the backdrop ---*
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    backdrop-filter: blur(32px) !important;
+    width: 20rem;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    */
 }
 
 .activity-info {
@@ -220,7 +236,12 @@ d4{
     flex-direction: row;
     gap: 1rem;
     align-items: center;
-    width: 100%;
+    width: unset !important;
+
+    max-width: 20rem;
+
+    inline-size: 150px;
+    overflow-wrap: break-word;
 }
 
 .activity-large-img {
