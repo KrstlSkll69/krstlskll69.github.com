@@ -325,10 +325,11 @@ function fetchDiscordBadges(flags) {
 
 async function fetchBadges() {
     try {
-        const [equicordResponse, vencordResponse, nekocordResponse] = await Promise.all([
+        const [equicordResponse, vencordResponse, nekocordResponse, clientModBadgesApiResponse] = await Promise.all([
             fetch('https://raw.githubusercontent.com/Equicord/Equibored/refs/heads/main/badges.json'),
             fetch('https://badges.vencord.dev/badges.json'),
-            fetch('https://nekocord.dev/assets/badges.json')
+            fetch('https://nekocord.dev/assets/badges.json'),
+            fetch(`https://api.domi-btnr.dev/clientmodbadges/users/${userId}`)
         ]);
 
         let userBadges = [];
@@ -379,6 +380,33 @@ async function fetchBadges() {
                 }
             });
         }
+
+        // Handle ClientModBadges-API badges
+        const clientModBadgesApiData = await clientModBadgesApiResponse.json();
+
+        // Handle Enmity badges
+        if (clientModBadgesApiData?.Enmity?.length > 0) {
+            clientModBadgesApiData.Enmity.forEach(badge => {
+                userBadges.push({
+                    name: badge,
+                    tooltip: `Enmity: ${badge}`,
+                    icon: `https://api.domi-btnr.dev/clientmodbadges/badges/Enmity/${badge}`,
+                    type: 'enmity'
+                });
+            });
+        }
+
+        // // Handle BadgeVault badges
+        // if (clientModBadgesApiData?.BadgeVault?.length > 0) {
+        //     clientModBadgesApiData.BadgeVault.forEach(badge => {
+        //         userBadges.push({
+        //             name: badge.name,
+        //             tooltip: badge.name,
+        //             icon:badge.badge,
+        //             type: 'badgevault'
+        //         });
+        //     });
+        // }
 
         return userBadges;
     } catch (error) {
