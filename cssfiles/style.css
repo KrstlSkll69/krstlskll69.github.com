@@ -300,11 +300,15 @@ d4{
 /* Hide on mobile */
 @media (max-width: 600px) {
   .piContainer {
-    display: none;
+    display: none !important;
   }
 
   .activity-item {
-    display: none;
+    display: none !important;
+  }
+
+  .activity-item-1{
+    display: none !important;
   }
 }
 
