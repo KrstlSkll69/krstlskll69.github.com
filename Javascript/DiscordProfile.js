@@ -31,7 +31,9 @@ function connectWebSocket() {
         const { op, d } = JSON.parse(data);
         switch (op) {
             case 0: {
-                userData = d;
+                userData = { data: d };
+                await updateClanBadge();
+                await updateAvatarDecoration();
                 
                 // Update Status
                 if (d.discord_status !== previousStatus) {
@@ -89,6 +91,11 @@ function connectWebSocket() {
                 // Update Avatar Decoration (only if changed)
                 if (d?.discord_user?.avatar_decoration_data) {
                     await updateAvatarDecoration();
+                }
+
+                // Update Clan Badge (only if changed)
+                if (d?.data?.discord_user?.clan) {
+                    await updateClanBadge();
                 }
 
                 break;
@@ -172,22 +179,63 @@ async function updateActivities() {
 
 async function updateAvatarDecoration() {
     try {
-        if (userData?.discord_user?.avatar_decoration_data) {
-            const decorationUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${userData.discord_user.avatar_decoration_data.asset}.png?size=64&passthrough=true`;
+        if (userData?.data?.discord_user?.avatar_decoration_data) {
+            const decorationData = userData.data.discord_user.avatar_decoration_data;
+            const decorationUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${decorationData.asset}.png?size=64&passthrough=true`;            
             const decorationBase64 = await encodeBase64(decorationUrl);
-            
+
             let decorationImg = document.getElementById('avatar-decoration');
             if (!decorationImg) {
                 decorationImg = document.createElement('img');
                 decorationImg.id = 'avatar-decoration';
                 decorationImg.alt = 'Avatar Decoration';
-                decorationImg.className = 'hover-opacity transition';
+                decorationImg.style.cssText = `
+                    display: block;
+                    width: fill;
+                    height: fill;
+                    position: absolute;
+                    z-index: 2;
+                    pointer-events: none;
+                `;
                 document.querySelector('.profilePic').parentElement.appendChild(decorationImg);
             }
             
             decorationImg.src = `data:image/png;base64,${decorationBase64}`;
+            console.log('Avatar decoration updated successfully');
+        } else {
+            console.log('No avatar decoration data found');
         }
     } catch (error) {
         console.error('Error updating avatar decoration:', error);
+
+    }
+}
+
+async function updateClanBadge() {
+    try {        
+        // Check correct data
+        if (!userData?.data?.discord_user?.clan?.tag) {
+            console.log('No clan data found');
+            return;
+        }
+
+        const clan = userData.data.discord_user.clan;
+        const clanContainer = document.getElementById('clan-container');
+        if (!clanContainer) {
+            console.log('Clan container not found in DOM');
+            return;
+        }
+
+        const clanUrl = `https://cdn.discordapp.com/clan-badges/${clan.identity_guild_id}/${clan.badge}.png?size=16`;        
+        const clanBase64 = await encodeBase64(clanUrl);
+        
+        clanContainer.innerHTML = `
+            <img src="data:image/png;base64,${clanBase64}" alt="Clan Badge" style="height: 12px; width: 12px;">
+            <span style="white-space: nowrap;">${clan.tag}</span>
+        `;
+        clanContainer.style.display = 'inline-flex';
+        console.log('Clan badge updated successfully');
+    } catch (error) {
+        console.error(`Error updating clan badge: ${error.message}`);
     }
 }
