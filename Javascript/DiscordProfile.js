@@ -34,6 +34,7 @@ function connectWebSocket() {
                 userData = { data: d };
                 await updateClanBadge();
                 await updateAvatarDecoration();
+                await updateBadges();
                 
                 // Update Status
                 if (d.discord_status !== previousStatus) {
@@ -237,5 +238,185 @@ async function updateClanBadge() {
         console.log('Clan badge updated successfully');
     } catch (error) {
         console.error(`Error updating clan badge: ${error.message}`);
+    }
+}
+
+const DISCORD_BADGES = {
+    DISCORD_EMPLOYEE: 1 << 0,
+    PARTNERED_SERVER_OWNER: 1 << 1,
+    HYPESQUAD_EVENTS: 1 << 2,
+    BUGHUNTER_LEVEL_1: 1 << 3,
+    HOUSE_BRAVERY: 1 << 6,
+    HOUSE_BRILLIANCE: 1 << 7,
+    HOUSE_BALANCE: 1 << 8,
+    EARLY_SUPPORTER: 1 << 9,
+    BUGHUNTER_LEVEL_2: 1 << 14,
+    VERIFIED_BOT_DEVELOPER: 1 << 17,
+    CERTIFIED_MODERATOR: 1 << 18,
+    ACTIVE_DEVELOPER: 1 << 22
+};
+
+const DISCORD_BADGE_DETAILS = {
+    DISCORD_EMPLOYEE: {
+        tooltip: "Discord Staff",
+        icon: "https://cdn.discordapp.com/badge-icons/5e74e9b61934fc1f67c65515d1f7e60d.png"
+    },
+    PARTNERED_SERVER_OWNER: {
+        tooltip: "Partnered Server Owner",
+        icon: "https://cdn.discordapp.com/badge-icons/3f9748e53446a137a052f3454e2de41e.png"
+    },
+    HYPESQUAD_EVENTS: {
+        tooltip: "HypeSquad Events",
+        icon: "https://cdn.discordapp.com/badge-icons/bf01d1073931f921909045f3a39fd264.png"
+    },
+    HOUSE_BRAVERY: {
+        tooltip: "HypeSquad Bravery",
+        icon: "https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png"
+    },
+    HOUSE_BRILLIANCE: {
+        tooltip: "HypeSquad Brilliance",
+        icon: "https://cdn.discordapp.com/badge-icons/011940fd013da3f7fb926e4a1cd2e618.png"
+    },
+    HOUSE_BALANCE: {
+        tooltip: "HypeSquad Balance",
+        icon: "https://cdn.discordapp.com/badge-icons/3aa41de486fa12454c3761e8e223442e.png"
+    },
+    EARLY_SUPPORTER: {
+        tooltip: "Early Supporter",
+        icon: "https://cdn.discordapp.com/badge-icons/7060786766c9c840eb3019e725d2b358.png"
+    },
+    BUGHUNTER_LEVEL_1: {
+        tooltip: "Bug Hunter",
+        icon: "https://cdn.discordapp.com/badge-icons/2717692c7dca7289b35297368a940dd0.png"
+    },
+    BUGHUNTER_LEVEL_2: {
+        tooltip: "Bug Hunter",
+        icon: "https://cdn.discordapp.com/badge-icons/848f79194d4be5ff5f81505cbd0ce1e6.png"
+    },
+    VERIFIED_BOT_DEVELOPER: {
+        tooltip: "Early Verified Bot Developer",
+        icon: "https://cdn.discordapp.com/badge-icons/6df5892e0f35b051f8b61eace34f4967.png"
+    },
+    CERTIFIED_MODERATOR: {
+        tooltip: "Moderator Programs Alumni",
+        icon: "https://cdn.discordapp.com/badge-icons/fee1624003e2fee35cb398e125dc479b.png"
+    },
+    ACTIVE_DEVELOPER: {
+        tooltip: "Active Developer",
+        icon: "https://cdn.discordapp.com/badge-icons/6bdc42827a38498929a4920da12695d9.png"
+    }
+};
+
+function fetchDiscordBadges(flags) {
+    const badges = [];
+    for (const [flag, bitwise] of Object.entries(DISCORD_BADGES)) {
+        if (flags & bitwise) {
+            const badge = DISCORD_BADGE_DETAILS[flag];
+            badges.push({
+                name: badge.tooltip,
+                tooltip: badge.tooltip,
+                icon: badge.icon,
+                type: 'discord'
+            });
+        }
+    }
+    return badges;
+}
+
+async function fetchBadges() {
+    try {
+        const [equicordResponse, vencordResponse, nekocordResponse] = await Promise.all([
+            fetch('https://raw.githubusercontent.com/Equicord/Equibored/refs/heads/main/badges.json'),
+            fetch('https://badges.vencord.dev/badges.json'),
+            fetch('https://nekocord.dev/assets/badges.json')
+        ]);
+
+        let userBadges = [];
+
+        // Handle Discord badges
+        if (userData?.data?.discord_user?.public_flags) {
+            const discordBadges = fetchDiscordBadges(userData.data.discord_user.public_flags);
+            userBadges.push(...discordBadges);
+        }
+
+        // Handle Vencord badges
+        const vencordBadges = await vencordResponse.json();
+        if (vencordBadges[userId] && Array.isArray(vencordBadges[userId])) {
+            userBadges.push(...vencordBadges[userId].map(badge => ({
+                name: badge.tooltip,
+                tooltip: badge.tooltip,
+                icon: badge.badge,
+                type: 'vencord'
+            })));
+        }
+
+        // Handle Equicord badges
+        const equicordBadges = await equicordResponse.json();
+        if (equicordBadges[userId] && Array.isArray(equicordBadges[userId])) {
+            userBadges.push(...equicordBadges[userId].map(badge => ({
+                name: badge.tooltip,
+                tooltip: badge.tooltip,
+                icon: badge.badge,
+                type: 'equicord'
+            })));
+        }
+
+        // Handle Nekocord badges
+        const nekocordData = await nekocordResponse.json();
+        if (nekocordData.users?.[userId]?.badges) {
+            const userNekoBadges = nekocordData.users[userId].badges;
+            const nekoBadges = nekocordData.badges;
+            
+            userNekoBadges.forEach(badgeId => {
+                const badge = nekoBadges[badgeId];
+                if (badge) {
+                    userBadges.push({
+                        name: badge.name,
+                        tooltip: badge.description,
+                        icon: badge.image,
+                        type: 'nekocord'
+                    });
+                }
+            });
+        }
+
+        return userBadges;
+    } catch (error) {
+        console.error('Error fetching badges:', error);
+        return [];
+    }
+}
+
+async function updateBadges() {
+    try {
+        const badges = await fetchBadges();
+        if (!badges.length) return;
+
+        let badgesContainer = document.getElementById('badges-container');
+        if (!badgesContainer) {
+            badgesContainer = document.createElement('div');
+            badgesContainer.id = 'badges-container';
+            badgesContainer.className = 'badges-wrapper';
+            badgesContainer.style.cssText = `
+                display: flex;
+                gap: 0.5rem;
+                margin: 0.5rem 0;
+            `;
+            
+            const clanBadge = document.getElementById('clan-container');
+            if (clanBadge) {
+                clanBadge.parentNode.insertBefore(badgesContainer, clanBadge.nextSibling);
+            }
+        }
+
+        badgesContainer.innerHTML = badges.map(badge => `
+            <div class="badge-item">
+                <img src="${badge.icon}" alt="${badge.tooltip}" style="width: 20px; height: 20px; border-radius: 50%;">
+                <span class="badge-tooltip">${badge.tooltip}</span>
+            </div>
+        `).join('');
+
+    } catch (error) {
+        console.error('Error updating badges:', error);
     }
 }
