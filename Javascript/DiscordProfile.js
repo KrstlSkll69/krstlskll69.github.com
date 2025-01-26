@@ -14,7 +14,7 @@ let userData = null;
 let previousStatus = null;
 let previousActivity = null;
 
-const userId = "861631850681729045";
+const userId = "929208515883569182";
 
 function connectWebSocket() {
     ws = new WebSocket("wss://api.lanyard.rest/socket");
