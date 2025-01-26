@@ -40,20 +40,57 @@ function connectWebSocket() {
                     statusIndicator.className = `status-indicator status-${d.discord_status}`;
                 }
 
-                // Update Activities
-                const validActivities = d?.activities?.filter(
-                    activity => !(activity.id === "custom" && activity.type === 4)
-                ) || [];
-                
-                if (JSON.stringify(validActivities[0]) !== JSON.stringify(previousActivity)) {
-                    previousActivity = validActivities[0];
-                    await updateActivities();
+                // Update Activities or Spotify
+                if (d.listening_to_spotify) {
+                    const activityList = document.getElementById('activities-list');
+                    activityList.style.display = 'block';
+                    activityList.innerHTML = '';
+
+                    const listItem = document.createElement('li');
+                    listItem.classList.add('activity-item');
+
+                    const albumArt = d.spotify.album_art_url ? 
+                        await encodeBase64(d.spotify.album_art_url) : 
+                        await encodeBase64('https://lanyard-profile-readme.vercel.app/assets/unknown.png');
+
+                    listItem.innerHTML = `
+                        <div class="activity-large-img" style="display: flex; align-items: center; justify-content: center;">
+                            <img src="data:image/png;base64,${albumArt}" 
+                                alt="Album Cover"
+                                style="
+                                    width: 80px; 
+                                    height: 80px; 
+                                    border-radius: 10px; 
+                                    margin: 0 15px;
+                                    object-fit: cover;
+                                    ${!d.spotify.album_art_url ? 'filter: invert(100);' : ''} 
+                                    ${d.spotify.album_art_url ? 'border: solid 0.5px #222;' : ''}
+                                ">
+                        </div>
+                        <div class="activity-text">
+                            <h4>Listening to Spotify</h4>
+                            <p>${d.spotify.song}</p>
+                            <p>by ${d.spotify.artist}</p>
+                        </div>`;
+
+                    activityList.appendChild(listItem);
+                } else {
+                    // Regular activity update
+                    const validActivities = d?.activities?.filter(
+                        activity => !(activity.id === "custom" && activity.type === 4)
+                    ) || [];
+                    
+                    if (JSON.stringify(validActivities[0]) !== JSON.stringify(previousActivity)) {
+                        previousActivity = validActivities[0];
+                        await updateActivities();
+                    }
                 }
 
                 // Update Avatar Decoration (only if changed)
                 if (d?.discord_user?.avatar_decoration_data) {
                     await updateAvatarDecoration();
                 }
+
                 break;
             }
             case 1: {
