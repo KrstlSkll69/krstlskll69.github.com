@@ -121,7 +121,7 @@ async function updateActivities() {
         const activitiesList = document.getElementById('activities-list');
         
         // Filter out custom status
-        const validActivities = userData?.activities?.filter(
+        const validActivities = userData?.data?.activities?.filter(
             activity => !(activity.id === "custom" && activity.type === 4)
         ) || [];
 
