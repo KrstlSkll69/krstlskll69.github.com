@@ -12,9 +12,7 @@ div[id*=oneko]{
 }
 
 body {
-
-    cursor: default;
-
+  cursor: default;
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
   box-sizing: border-box;
@@ -47,7 +45,6 @@ li {
   &:active {scale: 1.05; }
   transition: scale 0.6s cubic-bezier(0.34, 1.54, 0.64, 1);
 }
-
 
 a {
   text-decoration: unset;
@@ -91,7 +88,6 @@ a {
   border-radius: 1rem;
 }
 
-
 .backPanel{
   display: flex;
   flex-direction: column;
@@ -101,10 +97,6 @@ a {
   backdrop-filter: blur(32px) !important;
   border-radius: 2rem;
   padding: 0.5rem
-}
-
-.mexwell{
-
 }
 
 .warning{
@@ -145,22 +137,155 @@ d4{
   font-style: italic;
   color: oklch(73.48% 0 0);
 }
+
 /*------------Proflie Pic------------*/
 .profilePic {
   width: 8rem;
-  border-radius: 0.5rem;
-}
-.piContainer{
-  width: 8.2rem !important;
+  border-radius: 50%;
+  position: relative;
 }
 
-/*hide on moblie*/
+#avatar-decoration {
+    display: block;
+    width: 9.5rem;
+    height: 9.5rem;
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+.hover-opacity {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+.hover-opacity:hover {
+    opacity: 0.8;
+}
+
+.piContainer {
+  width: 8.89rem !important;
+  height: 8.89rem !important;
+  position: relative;
+
+}
+
+.status-indicator {
+  position: absolute;
+  bottom: 1rem;
+  right: 1.7rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  border-radius: 50%;
+  box-sizing: content-box;
+  z-index: 3;
+  border: 2px solid var(--bg-color);
+}
+
+.status-online {
+  background-color: #43b581;
+}
+
+.status-idle {
+  background-image: url('https://cdn.nest.rip/uploads/2856a7a7-4844-43e8-8b58-1fc17dc229ca.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.status-dnd {
+  background-image: url('https://cdn.nest.rip/uploads/53584004-9290-42ff-b45b-3af141bb49d7.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.status-offline {
+  background-image: url('https://cdn.nest.rip/uploads/827cdfb8-07bb-402b-9645-87521a3b18e0.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#activities-list {
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1;
+}
+
+.activity-info {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+}
+
+.activity-large-img {
+    position: relative;
+}
+
+.activity-large-img img {
+    width: 70px;
+    height: 70px;
+    border: solid 0.5px #222;
+    border-radius: 10px;
+}
+
+.activity-small-img {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 55px;
+    margin-top: -30px;
+}
+
+.activity-small-img img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.activity-text {
+    flex-grow: 1;
+    color: #ffffff;
+}
+
+.activity-text h4 {
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.activity-item > span {
+    position: absolute;
+    white-space: nowrap;
+    translate: -50% 0%;
+    top: 2rem;
+    background-color: oklch(0% 0 0);
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    font-family: "Comic Neue", cursive;
+    font-weight: 700;
+    display: none;
+}
+
+.activity-item:hover > span {
+    display: unset;
+}
+
+/* Hide on mobile */
 @media (max-width: 600px) {
   .piContainer {
     display: none;
   }
-}
 
+  .activity-item {
+    display: none;
+  }
+}
 
 /*------------Discord Server(s) Panel------------*/
 a {
