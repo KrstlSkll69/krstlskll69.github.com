@@ -297,7 +297,7 @@ d4{
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.39);
     backdrop-filter: blur(4px);
     border-radius: 0.375rem;
     padding: 0 0.3rem;
@@ -367,6 +367,7 @@ a {
     font-family: "Comic Neue", cursive;
     font-weight: 700;
     display: none;
+    z-index: 1 !important;
   }
   &:hover > span { display: unset; }
 }
