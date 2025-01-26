@@ -293,6 +293,7 @@ d4{
 }
 
 .clan-badge {
+    position: relative;
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
@@ -303,12 +304,17 @@ d4{
     height: 22px;
     font-size: x-small;
     font-weight: 500;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.34, 1.54, 0.64, 1);
 }
 
 .clan-badge:hover {
+    scale: 0.95;
     background-color: oklch(0% 0 0);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 99999999;
+}
+
+.clan-badge:active {
+    scale: 1.05;
 }
 
 .clan-badge img {
