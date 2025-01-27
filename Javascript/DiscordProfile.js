@@ -17,7 +17,8 @@ let previousActivity = null;
 const userId = "929208515883569182";
 
 function connectWebSocket() {
-    ws = new WebSocket("wss://api.lanyard.rest/socket");
+    // Currently using 'SelfHosted' landyard instance main can be found @ wss://api.lanyard.rest/socket
+    ws = new WebSocket("wss://lanyard.vmohammad.dev/socket");
 
     ws.onopen = () => {
         console.log("WebSocket Connected");
