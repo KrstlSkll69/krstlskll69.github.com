@@ -394,7 +394,7 @@ async function fetchBadges() {
                 userBadges.push({
                     name: badge,
                     tooltip: `Enmity: ${badge}`,
-                    icon: `https://api.domi-btnr.dev/clientmodbadges/badges/Enmity/${badge}`,
+                    icon: `https://globalbadges.equicord.fyi/badges/Enmity/${badge}`,
                     type: 'enmity'
                 });
             });
@@ -415,7 +415,7 @@ async function fetchBadges() {
         }
 
         // Handle BadgeVault badges
-        // You can change BadgeVault to Vencord or any other client mod that's supported @ https://github.com/domi-btnr/ClientModBadges-API?tab=readme-ov-file#supported-client-mods just make sure it's in the right format
+        // You can change BadgeVault to Vencord or any other client mod that's supported @ https://github.com/Equicord/ClientModBadges-API?tab=readme-ov-file#supported-client-mods just make sure it's in the right format
         // if (clientModBadgesApiData?.BadgeVault?.length > 0) {
         //     clientModBadgesApiData.BadgeVault.forEach(badge => {
         //         userBadges.push({
