@@ -440,7 +440,7 @@ a {
     white-space: nowrap;
     left: 50%;
     transform: translateX(-50%);
-    top: 2rem;
+    top: 1.9rem;
     background-color: oklch(0% 0 0);
     padding: 0.25rem;
     border-radius: 0.5rem;
