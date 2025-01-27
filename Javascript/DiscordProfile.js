@@ -376,7 +376,7 @@ async function fetchBadges() {
                 if (badge) {
                     userBadges.push({
                         name: badge.name,
-                        tooltip: badge.description,
+                        tooltip: badge.name,
                         icon: badge.image,
                         type: 'nekocord'
                     });
