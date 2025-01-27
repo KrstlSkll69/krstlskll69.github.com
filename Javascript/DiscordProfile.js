@@ -332,7 +332,8 @@ async function fetchBadges() {
             fetch('https://raw.githubusercontent.com/Equicord/Equibored/refs/heads/main/badges.json'),
             fetch('https://badges.vencord.dev/badges.json'),
             fetch('https://nekocord.dev/assets/badges.json'),
-            fetch(`https://api.domi-btnr.dev/clientmodbadges/users/${userId}`)
+            // We're using the fork made by Equicord, you can find the original repository @ https://api.domi-btnr.dev/clientmodbadges
+            fetch(`https://globalbadges.equicord.fyi/users/${userId}`)
         ]);
 
         let userBadges = [];
@@ -396,6 +397,20 @@ async function fetchBadges() {
                     icon: `https://api.domi-btnr.dev/clientmodbadges/badges/Enmity/${badge}`,
                     type: 'enmity'
                 });
+            });
+        }
+
+        // Handle Equicord string badges
+        if (clientModBadgesApiData?.Equicord?.length > 0) {
+            clientModBadgesApiData.Equicord.forEach(badge => {
+                if (typeof badge === 'string') {
+                    userBadges.push({
+                        name: badge,
+                        tooltip: `Equicord: ${badge}`,
+                        icon: `https://globalbadges.equicord.fyi/badges/Equicord/${badge}`,
+                        type: 'equicord'
+                    });
+                }
             });
         }
 
