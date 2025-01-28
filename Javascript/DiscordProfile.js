@@ -329,12 +329,13 @@ function fetchDiscordBadges(flags) {
 
 async function fetchBadges() {
     try {
-        const [equicordResponse, vencordResponse, nekocordResponse, clientModBadgesApiResponse] = await Promise.all([
+        const [equicordResponse, vencordResponse, nekocordResponse, clientModBadgesApiResponse, reviewDbResponse] = await Promise.all([
             fetch('https://raw.githubusercontent.com/Equicord/Equibored/refs/heads/main/badges.json'),
             fetch('https://badges.vencord.dev/badges.json'),
             fetch('https://nekocord.dev/assets/badges.json'),
             // We're using the fork made by Equicord, you can find the original repository @ https://api.domi-btnr.dev/clientmodbadges
-            fetch(`https://globalbadges.equicord.fyi/users/${userId}`)
+            fetch(`https://globalbadges.equicord.fyi/users/${userId}`),
+            fetch('https://manti.vendicated.dev/api/reviewdb/badges')
         ]);
 
         let userBadges = [];
@@ -427,6 +428,19 @@ async function fetchBadges() {
         //         });
         //     });
         // }
+
+        // Handle ReviewDB badges
+        const reviewDbBadges = await reviewDbResponse.json();
+        reviewDbBadges
+            .filter(badge => badge.discordID === userId)
+            .forEach(badge => {
+                userBadges.push({
+                    name: badge.name,
+                    tooltip: `ReviewDB: ${badge.name}`,
+                    icon: badge.icon,
+                    type: 'reviewdb'
+                });
+            });
 
         return userBadges;
     } catch (error) {
