@@ -1,3 +1,4 @@
+// Encode images to base64
 async function encodeBase64(url) {
     const response = await fetch(url);
     const blob = await response.blob();
@@ -9,13 +10,16 @@ async function encodeBase64(url) {
     });
 }
 
+// Data from Lanyard API
 let ws = null;
 let userData = null;
 let previousStatus = null;
 let previousActivity = null;
 
+// Discord User ID of the person you want to track
 const userId = "929208515883569182";
 
+// Connect to Lanayrd WebSocket
 function connectWebSocket() {
     // Currently using 'SelfHosted' Lanyard instance main can be found @ wss://api.lanyard.rest/socket
     ws = new WebSocket("wss://lanyard.vmohammad.dev/socket");
@@ -33,8 +37,8 @@ function connectWebSocket() {
         switch (op) {
             case 0: {
                 userData = { data: d };
-                await updateClanBadge();
-                await updateAvatarDecoration();
+                // await updateClanBadge();
+                // await updateAvatarDecoration();
                 await updateBadges();
                 
                 // Update Status
@@ -42,6 +46,7 @@ function connectWebSocket() {
                     previousStatus = d.discord_status;
                     const statusIndicator = document.querySelector('.status-indicator');
                     statusIndicator.className = `status-indicator status-${d.discord_status}`;
+                    console.log('Status updated successfully');
                 }
 
                 // Update Activities or Spotify
@@ -54,8 +59,7 @@ function connectWebSocket() {
                     listItem.classList.add('activity-item');
 
                     const albumArt = d.spotify.album_art_url ? 
-                        await encodeBase64(d.spotify.album_art_url) : 
-                        await encodeBase64('https://lanyard-profile-readme.vercel.app/assets/unknown.png');
+                        await encodeBase64(d.spotify.album_art_url) : '';
 
                     listItem.innerHTML = `
                         <div class="activity-large-img" style="display: flex; align-items: center; justify-content: center;">
@@ -67,7 +71,7 @@ function connectWebSocket() {
                                     border-radius: 10px; 
                                     margin: 0 15px;
                                     object-fit: cover;
-                                    ${!d.spotify.album_art_url ? 'filter: invert(100);' : ''} 
+                                    display: ${d.spotify.album_art_url ? 'block' : 'none'};
                                     ${d.spotify.album_art_url ? 'border: solid 0.5px #222;' : ''}
                                 ">
                         </div>
@@ -78,6 +82,7 @@ function connectWebSocket() {
                         </div>`;
 
                     activityList.appendChild(listItem);
+                    console.log('Spotify updated successfully');
                 } else {
                     // Regular activity update
                     const validActivities = d?.activities?.filter(
@@ -96,7 +101,7 @@ function connectWebSocket() {
                 }
 
                 // Update Clan Badge (only if changed)
-                if (d?.data?.discord_user?.clan) {
+                if (d?.discord_user?.clan) {
                     await updateClanBadge();
                 }
 
@@ -118,6 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
     connectWebSocket();
 });
 
+// Activity Updater
 async function updateActivities() {
     try {
         const activitiesList = document.getElementById('activities-list');
@@ -138,21 +144,23 @@ async function updateActivities() {
         activitiesList.style.display = 'block';
         activitiesList.innerHTML = '';
 
+        // Large image
         let largeImageSrc = activity.assets?.large_image
             ? await encodeBase64(
                 activity.assets.large_image.startsWith("mp:external/")
                     ? `https://media.discordapp.net/external/${activity.assets.large_image.replace("mp:external/", "")}`
                     : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`
             )
-            : await encodeBase64('https://lanyard-profile-readme.vercel.app/assets/unknown.png');
+            : '';
         
+        // Small image
         let smallImageSrc = activity.assets?.small_image
             ? await encodeBase64(
                 activity.assets.small_image.startsWith("mp:external/")
                 ? `https://media.discordapp.net/external/${activity.assets.small_image.replace("mp:external/", "")}`
                 : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}.webp`
             )
-            : await encodeBase64('https://lanyard-profile-readme.vercel.app/assets/unknown.png');
+            : '';
 
         const listItem = document.createElement('li');
         listItem.classList.add('activity-item-1');
@@ -174,18 +182,22 @@ async function updateActivities() {
             </div>
         `;
         activitiesList.appendChild(listItem);
+        console.log('Activities updated successfully');
     } catch (error) {
         console.error('Error updating activities:', error);
     }
 }
 
+// Avatar Decoration Updater
 async function updateAvatarDecoration() {
     try {
+        // Check if the user has avatar decoration data
         if (userData?.data?.discord_user?.avatar_decoration_data) {
             const decorationData = userData.data.discord_user.avatar_decoration_data;
             const decorationUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${decorationData.asset}.png?size=64&passthrough=true`;            
             const decorationBase64 = await encodeBase64(decorationUrl);
 
+            // Add the decoration image to the profile picture
             let decorationImg = document.getElementById('avatar-decoration');
             if (!decorationImg) {
                 decorationImg = document.createElement('img');
@@ -201,21 +213,24 @@ async function updateAvatarDecoration() {
                 `;
                 document.querySelector('.profilePic').parentElement.appendChild(decorationImg);
             }
-            
+            // In base64 format
             decorationImg.src = `data:image/png;base64,${decorationBase64}`;
             console.log('Avatar decoration updated successfully');
         } else {
+            // If there's no avatar decoration data, don't do anything
             console.log('No avatar decoration data found');
         }
     } catch (error) {
+        // Error...
         console.error('Error updating avatar decoration:', error);
 
     }
 }
 
+// Clan Badge Updater
 async function updateClanBadge() {
     try {        
-        // Check correct data
+        // Check if the user has clan data
         if (!userData?.data?.discord_user?.clan?.tag) {
             console.log('No clan data found');
             return;
@@ -229,6 +244,7 @@ async function updateClanBadge() {
         }
 
         const clanUrl = `https://cdn.discordapp.com/clan-badges/${clan.identity_guild_id}/${clan.badge}.png?size=16`;        
+        // In base64 format
         const clanBase64 = await encodeBase64(clanUrl);
         
         clanContainer.innerHTML = `
@@ -238,10 +254,12 @@ async function updateClanBadge() {
         clanContainer.style.display = 'inline-flex';
         console.log('Clan badge updated successfully');
     } catch (error) {
+        // Error...
         console.error(`Error updating clan badge: ${error.message}`);
     }
 }
 
+// Discord Badges Math
 const DISCORD_BADGES = {
     // We cannot get the Nitro badges due limitations
     // But you can add an function to check if the user has an animated profile picture and add the Nitro badge
@@ -259,6 +277,7 @@ const DISCORD_BADGES = {
     ACTIVE_DEVELOPER: 1 << 22
 };
 
+// Fetch Discord Badges
 const DISCORD_BADGE_DETAILS = {
     // If you're adding more badges, make sure to add them below
     DISCORD_EMPLOYEE: {
@@ -311,6 +330,7 @@ const DISCORD_BADGE_DETAILS = {
     }
 };
 
+// Fetch Discord Badges and add them to the profile
 function fetchDiscordBadges(flags) {
     const badges = [];
     for (const [flag, bitwise] of Object.entries(DISCORD_BADGES)) {
@@ -327,7 +347,47 @@ function fetchDiscordBadges(flags) {
     return badges;
 }
 
+// Fetch Client Mod badges and add them to the profile
 async function fetchBadges() {
+    try {
+        // Fetch from the RealBadgesAPI (the name is a joke) by @SerStars
+        const badgesResponse = await fetch(`https://therealbadgesapi.serstars.workers.dev/?userid=${userId}`);
+        const response = await badgesResponse.json();
+        
+        let userBadges = [];
+
+        // Handle Discord badges
+        if (userData?.data?.discord_user?.public_flags) {
+            const discordBadges = fetchDiscordBadges(userData.data.discord_user.public_flags);
+            userBadges.push(...discordBadges);
+        }
+
+        // If the response is an array, it means the API is working, fetch and load them
+        if (Array.isArray(response)) {
+            // Filter out the badges from BadgeVault (if you want to filter out more badges, just add a comma (,) and the badge source name (can be found on the API response))
+            const filteredBadges = response.filter(badge => badge.source !== 'badgevault');
+            userBadges.push(...filteredBadges.map(badge => ({
+                name: badge.name,
+                tooltip: badge.tooltip,
+                icon: badge.icon,
+                type: badge.source
+            })));
+            console.log('Badges successful loaded');
+            return userBadges;
+        }
+
+        // Try to fallback if the API fails
+        console.log('Badges failed, trying fallback...');
+        return await fetchBadgesFallback();
+    } catch (error) {
+        // Fallback if the API fails
+        console.error('Badges failed, using fallback');
+        return await fetchBadgesFallback();
+    }
+}
+
+// The fallback function to fetch badges
+async function fetchBadgesFallback() {
     try {
         const [equicordResponse, vencordResponse, nekocordResponse, clientModBadgesApiResponse, reviewDbResponse] = await Promise.all([
             fetch('https://raw.githubusercontent.com/Equicord/Equibored/refs/heads/main/badges.json'),
@@ -449,6 +509,7 @@ async function fetchBadges() {
     }
 }
 
+// Update the badges on the profile
 async function updateBadges() {
     try {
         const badges = await fetchBadges();
