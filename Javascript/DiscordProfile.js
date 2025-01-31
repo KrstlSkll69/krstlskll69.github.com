@@ -342,7 +342,6 @@ async function fetchBadges() {
             userBadges.push(...discordBadges);
         }
 
-        // Handle custom badges
         if (Array.isArray(response)) {
             const filteredBadges = response.filter(badge => badge.source !== 'badgevault');
             userBadges.push(...filteredBadges.map(badge => ({
@@ -351,10 +350,132 @@ async function fetchBadges() {
                 icon: badge.icon,
                 type: badge.source
             })));
-            console.log('Badges updated successfully:', userBadges);
-        } else {
-            console.error('Invalid badge data format:', response);
+            console.log('Badges successful loaded');
+            return userBadges;
         }
+
+        console.log('Badges failed, trying fallback...');
+        return await fetchBadgesFallback();
+    } catch (error) {
+        console.error('Badges failed, using fallback');
+        return await fetchBadgesFallback();
+    }
+}
+
+async function fetchBadgesFallback() {
+    try {
+        const [equicordResponse, vencordResponse, nekocordResponse, clientModBadgesApiResponse, reviewDbResponse] = await Promise.all([
+            fetch('https://raw.githubusercontent.com/Equicord/Equibored/refs/heads/main/badges.json'),
+            fetch('https://badges.vencord.dev/badges.json'),
+            fetch('https://nekocord.dev/assets/badges.json'),
+            // We're using the fork made by Equicord, you can find the original repository @ https://api.domi-btnr.dev/clientmodbadges
+            fetch(`https://globalbadges.equicord.fyi/users/${userId}`),
+            fetch('https://manti.vendicated.dev/api/reviewdb/badges')
+        ]);
+
+        let userBadges = [];
+
+        // Handle Discord badges
+        if (userData?.data?.discord_user?.public_flags) {
+            const discordBadges = fetchDiscordBadges(userData.data.discord_user.public_flags);
+            userBadges.push(...discordBadges);
+        }
+
+        // Handle Vencord badges
+        const vencordBadges = await vencordResponse.json();
+        if (vencordBadges[userId] && Array.isArray(vencordBadges[userId])) {
+            userBadges.push(...vencordBadges[userId].map(badge => ({
+                name: badge.tooltip,
+                tooltip: badge.tooltip,
+                icon: badge.badge,
+                type: 'vencord'
+            })));
+        }
+
+        // Handle Equicord badges
+        const equicordBadges = await equicordResponse.json();
+        if (equicordBadges[userId] && Array.isArray(equicordBadges[userId])) {
+            userBadges.push(...equicordBadges[userId].map(badge => ({
+                name: badge.tooltip,
+                tooltip: badge.tooltip,
+                icon: badge.badge,
+                type: 'equicord'
+            })));
+        }
+
+        // Handle Nekocord badges
+        const nekocordData = await nekocordResponse.json();
+        if (nekocordData.users?.[userId]?.badges) {
+            const userNekoBadges = nekocordData.users[userId].badges;
+            const nekoBadges = nekocordData.badges;
+            
+            userNekoBadges.forEach(badgeId => {
+                const badge = nekoBadges[badgeId];
+                if (badge) {
+                    userBadges.push({
+                        name: badge.name,
+                        tooltip: badge.name,
+                        icon: badge.image,
+                        type: 'nekocord'
+                    });
+                }
+            });
+        }
+
+        // Handle ClientModBadges-API badges
+        const clientModBadgesApiData = await clientModBadgesApiResponse.json();
+
+        // Handle Enmity badges
+        if (clientModBadgesApiData?.Enmity?.length > 0) {
+            clientModBadgesApiData.Enmity.forEach(badge => {
+                userBadges.push({
+                    name: badge,
+                    tooltip: `Enmity: ${badge}`,
+                    icon: `https://globalbadges.equicord.fyi/badges/Enmity/${badge}`,
+                    type: 'enmity'
+                });
+            });
+        }
+
+        // Handle Equicord string badges
+        if (clientModBadgesApiData?.Equicord?.length > 0) {
+            clientModBadgesApiData.Equicord.forEach(badge => {
+                if (typeof badge === 'string') {
+                    userBadges.push({
+                        name: badge,
+                        tooltip: `Equicord: ${badge}`,
+                        icon: `https://globalbadges.equicord.fyi/badges/Equicord/${badge}`,
+                        type: 'equicord'
+                    });
+                }
+            });
+        }
+
+        // Handle BadgeVault badges
+        // You can change BadgeVault to Vencord or any other client mod that's supported @ https://github.com/Equicord/ClientModBadges-API?tab=readme-ov-file#supported-client-mods just make sure it's in the right format
+        // if (clientModBadgesApiData?.BadgeVault?.length > 0) {
+        //     clientModBadgesApiData.BadgeVault.forEach(badge => {
+        //         userBadges.push({
+        //             name: badge.name,
+        //             tooltip: badge.name,
+        //             icon:badge.badge,
+        //             type: 'badgevault'
+        //         });
+        //     });
+        // }
+
+        // Handle ReviewDB badges
+        const reviewDbBadges = await reviewDbResponse.json();
+        reviewDbBadges
+            .filter(badge => badge.discordID === userId)
+            .forEach(badge => {
+                userBadges.push({
+                    name: badge.name,
+                    tooltip: `ReviewDB: ${badge.name}`,
+                    icon: badge.icon,
+                    type: 'reviewdb'
+                });
+            });
 
         return userBadges;
     } catch (error) {
