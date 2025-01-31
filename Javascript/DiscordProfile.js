@@ -362,7 +362,7 @@ async function fetchBadges() {
             userBadges.push(...discordBadges);
         }
 
-        // If the response is an array, it means the API is working, so add it to the profile
+        // If the response is an array, it means the API is working, fetch and load them
         if (Array.isArray(response)) {
             // Filter out the badges from BadgeVault (if you want to filter out more badges, just add a comma (,) and the badge source name (can be found on the API response))
             const filteredBadges = response.filter(badge => badge.source !== 'badgevault');
