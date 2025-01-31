@@ -33,8 +33,8 @@ function connectWebSocket() {
         switch (op) {
             case 0: {
                 userData = { data: d };
-                await updateClanBadge();
-                await updateAvatarDecoration();
+                // await updateClanBadge();
+                // await updateAvatarDecoration();
                 await updateBadges();
                 
                 // Update Status
@@ -42,6 +42,7 @@ function connectWebSocket() {
                     previousStatus = d.discord_status;
                     const statusIndicator = document.querySelector('.status-indicator');
                     statusIndicator.className = `status-indicator status-${d.discord_status}`;
+                    console.log('Status updated successfully');
                 }
 
                 // Update Activities or Spotify
@@ -54,8 +55,7 @@ function connectWebSocket() {
                     listItem.classList.add('activity-item');
 
                     const albumArt = d.spotify.album_art_url ? 
-                        await encodeBase64(d.spotify.album_art_url) : 
-                        await encodeBase64('https://lanyard-profile-readme.vercel.app/assets/unknown.png');
+                        await encodeBase64(d.spotify.album_art_url) : '';
 
                     listItem.innerHTML = `
                         <div class="activity-large-img" style="display: flex; align-items: center; justify-content: center;">
@@ -67,7 +67,7 @@ function connectWebSocket() {
                                     border-radius: 10px; 
                                     margin: 0 15px;
                                     object-fit: cover;
-                                    ${!d.spotify.album_art_url ? 'filter: invert(100);' : ''} 
+                                    display: ${d.spotify.album_art_url ? 'block' : 'none'};
                                     ${d.spotify.album_art_url ? 'border: solid 0.5px #222;' : ''}
                                 ">
                         </div>
@@ -78,6 +78,7 @@ function connectWebSocket() {
                         </div>`;
 
                     activityList.appendChild(listItem);
+                    console.log('Spotify updated successfully');
                 } else {
                     // Regular activity update
                     const validActivities = d?.activities?.filter(
@@ -96,7 +97,7 @@ function connectWebSocket() {
                 }
 
                 // Update Clan Badge (only if changed)
-                if (d?.data?.discord_user?.clan) {
+                if (d?.discord_user?.clan) {
                     await updateClanBadge();
                 }
 
@@ -144,7 +145,7 @@ async function updateActivities() {
                     ? `https://media.discordapp.net/external/${activity.assets.large_image.replace("mp:external/", "")}`
                     : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`
             )
-            : await encodeBase64('https://lanyard-profile-readme.vercel.app/assets/unknown.png');
+            : '';
         
         let smallImageSrc = activity.assets?.small_image
             ? await encodeBase64(
@@ -152,7 +153,7 @@ async function updateActivities() {
                 ? `https://media.discordapp.net/external/${activity.assets.small_image.replace("mp:external/", "")}`
                 : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}.webp`
             )
-            : await encodeBase64('https://lanyard-profile-readme.vercel.app/assets/unknown.png');
+            : '';
 
         const listItem = document.createElement('li');
         listItem.classList.add('activity-item-1');
@@ -174,6 +175,7 @@ async function updateActivities() {
             </div>
         `;
         activitiesList.appendChild(listItem);
+        console.log('Activities updated successfully');
     } catch (error) {
         console.error('Error updating activities:', error);
     }
@@ -329,15 +331,9 @@ function fetchDiscordBadges(flags) {
 
 async function fetchBadges() {
     try {
-        const [equicordResponse, vencordResponse, nekocordResponse, clientModBadgesApiResponse, reviewDbResponse] = await Promise.all([
-            fetch('https://raw.githubusercontent.com/Equicord/Equibored/refs/heads/main/badges.json'),
-            fetch('https://badges.vencord.dev/badges.json'),
-            fetch('https://nekocord.dev/assets/badges.json'),
-            // We're using the fork made by Equicord, you can find the original repository @ https://api.domi-btnr.dev/clientmodbadges
-            fetch(`https://globalbadges.equicord.fyi/users/${userId}`),
-            fetch('https://manti.vendicated.dev/api/reviewdb/badges')
-        ]);
-
+        const badgesResponse = await fetch(`https://therealbadgesapi.serstars.workers.dev/?userid=${userId}`);
+        const response = await badgesResponse.json();
+        
         let userBadges = [];
 
         // Handle Discord badges
@@ -346,101 +342,19 @@ async function fetchBadges() {
             userBadges.push(...discordBadges);
         }
 
-        // Handle Vencord badges
-        const vencordBadges = await vencordResponse.json();
-        if (vencordBadges[userId] && Array.isArray(vencordBadges[userId])) {
-            userBadges.push(...vencordBadges[userId].map(badge => ({
-                name: badge.tooltip,
+        // Handle custom badges
+        if (Array.isArray(response)) {
+            const filteredBadges = response.filter(badge => badge.source !== 'badgevault');
+            userBadges.push(...filteredBadges.map(badge => ({
+                name: badge.name,
                 tooltip: badge.tooltip,
-                icon: badge.badge,
-                type: 'vencord'
+                icon: badge.icon,
+                type: badge.source
             })));
+            console.log('Badges updated successfully:', userBadges);
+        } else {
+            console.error('Invalid badge data format:', response);
         }
-
-        // Handle Equicord badges
-        const equicordBadges = await equicordResponse.json();
-        if (equicordBadges[userId] && Array.isArray(equicordBadges[userId])) {
-            userBadges.push(...equicordBadges[userId].map(badge => ({
-                name: badge.tooltip,
-                tooltip: badge.tooltip,
-                icon: badge.badge,
-                type: 'equicord'
-            })));
-        }
-
-        // Handle Nekocord badges
-        const nekocordData = await nekocordResponse.json();
-        if (nekocordData.users?.[userId]?.badges) {
-            const userNekoBadges = nekocordData.users[userId].badges;
-            const nekoBadges = nekocordData.badges;
-            
-            userNekoBadges.forEach(badgeId => {
-                const badge = nekoBadges[badgeId];
-                if (badge) {
-                    userBadges.push({
-                        name: badge.name,
-                        tooltip: badge.name,
-                        icon: badge.image,
-                        type: 'nekocord'
-                    });
-                }
-            });
-        }
-
-        // Handle ClientModBadges-API badges
-        const clientModBadgesApiData = await clientModBadgesApiResponse.json();
-
-        // Handle Enmity badges
-        if (clientModBadgesApiData?.Enmity?.length > 0) {
-            clientModBadgesApiData.Enmity.forEach(badge => {
-                userBadges.push({
-                    name: badge,
-                    tooltip: `Enmity: ${badge}`,
-                    icon: `https://globalbadges.equicord.fyi/badges/Enmity/${badge}`,
-                    type: 'enmity'
-                });
-            });
-        }
-
-        // Handle Equicord string badges
-        if (clientModBadgesApiData?.Equicord?.length > 0) {
-            clientModBadgesApiData.Equicord.forEach(badge => {
-                if (typeof badge === 'string') {
-                    userBadges.push({
-                        name: badge,
-                        tooltip: `Equicord: ${badge}`,
-                        icon: `https://globalbadges.equicord.fyi/badges/Equicord/${badge}`,
-                        type: 'equicord'
-                    });
-                }
-            });
-        }
-
-        // Handle BadgeVault badges
-        // You can change BadgeVault to Vencord or any other client mod that's supported @ https://github.com/Equicord/ClientModBadges-API?tab=readme-ov-file#supported-client-mods just make sure it's in the right format
-        // if (clientModBadgesApiData?.BadgeVault?.length > 0) {
-        //     clientModBadgesApiData.BadgeVault.forEach(badge => {
-        //         userBadges.push({
-        //             name: badge.name,
-        //             tooltip: badge.name,
-        //             icon:badge.badge,
-        //             type: 'badgevault'
-        //         });
-        //     });
-        // }
-
-        // Handle ReviewDB badges
-        const reviewDbBadges = await reviewDbResponse.json();
-        reviewDbBadges
-            .filter(badge => badge.discordID === userId)
-            .forEach(badge => {
-                userBadges.push({
-                    name: badge.name,
-                    tooltip: `ReviewDB: ${badge.name}`,
-                    icon: badge.icon,
-                    type: 'reviewdb'
-                });
-            });
 
         return userBadges;
     } catch (error) {
