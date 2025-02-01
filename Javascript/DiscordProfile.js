@@ -389,7 +389,7 @@ async function fetchBadges() {
             console.log('Badges successful loaded');
             return userBadges;
         }
-        
+
         // Try to fallback if the API fails
         console.log('Badges failed, trying fallback...');
         return await fetchBadgesFallback();
