@@ -366,12 +366,26 @@ async function fetchBadges() {
         if (Array.isArray(response)) {
             // Filter out the badges from BadgeVault (if you want to filter out more badges, just add a comma (,) and the badge source name (can be found on the API response))
             const filteredBadges = response.filter(badge => badge.source !== 'badgevault');
-            userBadges.push(...filteredBadges.map(badge => ({
-                name: badge.name,
-                tooltip: badge.tooltip,
-                icon: badge.icon,
-                type: badge.source
-            })));
+            userBadges.push(...filteredBadges.map(badge => {
+                // You can change the badge names here
+                let tooltip = badge.tooltip;
+                if (badge.source === 'equicord' && badge.name === 'Contributor') {
+                    tooltip = `Equicord: ${badge.tooltip}`;
+                }
+                if (badge.source === 'enmity' && badge.name === 'supporter') {
+                    tooltip = `Enmity: ${badge.tooltip}`;
+                }
+                if (badge.source === 'reviewdb' && badge.name === 'Donor') {
+                    tooltip = `ReviewDB: ${badge.tooltip}`;
+                }
+
+                return {
+                    name: badge.name,
+                    tooltip: tooltip,
+                    icon: badge.icon,
+                    type: badge.source
+                };
+            }));
             console.log('Badges successful loaded');
             return userBadges;
         }
