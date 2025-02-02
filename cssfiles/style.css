@@ -7,6 +7,53 @@
   overflow: hidden;
 
   --OnekoHearts:  oklch(65.49% 0.2613 356.94);
+
+  --red-label: oklch(65.39% 0.1926 25.14);
+  --green-label: oklch(80.2% 0.1398 145.16);
+  --blue-label: oklch(81.34% 0.0795 199.75);
+  --black-100: oklch(0% 0 0);
+}
+
+.labels{
+  display: inline;
+}
+
+.red-label{
+  background: var(--red-label);
+  color: var(--white-100);
+  padding: 0 6px;
+  border-radius: 8px;
+  margin-top: 2px !important;
+  margin-bottom: 3px !important;
+  width: fit-content;
+  margin: auto;
+}
+
+.green-label{
+  background: var(--green-label);
+  color: var(--black-100);
+  padding: 0 6px;
+  border-radius: 8px;
+  margin-top: 2px !important;
+  margin-bottom: 3px !important;
+  width: fit-content;
+  margin: auto;
+}
+.blue-label{
+  background: var(--blue-label);
+  color: var(--black-100);
+  padding: 0 6px;
+  border-radius: 8px;
+  margin-top: 2px !important;
+  margin-bottom: 3px !important;
+  width: fit-content;
+  margin: auto;
+}
+
+.logocenter{
+  margin-top: -8px;
+  display: grid;
+  gap: 100rem ;
 }
 
 div[id*=oneko]{
@@ -75,20 +122,7 @@ a {
   max-width: 20rem;
 }
 
-.portPanel{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: rgba(0, 0, 0, 0.5) !important;
-  backdrop-filter: blur(32px) !important;
-  border-radius: 1rem;
-  padding: 0.5rem;
-}
 
-.portphoto{
-  border-radius: 1rem;
-}
 
 .backPanel{
   display: flex;
