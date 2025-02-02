@@ -22,12 +22,9 @@
   padding: 0 6px;
   border-radius: 8px;
   margin-top: 5px !important;
-  margin-bottom: -15px !important;
+  /*margin-bottom: 5px !important;*/
   width: fit-content;
   margin: auto;
-
-  position: relative;
-  top: -1rem;
 }
 
 .green-label{
