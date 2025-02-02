@@ -4,8 +4,6 @@
   background-position: center;
   background-size: 30rem;
 
-  overflow: hidden;
-
   --OnekoHearts:  oklch(65.49% 0.2613 356.94);
 
   --red-label: oklch(65.39% 0.1926 25.14);
@@ -366,8 +364,6 @@ d4{
   margin: 7px;
 
 }
-
-
 
 
 /* Hide on mobile */
