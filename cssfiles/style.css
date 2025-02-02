@@ -21,10 +21,13 @@
   color: var(--white-100);
   padding: 0 6px;
   border-radius: 8px;
-  margin-top: 2px !important;
-  margin-bottom: 3px !important;
+  margin-top: 5px !important;
+  margin-bottom: -15px !important;
   width: fit-content;
   margin: auto;
+
+  position: relative;
+  top: -1rem;
 }
 
 .green-label{
@@ -32,8 +35,8 @@
   color: var(--black-100);
   padding: 0 6px;
   border-radius: 8px;
-  margin-top: 2px !important;
-  margin-bottom: 3px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
   width: fit-content;
   margin: auto;
 }
@@ -42,11 +45,12 @@
   color: var(--black-100);
   padding: 0 6px;
   border-radius: 8px;
-  margin-top: 2px !important;
-  margin-bottom: 3px !important;
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
   width: fit-content;
   margin: auto;
 }
+
 
 .logocenter{
   margin-top: -8px;
@@ -120,6 +124,11 @@ a {
   max-width: 20rem;
 }
 
+.portPad{
+  padding: 13px;
+  width: fit-content;
+  height: fit-content !important;
+}
 
 
 .backPanel{
@@ -172,6 +181,7 @@ d4{
   font-size: 0.5rem;
   font-style: italic;
   color: oklch(73.48% 0 0);
+  white-space: pre;
 }
 
 /*------------Proflie Pic------------*/
