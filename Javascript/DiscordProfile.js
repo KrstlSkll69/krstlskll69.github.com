@@ -584,7 +584,7 @@ async function updateBadges() {
 
 // Discord Username
 async function updateUsername() {
-    try {        
+    try {
         if (!userData?.data?.discord_user?.username) {
             console.log('No username data found');
             return;

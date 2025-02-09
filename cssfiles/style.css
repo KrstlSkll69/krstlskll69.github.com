@@ -10,6 +10,8 @@
   --green-label: oklch(80.2% 0.1398 145.16);
   --blue-label: oklch(81.34% 0.0795 199.75);
   --black-100: oklch(0% 0 0);
+
+  overflow: hidden;
 }
 
 .labels{
@@ -403,7 +405,7 @@ d4{
     white-space: nowrap;
     left: 50%;
     transform: translateX(-50%);
-    top: 1.9rem;
+    top: 1.5rem;
     background-color: oklch(0% 0 0);
     padding: 0.25rem;
     border-radius: 0.5rem;
