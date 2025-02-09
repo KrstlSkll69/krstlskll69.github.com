@@ -127,6 +127,10 @@ a {
   height: fit-content !important;
 }
 
+.target:hover{
+  text-decoration: underline;
+}
+
 
 .backPanel{
   display: flex;
