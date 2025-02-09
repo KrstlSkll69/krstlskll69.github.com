@@ -105,6 +105,16 @@ function connectWebSocket() {
                     await updateClanBadge();
                 }
 
+                // Update Username (only if changed)
+                if (d?.discord_user?.username) {
+                    await updateUsername();
+                }
+
+                // Update Platform Indicator (only if changed)
+                if (d?.active_on_discord_web !== undefined || d?.active_on_discord_desktop !== undefined || d?.active_on_discord_mobile !== undefined) {
+                    await updatePlatformIndicator();
+                }
+
                 break;
             }
             case 1: {
@@ -386,7 +396,7 @@ async function fetchBadges() {
                     type: badge.source
                 };
             }));
-            console.log('Badges successful loaded');
+            console.log('Badges successfully loaded');
             return userBadges;
         }
 
@@ -569,5 +579,77 @@ async function updateBadges() {
 
     } catch (error) {
         console.error('Error updating badges:', error);
+    }
+}
+
+// Discord Username
+async function updateUsername() {
+    try {        
+        if (!userData?.data?.discord_user?.username) {
+            console.log('No username data found');
+            return;
+        }
+
+        const username = userData.data.discord_user.username;
+        const usernameContainer = document.getElementById('username-container');
+        if (!usernameContainer) {
+            console.log('Username container not found in DOM');
+            return;
+        }
+
+        usernameContainer.textContent = `@${username}`;
+        console.log('Username updated successfully');
+    } catch (error) {
+        // Error...
+        console.error(`Error updating username: ${error.message}`);
+    }
+}
+
+async function updatePlatformIndicator() {
+    try {
+        const webActive = userData?.data?.active_on_discord_web;
+        const desktopActive = userData?.data?.active_on_discord_desktop;
+        const mobileActive = userData?.data?.active_on_discord_mobile;
+
+        const platformIndicatorContainer = document.getElementById('platform-indicator-container');
+        if (!platformIndicatorContainer) {
+            console.log('Platform indicator container not found in DOM');
+            return;
+        }
+
+        let platformIconsHTML = '';
+
+        if (webActive) {
+            platformIconsHTML += `
+                <div class="platform-icon">
+                    <img src="https://cdn.nest.rip/uploads/db693b4d-c036-44ce-95a3-8620d8378b0f.svg" alt="Active on Web" style="height: 20px; width: 20px; filter: invert(1);">
+                    <span class="platform-tooltip">Active on Web</span>
+                </div>
+            `;
+        }
+
+        if (desktopActive) {
+            platformIconsHTML += `
+                <div class="platform-icon">
+                    <img src="https://cdn.nest.rip/uploads/01a58e1e-bd87-46e8-b5b0-85540e3d20cb.svg" alt="Active on Desktop" style="height: 20px; width: 20px; filter: invert(1);">
+                    <span class="platform-tooltip">Active on Desktop</span>
+                </div>
+            `;
+        }
+
+        if (mobileActive) {
+            platformIconsHTML += `
+                <div class="platform-icon">
+                    <img src="https://cdn.nest.rip/uploads/35a1108e-0c66-4afb-b18d-fbe826e29725.svg" alt="Active on Mobile" style="height: 17.5px; width: 17.5px; filter: invert(1);">
+                    <span class="platform-tooltip">Active on Mobile</span>
+                </div>
+            `;
+        }
+
+        platformIndicatorContainer.innerHTML = platformIconsHTML;
+        platformIndicatorContainer.style.display = 'flex';
+        console.log('Platform indicator updated successfully');
+    } catch (error) {
+        console.error('Error updating platform indicator:', error);
     }
 }
