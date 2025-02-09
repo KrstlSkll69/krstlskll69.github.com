@@ -610,10 +610,18 @@ async function updatePlatformIndicator() {
         const webActive = userData?.data?.active_on_discord_web;
         const desktopActive = userData?.data?.active_on_discord_desktop;
         const mobileActive = userData?.data?.active_on_discord_mobile;
+        const discordStatus = userData?.data?.discord_status;
 
         const platformIndicatorContainer = document.getElementById('platform-indicator-container');
         if (!platformIndicatorContainer) {
             console.log('Platform indicator container not found in DOM');
+            return;
+        }
+
+        // Hide if status is offline
+        if (discordStatus === 'offline') {
+            platformIndicatorContainer.style.display = 'none';
+            console.log('Platform indicator hidden due to offline status');
             return;
         }
 
