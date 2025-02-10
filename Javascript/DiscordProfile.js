@@ -597,7 +597,7 @@ async function updateUsername() {
             return;
         }
 
-        usernameContainer.textContent = `@${username}#0000`;
+        usernameContainer.textContent = `@${username}#0000 ~ Indiana Jone (Indi)`;
         console.log('Username updated successfully');
     } catch (error) {
         // Error...
