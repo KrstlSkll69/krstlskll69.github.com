@@ -267,6 +267,8 @@ d4{
 
     width: unset !important;
     max-width: 100rem;
+
+    margin-top: -8px;
 }
 
 .activity-info {
