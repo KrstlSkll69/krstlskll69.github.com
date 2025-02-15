@@ -10,6 +10,7 @@
   background-size: cover;
 
   --OnekoHearts:  oklch(65.49% 0.2613 356.94);
+  --OnekoHearts-filter: drop-shadow(10px 10px 14px var(--black-100));
 
   --bisexual-gradient: 
     linear-gradient(90deg, rgba(208,0,112,1) 0%, rgba(140,71,153,1) 44%, rgba(0,50,160,1) 100%),

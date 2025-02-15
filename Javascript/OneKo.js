@@ -234,6 +234,7 @@
 			  animation: heartBurst 1s ease-out;
 			  animation-fill-mode: forwards;
 			  color:  var(--OnekoHearts);
+        filter: var(--OnekoHearts-filter);
 		  }
 	  `;
 
