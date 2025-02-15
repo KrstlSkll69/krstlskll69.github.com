@@ -1,7 +1,9 @@
+/*--- BG made by/ can be found @ https://github.com/doki-theme */
 :root {
   color-scheme: dark !important;
-  /*--- BG made by/ can be found @ https://github.com/doki-theme */
-  background: url('https://cdn.nest.rip/uploads/cad211ba-2d14-4976-a6b0-9a1a0770a5f9.png') ;
+  
+  background: url(https://cdn.nest.rip/uploads/cad211ba-2d14-4976-a6b0-9a1a0770a5f9.png), var(--bisexual-gradient);
+  
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -9,10 +11,23 @@
 
   --OnekoHearts:  oklch(65.49% 0.2613 356.94);
 
+  --bisexual-gradient: 
+    linear-gradient(90deg, rgba(208,0,112,1) 0%, rgba(140,71,153,1) 44%, rgba(0,50,160,1) 100%),
+    -moz-linear-gradient(90deg, rgba(208,0,112,1) 0%, rgba(140,71,153,1) 44%, rgba(140,71,153,1) 100%),
+    -webkit-linear-gradient(90deg, rgba(208,0,112,1) 0%, rgba(140,71,153,1) 44%, rgba(140,71,153,1) 100%)
+    ;
+
+
+  --trans-gradient:
+    linear-gradient(90deg, rgba(91,206,250,1) 0%, rgba(255,255,255,1) 44%, rgba(245,169,184,1) 100%),
+    -webkit-linear-gradient(90deg, rgba(91,206,250,1) 0%, rgba(255,255,255,1) 44%, rgba(245,169,184,1) 100%),
+    -moz-linear-gradient(90deg, rgba(91,206,250,1) 0%, rgba(255,255,255,1) 44%, rgba(245,169,184,1) 100%)
+    ; 
+
   --red-label: oklch(65.39% 0.1926 25.14);
   --green-label: oklch(80.2% 0.1398 145.16);
   --blue-label: oklch(81.34% 0.0795 199.75);
-  --black-100: oklch(0% 0 0);
+  --black-100: oklch(0% 0 0) !important;
 }
 
 .labels{
