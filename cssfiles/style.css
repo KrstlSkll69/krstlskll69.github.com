@@ -19,7 +19,6 @@
     -webkit-linear-gradient(90deg, rgba(208,0,112,1) 0%, rgba(140,71,153,1) 44%, rgba(140,71,153,1) 100%)
     ;
 
-
   --trans-gradient:
     linear-gradient(90deg, rgba(91,206,250,1) 0%, rgba(255,255,255,1) 44%, rgba(245,169,184,1) 100%),
     -webkit-linear-gradient(90deg, rgba(91,206,250,1) 0%, rgba(255,255,255,1) 44%, rgba(245,169,184,1) 100%),
