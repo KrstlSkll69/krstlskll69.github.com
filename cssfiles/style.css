@@ -11,6 +11,7 @@
 
   --OnekoHearts:  oklch(65.49% 0.2613 356.94);
   --OnekoHearts-filter: drop-shadow(10px 10px 14px var(--black-100));
+  --OnekoCat-filter: drop-shadow(0px 12px 11px var(--black-100));;
 
   --bisexual-gradient: 
     linear-gradient(90deg, rgba(208,0,112,1) 0%, rgba(140,71,153,1) 44%, rgba(0,50,160,1) 100%),
@@ -29,6 +30,10 @@
   --green-label: oklch(80.2% 0.1398 145.16);
   --blue-label: oklch(81.34% 0.0795 199.75);
   --black-100: oklch(0% 0 0) !important;
+}
+
+#oneko{
+  filter: var(--OnekoCat-filter);
 }
 
 .labels{

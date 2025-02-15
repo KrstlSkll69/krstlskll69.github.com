@@ -165,7 +165,7 @@
       }
       idleAnimation =
         availableIdleAnimations[
-          Math.floor(Math.random() * availableIdleAnimations.length)
+        Math.floor(Math.random() * availableIdleAnimations.length)
         ];
     }
 
