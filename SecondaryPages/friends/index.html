@@ -150,14 +150,14 @@
 
     <!-- Is not included in resuffle -->
           <li class="discord">
-            <a target="_blank" href="https://x.com/videbiveoffical"> 
+            <a target="_blank" rel="noreferrer" href="https://x.com/videbiveoffical"> 
               <img src="https://cdn.nest.rip/uploads/076ae8bb-c75e-43d4-a7de-5f1e8d48cf96" alt="VideBiveOffcial Twitter">
             VideBive</a>
             <span>Twitter</span>
           </li> 
 
           <li class="discord">
-            <a target="_blank" href="https://www.youtube.com/@mamearcadeplaythroughs"> 
+            <a target="_blank" rel="noreferrer" href="https://www.youtube.com/@mamearcadeplaythroughs"> 
               <img src="https://cdn.nest.rip/uploads/02628142-cb33-4108-bbf2-6a5368f08678" alt="Adonis">
             Adonis</a>
             <span>Youtube Channel </span>
@@ -166,7 +166,7 @@
     <!-- resuffle main code -->
           <template x-for="friend in _.shuffle(friends)">
             <li>
-              <a target="_blank" :href="friend.url">
+              <a target="_blank" rel="noreferrer" :href="friend.url">
                 <img :src="friend.img" :alt="friend.alt">
                 <span x-text="friend.name"></span>
               </a>
@@ -195,7 +195,7 @@
 
     <!-- Is not included in resuffle -->
         <li class="discord">
-            <a target="_blank" href="https://www.instagram.com/videbiveoffical/"> 
+            <a target="_blank" rel="noreferrer" href="https://www.instagram.com/videbiveoffical/"> 
               <img src="https://cdn.nest.rip/uploads/076ae8bb-c75e-43d4-a7de-5f1e8d48cf96" alt="VideBiveOffcial Instagram">
             VideBive</a>
             <span>Instagram</span>
@@ -204,7 +204,7 @@
     <!-- resuffle main code -->
         <template x-for="friend in _.shuffle(friends2)">
           <li>
-            <a target="_blank" :href="friend.url">
+            <a target="_blank" rel="noreferrer" :href="friend.url">
               <img :src="friend.img" :alt="friend.alt">
               <span x-text="friend.name"></span>
             </a>
