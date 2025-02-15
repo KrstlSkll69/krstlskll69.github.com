@@ -1,8 +1,11 @@
 :root {
   color-scheme: dark !important;
-  background: url('https://cdn.nest.rip/uploads/d817d6b5-29e9-4c25-8012-2b766389723d.jpg');
+  /*--- BG made by/ can be found @ https://github.com/doki-theme */
+  background: url('https://cdn.nest.rip/uploads/cad211ba-2d14-4976-a6b0-9a1a0770a5f9.png') ;
+  height: 100%;
   background-position: center;
-  background-size: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   --OnekoHearts:  oklch(65.49% 0.2613 356.94);
 
