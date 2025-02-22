@@ -15,4 +15,5 @@ All code is held under GPL 3.0
 Pfp and `KRSTLSKLL` banner is held under NCND, and shall not be used without my permission
 
 
-`SPDX-License-Identifier: NCND OR GPL-2.0-or-later`
+CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ </br>
+`SPDX-License-Identifier: By-Nc-Nd OR GPL-3.0-or-later`
