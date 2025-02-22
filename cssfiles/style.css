@@ -458,6 +458,9 @@ d4{
     display: none !important;
   }
 
+  .maxwell {
+    display: none;
+  }
 
 }
 
