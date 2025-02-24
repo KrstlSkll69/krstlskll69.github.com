@@ -459,7 +459,11 @@ d4{
   }
 
   .maxwell {
-    display: none;
+    display: none !important;
+  }
+
+  .opener {
+    display: none !important;
   }
 
 }
