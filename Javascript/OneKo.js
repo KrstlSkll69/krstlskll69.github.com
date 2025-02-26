@@ -281,4 +281,5 @@
   }
 
   init();
+    console.log('OneKo successfully loaded');
 })();
