@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Friends</title>
   <link rel="icon" type="image/x-icon" href="https://cdn.nest.rip/uploads/137452fa-3981-40b7-8489-96c099892a17">
-  <link rel="stylesheet" href="/cssfiles/style.css"><link rel="stylesheet" href="/cssfiles/Icon.css">
+  <link rel="stylesheet" href="/cssfiles/style.css">
+  <link rel="stylesheet" href="/cssfiles/Icon.css">
   <meta property="og:description" name="description" content="
   Pro Idot Catgirl
   Krystal/Cassidy🎀
@@ -17,23 +19,36 @@
   <meta name="darkreader-lock">
 
   <script src="//unpkg.com/lodash" defer></script>
-  <script src="//unpkg.com/alpinejs" defer></script> 
+  <script src="//unpkg.com/alpinejs" defer></script>
 
 </head>
+
 <body>
   <div class="panel">
     <h1>Friends</h1>
     <p>These are my friends</p>
-    <p><d2>Dm me on discord</d2></p>
-    <p><d2>If we are friends</d2></p>
-    <p><d2>If you would like to be on this page</d2></p>
+    <p>
+      <d2>Dm me on discord</d2>
+    </p>
+    <p>
+      <d2>If we are friends</d2>
+    </p>
+    <p>
+      <d2>If you would like to be on this page</d2>
+    </p>
+    <div class="eightyeightthirtyoneBUTTONS">
+      <img src="https://cdn.nest.rip/uploads/14ef7c20-50e1-4f3e-94b6-e2b69667f54c.png" class="eightyeightthirtyone">
+      <img src="https://cdn.nest.rip/uploads/3f432e49-cb4a-4903-ab44-a480baf90108.png" class="eightyeightthirtyone">
+    </div>
   </div>
 
   <div class="panel">
-    <h2><h3>Main</h3></h2>
+    <h2>
+      <h3>Main</h3>
+    </h2>
 
     <!-- due to mainly ratelimit reasons images for now are grabbed from nest.rip ~ https://nest.rip/ -->
-      <!-- also if friend host their own image that can be used... avif, and webp for images... gif, apng for anything animated is preferred -->
+    <!-- also if friend host their own image that can be used... avif, and webp for images... gif, apng for anything animated is preferred -->
 
     <ul x-data="{
       friends:[      
@@ -145,42 +160,50 @@
         alt: 'EepyElvyra', 
         name: 'Elvyra',
       },
+      { 
+        url: 'https://rushii.dev/', 
+        img: 'https://cdn.nest.rip/uploads/a20cf785-fe1b-453f-b956-5303931b2add.png', 
+        alt: 'Rushii', 
+        name: 'Rushii',
+      },
       ]
-    }"> 
+    }">
 
-    <!-- Is not included in resuffle -->
-          <li class="discord">
-            <a target="_blank" rel="noreferrer" href="https://x.com/videbiveoffical"> 
-              <img src="https://cdn.nest.rip/uploads/076ae8bb-c75e-43d4-a7de-5f1e8d48cf96" alt="VideBiveOffcial Twitter">
-            VideBive</a>
-            <span>Twitter</span>
-          </li> 
+      <!-- Is not included in resuffle -->
+      <li class="discord">
+        <a target="_blank" rel="noreferrer" href="https://x.com/videbiveoffical">
+          <img src="https://cdn.nest.rip/uploads/076ae8bb-c75e-43d4-a7de-5f1e8d48cf96" alt="VideBiveOffcial Twitter">
+          VideBive</a>
+        <span>Twitter</span>
+      </li>
 
-          <li class="discord">
-            <a target="_blank" rel="noreferrer" href="https://www.youtube.com/@mamearcadeplaythroughs"> 
-              <img src="https://cdn.nest.rip/uploads/02628142-cb33-4108-bbf2-6a5368f08678" alt="Adonis">
-            Adonis</a>
-            <span>Youtube Channel </span>
-          </li>
+      <li class="discord">
+        <a target="_blank" rel="noreferrer" href="https://www.youtube.com/@mamearcadeplaythroughs">
+          <img src="https://cdn.nest.rip/uploads/02628142-cb33-4108-bbf2-6a5368f08678" alt="Adonis">
+          Adonis</a>
+        <span>Youtube Channel </span>
+      </li>
 
-    <!-- resuffle main code -->
-          <template x-for="friend in _.shuffle(friends)">
-            <li>
-              <a target="_blank" rel="noreferrer" :href="friend.url">
-                <img :src="friend.img" :alt="friend.alt">
-                <span x-text="friend.name"></span>
-              </a>
-            </li>
-          </template>
+      <!-- resuffle main code -->
+      <template x-for="friend in _.shuffle(friends)">
+        <li>
+          <a target="_blank" rel="noreferrer" :href="friend.url">
+            <img :src="friend.img" :alt="friend.alt">
+            <span x-text="friend.name"></span>
+          </a>
+        </li>
+      </template>
 
     </ul>
   </div>
 
   <div class="panel">
-    <h2><h3>Secondary</d3></h2>
+    <h2>
+      <h3>Secondary</d3>
+    </h2>
     <ul>
 
-    <!-- This is meant for secondary websites -->
+      <!-- This is meant for secondary websites -->
       <!-- See line 33 for rules and info about image hosting-->
       <ul x-data="{
         friends2:[      
@@ -191,17 +214,18 @@
           name: 'Alphexo',
         },
         ]
-      }"> 
+      }">
 
-    <!-- Is not included in resuffle -->
+        <!-- Is not included in resuffle -->
         <li class="discord">
-            <a target="_blank" rel="noreferrer" href="https://www.instagram.com/videbiveoffical/"> 
-              <img src="https://cdn.nest.rip/uploads/076ae8bb-c75e-43d4-a7de-5f1e8d48cf96" alt="VideBiveOffcial Instagram">
+          <a target="_blank" rel="noreferrer" href="https://www.instagram.com/videbiveoffical/">
+            <img src="https://cdn.nest.rip/uploads/076ae8bb-c75e-43d4-a7de-5f1e8d48cf96"
+              alt="VideBiveOffcial Instagram">
             VideBive</a>
-            <span>Instagram</span>
+          <span>Instagram</span>
         </li>
 
-    <!-- resuffle main code -->
+        <!-- resuffle main code -->
         <template x-for="friend in _.shuffle(friends2)">
           <li>
             <a target="_blank" rel="noreferrer" :href="friend.url">
@@ -211,18 +235,19 @@
           </li>
         </template>
 
-    </u1>
+        </u1>
   </div>
 
-    <div class="backPanel">
-      <ul>
-    <!-- links back to main index.html-->
-        <li><a target="_self" href="/" aria-label="Go Back"><span class="ri--arrow-go-back-line"></span></a>
-        </li>
-      </ul>
-    </div>
-    
+  <div class="backPanel">
+    <ul>
+      <!-- links back to main index.html-->
+      <li><a target="_self" href="/" aria-label="Go Back"><span class="ri--arrow-go-back-line"></span></a>
+      </li>
+    </ul>
+  </div>
+
 </body>
+
 </html>
 
 <!-- dont worry about this -->

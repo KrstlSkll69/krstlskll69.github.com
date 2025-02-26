@@ -566,3 +566,11 @@ a {
 .badge-item:hover .badge-tooltip {
     display: block;
 }
+.eightyeightthirtyoneBUTTONS{
+  display: flex;
+}
+.eightyeightthirtyone{
+  margin-top: 5px;
+  padding-left: 5px;
+}
+
