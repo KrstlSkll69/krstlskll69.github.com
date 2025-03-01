@@ -17,3 +17,5 @@ Pfp and `KRSTLSKLL` banner is held under CC-BY-NC-ND-4.0, and shall not be used 
 
 CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ </br>
 `SPDX-License-Identifier: CC-BY-NC-ND-4.0 OR GPL-3.0-or-later`
+
+BlobCat fav-icon is CC under https://www.apache.org/licenses/LICENSE-2.0.html and borrowed from https://blobs.gg/
