@@ -108,6 +108,23 @@ function connectWebSocket() {
                 // Update Username (only if changed)
                 if (d?.discord_user?.username) {
                     await updateUsername();
+                    // Add pronouns update
+                    const pronounData = await fetchPronouns(userId);
+                    const pronouns = formatPronouns(pronounData);
+                    
+                    if (pronouns) {
+                        let pronounsElement = document.getElementById('pronouns-container');
+                        if (!pronounsElement) {
+                            pronounsElement = document.createElement('d3');
+                            pronounsElement.id = 'pronouns-container';
+                            pronounsElement.style.cssText = 'margin-bottom: -8px; margin-top: 10px; display: block;';
+                            const usernameContainer = document.getElementById('username-container');
+                            if (usernameContainer) {
+                                usernameContainer.parentNode.insertBefore(pronounsElement, usernameContainer.nextSibling);
+                            }
+                        }
+                        pronounsElement.innerHTML = `<span>${pronouns}</span>`;
+                    }
                 }
 
                 // Update Platform Indicator (only if changed)
@@ -597,11 +614,32 @@ async function updateUsername() {
             return;
         }
 
+        // Update username
         usernameContainer.textContent = `@${username}#0000`;
-        console.log('Username updated successfully');
+
+        // Fetch and add pronouns
+        const pronounData = await fetchPronouns(userId);
+        const pronouns = formatPronouns(pronounData);
+        
+        if (pronouns) {
+            let pronounsElement = document.getElementById('pronouns-container');
+            if (!pronounsElement) {
+                pronounsElement = document.createElement('d3');
+                pronounsElement.id = 'pronouns-container';
+                pronounsElement.style.cssText = `
+                    margin-top: 5px; 
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                `;
+                usernameContainer.parentNode.insertBefore(pronounsElement, usernameContainer.nextSibling);
+            }
+            pronounsElement.innerHTML = `<span>${pronouns}</span>`;
+        }
+
+        console.log('Username and pronouns updated successfully');
     } catch (error) {
-        // Error...
-        console.error(`Error updating username: ${error.message}`);
+        console.error(`Error updating username and pronouns: ${error.message}`);
     }
 }
 
@@ -660,4 +698,33 @@ async function updatePlatformIndicator() {
     } catch (error) {
         console.error('Error updating platform indicator:', error);
     }
+}
+
+async function fetchPronouns(userId) {
+    try {
+        const response = await fetch(`https://pronoundb.org/api/v2/lookup?platform=discord&ids=${userId}`);
+        if (!response.ok) throw new Error('Failed to fetch pronouns');
+        const data = await response.json();
+        return data[userId];
+    } catch (error) {
+        console.error('Error fetching pronouns:', error);
+        return null;
+    }
+}
+
+function formatPronouns(pronounData) {
+    if (!pronounData?.sets?.en) return null;
+    
+    const pronounMap = {
+        'he': 'He/Him',
+        'it': 'It/Its',
+        'she': 'She/Her',
+        'they': 'They/Them',
+        'any': 'Any pronouns',
+        'ask': 'Ask me my pronouns',
+        'avoid': 'Use my name',
+        'other': 'Other pronouns'
+    };
+
+    return pronounData.sets.en.map(p => pronounMap[p] || p).join(', ');
 }
