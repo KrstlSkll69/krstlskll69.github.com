@@ -226,7 +226,7 @@ async function updateAvatarDecoration() {
             const decorationData = userData.data.discord_user.avatar_decoration_data;
             decorationUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${decorationData.asset}.png?size=64&passthrough=true`;
         } else {
-            // Check if the user has avatar decoration data from Decor
+            // Check if the user has avatar decoration data on Decor
             const decorApi = await fetch(`https://decor.fieryflames.dev/api/users/${userId}`);
             if (decorApi.ok) {
                 const decorData = await decorApi.json();
