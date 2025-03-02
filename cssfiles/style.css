@@ -247,28 +247,31 @@ d4{
 }
 
 .status-online {
-  background-color: #43b581;
+  content: url('https://cdn.nest.rip/uploads/4bc76bbc-296a-4657-a04f-df95d5e74b58.svg');
+  background-color: rgba(0, 0, 0, 0.63);
+  backdrop-filter: blur(32px) !important;  
+  padding: 3px;
 }
 
 .status-idle {
-  content: url('https://cdn.nest.rip/uploads/f1e26ee6-21c5-4042-84a2-00f747c1bc55.svg');
+  content: url('https://cdn.nest.rip/uploads/0b68c744-7543-431e-96c9-cd13c076702f.svg');
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(32px) !important;  
-  padding: 1.9px;
+  padding: 3px;
 }
 
 .status-dnd {
-  content: url('https://cdn.nest.rip/uploads/fd1b3736-785b-4273-a45c-f96bcd166e88.svg');
+  content: url('https://cdn.nest.rip/uploads/a001bf5c-26ec-47a8-bd92-81e8fd5acdcb.svg');
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(32px) !important;  
-  padding: 1.9px;
+  padding: 3px;
 }
 
 .status-offline {
-  content: url('https://cdn.nest.rip/uploads/c75312ed-0bc0-4fad-987e-4466b84e1782.svg');
+  content: url('https://cdn.nest.rip/uploads/ddaa722c-c6ab-4f22-bf76-088546968447.svg');
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(32px) !important;  
-  padding: 1.9px;
+  padding: 3px;
 }
 
 #activities-list {
