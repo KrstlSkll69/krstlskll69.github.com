@@ -378,7 +378,11 @@ function fetchDiscordBadges(flags) {
 async function fetchBadges() {
     try {
         // Fetch from the RealBadgesAPI (the name is a joke) by @SerStars
-        const badgesResponse = await fetch(`https://therealbadgesapi.serstars.workers.dev/?userid=${userId}`);
+        const badgesResponse = await fetch(`https://therealbadgesapi.serstars.workers.dev/?userid=${userId}`,
+        {
+            method: "GET",
+            mode: "cors"
+        });
         const response = await badgesResponse.json();
         
         let userBadges = [];
