@@ -677,12 +677,25 @@ async function updatePlatformIndicator() {
             return;
         }
 
+        // Define status colors
+        const statusColors = {
+            online: '#3ba55c',
+            idle: '#faa61a',
+            dnd: '#ed4245',
+            offline: '#747f8d'
+        };
+
+        const statusColor = statusColors[discordStatus] || statusColors.offline;
         let platformIconsHTML = '';
 
         if (webActive) {
             platformIconsHTML += `
                 <div class="platform-icon">
-                    <img src="https://cdn.nest.rip/uploads/db693b4d-c036-44ce-95a3-8620d8378b0f.svg" alt="Active on Web" style="height: 20px; width: 20px; filter: invert(1);">
+                    <div style="background-color: ${statusColor}; padding: 4px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <img src="https://cdn.nest.rip/uploads/db693b4d-c036-44ce-95a3-8620d8378b0f.svg" 
+                            alt="Active on Web" 
+                            style="height: 16px; width: 16px; filter: brightness(0) invert(1);">
+                    </div>
                     <span class="platform-tooltip">Active on Web</span>
                 </div>
             `;
@@ -691,7 +704,11 @@ async function updatePlatformIndicator() {
         if (desktopActive) {
             platformIconsHTML += `
                 <div class="platform-icon">
-                    <img src="https://cdn.nest.rip/uploads/01a58e1e-bd87-46e8-b5b0-85540e3d20cb.svg" alt="Active on Desktop" style="height: 20px; width: 20px; filter: invert(1);">
+                    <div style="background-color: ${statusColor}; padding: 4px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <img src="https://cdn.nest.rip/uploads/01a58e1e-bd87-46e8-b5b0-85540e3d20cb.svg" 
+                            alt="Active on Desktop" 
+                            style="height: 16px; width: 16px; filter: brightness(0) invert(1);">
+                    </div>
                     <span class="platform-tooltip">Active on Desktop</span>
                 </div>
             `;
@@ -700,7 +717,11 @@ async function updatePlatformIndicator() {
         if (mobileActive) {
             platformIconsHTML += `
                 <div class="platform-icon">
-                    <img src="https://cdn.nest.rip/uploads/35a1108e-0c66-4afb-b18d-fbe826e29725.svg" alt="Active on Mobile" style="height: 17.5px; width: 17.5px; filter: invert(1);">
+                    <div style="background-color: ${statusColor}; padding: 4px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <img src="https://cdn.nest.rip/uploads/35a1108e-0c66-4afb-b18d-fbe826e29725.svg" 
+                            alt="Active on Mobile" 
+                            style="height: 14px; width: 14px; filter: brightness(0) invert(1);">
+                    </div>
                     <span class="platform-tooltip">Active on Mobile</span>
                 </div>
             `;
@@ -708,6 +729,7 @@ async function updatePlatformIndicator() {
 
         platformIndicatorContainer.innerHTML = platformIconsHTML;
         platformIndicatorContainer.style.display = 'flex';
+
         console.log('Platform indicator updated successfully');
     } catch (error) {
         console.error('Error updating platform indicator:', error);
