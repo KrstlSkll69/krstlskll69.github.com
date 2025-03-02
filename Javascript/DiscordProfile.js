@@ -38,7 +38,7 @@ function connectWebSocket() {
             case 0: {
                 userData = { data: d };
                 // await updateClanBadge();
-                // await updateAvatarDecoration();
+                await updateAvatarDecoration();
                 await updateBadges();
                 
                 // Update Status
@@ -95,10 +95,11 @@ function connectWebSocket() {
                     }
                 }
 
+                // Please don't remove the lines commented out below
                 // Update Avatar Decoration (only if changed)
-                if (d?.discord_user?.avatar_decoration_data) {
-                    await updateAvatarDecoration();
-                }
+                // if (d?.discord_user?.avatar_decoration_data) {
+                //     await updateAvatarDecoration();
+                // }
 
                 // Update Clan Badge (only if changed)
                 if (d?.discord_user?.clan) {
@@ -218,39 +219,48 @@ async function updateActivities() {
 // Avatar Decoration Updater
 async function updateAvatarDecoration() {
     try {
-        // Check if the user has avatar decoration data
+        let decorationUrl = null;
+
+        // Check if the user has avatar decoration data on Discord
         if (userData?.data?.discord_user?.avatar_decoration_data) {
             const decorationData = userData.data.discord_user.avatar_decoration_data;
-            const decorationUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${decorationData.asset}.png?size=64&passthrough=true`;            
-            const decorationBase64 = await encodeBase64(decorationUrl);
+            decorationUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${decorationData.asset}.png?size=64&passthrough=true`;
+        } else {
+            // Check if the user has avatar decoration data from Decor
+            const decorApi = await fetch(`https://decor.fieryflames.dev/api/users/${userId}`);
+            if (decorApi.ok) {
+                const decorData = await decorApi.json();
+                if (decorData.decorationHash) {
+                    decorationUrl = `https://ugc.decor.fieryflames.dev/${decorData.decorationHash}.png?animated=true`
+                }
+            }
+        }
 
-            // Add the decoration image to the profile picture
+        // If we have a decoration from either source, update the avatar decoration
+        if (decorationUrl) {
+            const decorationBase64 = await encodeBase64(decorationUrl);
             let decorationImg = document.getElementById('avatar-decoration');
+
             if (!decorationImg) {
                 decorationImg = document.createElement('img');
                 decorationImg.id = 'avatar-decoration';
-                decorationImg.alt = 'Avatar Decoration';
-                decorationImg.style.cssText = `
-                    display: block;
-                    width: fill;
-                    height: fill;
-                    position: absolute;
-                    z-index: 2;
-                    pointer-events: none;
-                `;
-                document.querySelector('.profilePic').parentElement.appendChild(decorationImg);
+                const profilePicContainer = document.querySelector('.profilePic').parentElement;
+                profilePicContainer.style.position = 'relative';
+                profilePicContainer.appendChild(decorationImg);
             }
-            // In base64 format
+
             decorationImg.src = `data:image/png;base64,${decorationBase64}`;
             console.log('Avatar decoration updated successfully');
         } else {
-            // If there's no avatar decoration data, don't do anything
-            console.log('No avatar decoration data found');
+            // Remove the decoration if none is found
+            const decorationImg = document.getElementById('avatar-decoration');
+            if (decorationImg) {
+                decorationImg.remove();
+            }
+            console.log('No avatar decoration found');
         }
     } catch (error) {
-        // Error...
-        console.error('Error updating avatar decoration:', error);
-
+        console.error(`Error updating avatar decoration:`, error);
     }
 }
 
