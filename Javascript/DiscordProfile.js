@@ -38,7 +38,7 @@ function connectWebSocket() {
             case 0: {
                 userData = { data: d };
                 // await updateClanBadge();
-                // await updateAvatarDecoration();
+                await updateAvatarDecoration();
                 await updateBadges();
                 
                 // Update Status
@@ -95,10 +95,11 @@ function connectWebSocket() {
                     }
                 }
 
+                // Please don't remove the lines commented out below
                 // Update Avatar Decoration (only if changed)
-                if (d?.discord_user?.avatar_decoration_data) {
-                    await updateAvatarDecoration();
-                }
+                // if (d?.discord_user?.avatar_decoration_data) {
+                //     await updateAvatarDecoration();
+                // }
 
                 // Update Clan Badge (only if changed)
                 if (d?.discord_user?.clan) {
@@ -108,6 +109,23 @@ function connectWebSocket() {
                 // Update Username (only if changed)
                 if (d?.discord_user?.username) {
                     await updateUsername();
+                    // Add pronouns update
+                    const pronounData = await fetchPronouns(userId);
+                    const pronouns = formatPronouns(pronounData);
+                    
+                    if (pronouns) {
+                        let pronounsElement = document.getElementById('pronouns-container');
+                        if (!pronounsElement) {
+                            pronounsElement = document.createElement('d3');
+                            pronounsElement.id = 'pronouns-container';
+                            pronounsElement.style.cssText = 'margin-bottom: -8px; margin-top: 10px; display: block;';
+                            const usernameContainer = document.getElementById('username-container');
+                            if (usernameContainer) {
+                                usernameContainer.parentNode.insertBefore(pronounsElement, usernameContainer.nextSibling);
+                            }
+                        }
+                        pronounsElement.innerHTML = `<span>${pronouns}</span>`;
+                    }
                 }
 
                 // Update Platform Indicator (only if changed)
@@ -201,39 +219,48 @@ async function updateActivities() {
 // Avatar Decoration Updater
 async function updateAvatarDecoration() {
     try {
-        // Check if the user has avatar decoration data
+        let decorationUrl = null;
+
+        // Check if the user has avatar decoration data on Discord
         if (userData?.data?.discord_user?.avatar_decoration_data) {
             const decorationData = userData.data.discord_user.avatar_decoration_data;
-            const decorationUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${decorationData.asset}.png?size=64&passthrough=true`;            
-            const decorationBase64 = await encodeBase64(decorationUrl);
+            decorationUrl = `https://cdn.discordapp.com/avatar-decoration-presets/${decorationData.asset}.png?size=64&passthrough=true`;
+        } else {
+            // Check if the user has avatar decoration data on Decor
+            const decorApi = await fetch(`https://decor.fieryflames.dev/api/users/${userId}`);
+            if (decorApi.ok) {
+                const decorData = await decorApi.json();
+                if (decorData.decorationHash) {
+                    decorationUrl = `https://ugc.decor.fieryflames.dev/${decorData.decorationHash}.png?animated=true`
+                }
+            }
+        }
 
-            // Add the decoration image to the profile picture
+        // If we have a decoration from either source, update the avatar decoration
+        if (decorationUrl) {
+            const decorationBase64 = await encodeBase64(decorationUrl);
             let decorationImg = document.getElementById('avatar-decoration');
+
             if (!decorationImg) {
                 decorationImg = document.createElement('img');
                 decorationImg.id = 'avatar-decoration';
-                decorationImg.alt = 'Avatar Decoration';
-                decorationImg.style.cssText = `
-                    display: block;
-                    width: fill;
-                    height: fill;
-                    position: absolute;
-                    z-index: 2;
-                    pointer-events: none;
-                `;
-                document.querySelector('.profilePic').parentElement.appendChild(decorationImg);
+                const profilePicContainer = document.querySelector('.profilePic').parentElement;
+                profilePicContainer.style.position = 'relative';
+                profilePicContainer.appendChild(decorationImg);
             }
-            // In base64 format
+
             decorationImg.src = `data:image/png;base64,${decorationBase64}`;
             console.log('Avatar decoration updated successfully');
         } else {
-            // If there's no avatar decoration data, don't do anything
-            console.log('No avatar decoration data found');
+            // Remove the decoration if none is found
+            const decorationImg = document.getElementById('avatar-decoration');
+            if (decorationImg) {
+                decorationImg.remove();
+            }
+            console.log('No avatar decoration found');
         }
     } catch (error) {
-        // Error...
-        console.error('Error updating avatar decoration:', error);
-
+        console.error(`Error updating avatar decoration:`, error);
     }
 }
 
@@ -361,7 +388,11 @@ function fetchDiscordBadges(flags) {
 async function fetchBadges() {
     try {
         // Fetch from the RealBadgesAPI (the name is a joke) by @SerStars
-        const badgesResponse = await fetch(`https://therealbadgesapi.serstars.workers.dev/?userid=${userId}`);
+        const badgesResponse = await fetch(`https://therealbadgesapi.serstars.workers.dev/?userid=${userId}`,
+        {
+            method: "GET",
+            mode: "cors"
+        });
         const response = await badgesResponse.json();
         
         let userBadges = [];
@@ -597,11 +628,32 @@ async function updateUsername() {
             return;
         }
 
+        // Update username
         usernameContainer.textContent = `@${username}#0000`;
-        console.log('Username updated successfully');
+
+        // Fetch and add pronouns
+        const pronounData = await fetchPronouns(userId);
+        const pronouns = formatPronouns(pronounData);
+        
+        if (pronouns) {
+            let pronounsElement = document.getElementById('pronouns-container');
+            if (!pronounsElement) {
+                pronounsElement = document.createElement('d3');
+                pronounsElement.id = 'pronouns-container';
+                pronounsElement.style.cssText = `
+                    margin-top: 5px; 
+                    display: flex;
+                    justify-content: center;
+                    width: 100%;
+                `;
+                usernameContainer.parentNode.insertBefore(pronounsElement, usernameContainer.nextSibling);
+            }
+            pronounsElement.innerHTML = `<span>${pronouns}</span>`;
+        }
+
+        console.log('Username and pronouns updated successfully');
     } catch (error) {
-        // Error...
-        console.error(`Error updating username: ${error.message}`);
+        console.error(`Error updating username and pronouns: ${error.message}`);
     }
 }
 
@@ -625,12 +677,25 @@ async function updatePlatformIndicator() {
             return;
         }
 
+        // Define status colors
+        const statusColors = {
+            online: '#3ba55c',
+            idle: '#faa61a',
+            dnd: '#ed4245',
+            offline: '#747f8d'
+        };
+
+        const statusColor = statusColors[discordStatus] || statusColors.offline;
         let platformIconsHTML = '';
 
         if (webActive) {
             platformIconsHTML += `
                 <div class="platform-icon">
-                    <img src="https://cdn.nest.rip/uploads/db693b4d-c036-44ce-95a3-8620d8378b0f.svg" alt="Active on Web" style="height: 20px; width: 20px; filter: invert(1);">
+                    <div style="background-color: ${statusColor}; padding: 4px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <img src="https://cdn.nest.rip/uploads/db693b4d-c036-44ce-95a3-8620d8378b0f.svg" 
+                            alt="Active on Web" 
+                            style="height: 16px; width: 16px; filter: brightness(0) invert(1);">
+                    </div>
                     <span class="platform-tooltip">Active on Web</span>
                 </div>
             `;
@@ -639,7 +704,11 @@ async function updatePlatformIndicator() {
         if (desktopActive) {
             platformIconsHTML += `
                 <div class="platform-icon">
-                    <img src="https://cdn.nest.rip/uploads/01a58e1e-bd87-46e8-b5b0-85540e3d20cb.svg" alt="Active on Desktop" style="height: 20px; width: 20px; filter: invert(1);">
+                    <div style="background-color: ${statusColor}; padding: 4px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <img src="https://cdn.nest.rip/uploads/01a58e1e-bd87-46e8-b5b0-85540e3d20cb.svg" 
+                            alt="Active on Desktop" 
+                            style="height: 16px; width: 16px; filter: brightness(0) invert(1);">
+                    </div>
                     <span class="platform-tooltip">Active on Desktop</span>
                 </div>
             `;
@@ -648,7 +717,11 @@ async function updatePlatformIndicator() {
         if (mobileActive) {
             platformIconsHTML += `
                 <div class="platform-icon">
-                    <img src="https://cdn.nest.rip/uploads/35a1108e-0c66-4afb-b18d-fbe826e29725.svg" alt="Active on Mobile" style="height: 17.5px; width: 17.5px; filter: invert(1);">
+                    <div style="background-color: ${statusColor}; padding: 4px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <img src="https://cdn.nest.rip/uploads/35a1108e-0c66-4afb-b18d-fbe826e29725.svg" 
+                            alt="Active on Mobile" 
+                            style="height: 14px; width: 14px; filter: brightness(0) invert(1);">
+                    </div>
                     <span class="platform-tooltip">Active on Mobile</span>
                 </div>
             `;
@@ -656,8 +729,38 @@ async function updatePlatformIndicator() {
 
         platformIndicatorContainer.innerHTML = platformIconsHTML;
         platformIndicatorContainer.style.display = 'flex';
+
         console.log('Platform indicator updated successfully');
     } catch (error) {
         console.error('Error updating platform indicator:', error);
     }
+}
+
+async function fetchPronouns(userId) {
+    try {
+        const response = await fetch(`https://pronoundb.org/api/v2/lookup?platform=discord&ids=${userId}`);
+        if (!response.ok) throw new Error('Failed to fetch pronouns');
+        const data = await response.json();
+        return data[userId];
+    } catch (error) {
+        console.error('Error fetching pronouns:', error);
+        return null;
+    }
+}
+
+function formatPronouns(pronounData) {
+    if (!pronounData?.sets?.en) return null;
+    
+    const pronounMap = {
+        'he': 'He/Him',
+        'it': 'It/Its',
+        'she': 'She/Her',
+        'they': 'They/Them',
+        'any': 'Any pronouns',
+        'ask': 'Ask me my pronouns',
+        'avoid': 'Use my name',
+        'other': 'Other pronouns'
+    };
+
+    return pronounData.sets.en.map(p => pronounMap[p] || p).join(', ');
 }
