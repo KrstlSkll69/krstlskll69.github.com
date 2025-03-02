@@ -36,10 +36,13 @@ CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ 
     6(b). [Privacy Policy](https://discord.com/privacy) </br>
     6(c). [Community Guidelines](https://discord.com/guidelines) </br>
 
-7. Discord Client Mod badges: </br>
-    7(a). Vencord is CC under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/Vendicated/Vencord </br>
-    7(b). Equicord *(A Vencord fork)* is CC under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/Equicord/Equicord </br>
-    7(c). Nekocord is CC under *null* and can be found @ https://github.com/nekocord-mod </br>
-    7(d). ClientModBadges-API is CC under *null* and can be found @ https://github.com/Equicord/ClientModBadges-API </br>
+7. [SerStar](https://github.com/SerStars) for his 'RealBadgesAPI'</br>
+
+8. Discord Client Mod badges: </br>
+    8(a). Vencord is CC under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/Vendicated/Vencord </br>
+    8(b). Equicord *(A Vencord fork)* is CC under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/Equicord/Equicord </br>
+    8(c). Nekocord is CC under [GNU Affero](https://www.gnu.org/licenses/agpl-3.0.en.html) and can be found @ https://github.com/nekocord-mod </br>
+        &nbsp; &nbsp; &nbsp; 8(i). Nekocord is currently closed source. </br> 
+    8(d). ClientModBadges-API is CC under *null* and can be found @ https://github.com/Equicord/ClientModBadges-API </br>
 
 8. BG can be found @ https://Website-BG.dny.wtf/s/JXqkH
