@@ -7,7 +7,7 @@ https://krstlskll69.github.io/
 
 https://krstlskll69.pages.gay/
 
-##licensed
+## License
 
 This work is dual-licensed under licensed-BY-NC-ND-4.0 and GPL 3.0 (or any later version).
 
