@@ -10,14 +10,27 @@
   --OnekoHearts-filter: drop-shadow(10px 10px 14px var(--black-100));
   --OnekoCat-filter: drop-shadow(0px 12px 11px var(--black-100));;
 
-  --bisexual-gradient: linear-gradient(90deg, rgba(208,0,112,1) 0%, rgba(140,71,153,1) 44%, rgba(0,50,160,1) 100%) ;
-
+  --bisexual-gradient: linear-gradient(90deg, rgba(208,0,112,1) 0%, rgba(140,71,153,1) 44%, rgba(0,50,160,1) 100%);
   --trans-gradient: linear-gradient(90deg, rgba(91,206,250,1) 0%, rgba(255,255,255,1) 44%, rgba(245,169,184,1) 100%) ; 
 
   --red-label: oklch(65.39% 0.1926 25.14);
   --green-label: oklch(80.2% 0.1398 145.16);
   --blue-label: oklch(81.34% 0.0795 199.75);
   --black-100: oklch(0% 0 0) !important;
+
+  --Discord-discriminator: '#0000';
+  --Discord-mention: '@';
+  --Discord-meta-color: oklch(64.39% 0 0);
+}
+
+#username-container::after{
+  color: var(--Discord-meta-color);
+  content: var(--Discord-discriminator);
+}
+
+#username-container::before{
+  color: var(--Discord-meta-color);
+  content: var(--Discord-mention);
 }
 
 #oneko{
@@ -572,4 +585,3 @@ a {
   margin-top: 5px;
   padding-left: 5px;
 }
-
