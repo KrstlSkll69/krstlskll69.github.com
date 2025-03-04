@@ -21,6 +21,7 @@
   --Discord-discriminator: '#9236';
   --Revolt-discriminator: '#2238';
   --Mastodon-Web: "@social.poketube.fun";
+  --Martix-Web: ":matrix.org";
   --Discord-mention: '@';
   --Discord-meta-color: oklch(64.39% 0 0);
 }
@@ -42,6 +43,10 @@
 
 .MastodonHref::after{
   content: var(--Mastodon-Web);
+}
+
+.MatrixHref::after{
+  content: var(--Martix-Web);
 }
 
 #oneko{
