@@ -35,6 +35,10 @@
 }
 */
 
+.RevoltUsername::after{
+  content: var(--Revolt-discriminator);
+}
+
 #oneko{
   filter: var(--OnekoCat-filter);
 }
