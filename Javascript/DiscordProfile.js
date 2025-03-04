@@ -629,7 +629,7 @@ async function updateUsername() {
         }
 
         // Update username
-        usernameContainer.textContent = `${username}`;
+        usernameContainer.textContent = `@${username}#2283`;
 
         // Fetch and add pronouns
         const pronounData = await fetchPronouns(userId);

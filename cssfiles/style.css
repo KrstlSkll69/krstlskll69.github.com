@@ -18,11 +18,13 @@
   --blue-label: oklch(81.34% 0.0795 199.75);
   --black-100: oklch(0% 0 0);
 
+  /*
   --Discord-discriminator: '#9236';
   --Discord-mention: '@';
   --Discord-meta-color: oklch(64.39% 0 0);
+  */
 }
-
+/*
 #username-container::after{
   color: var(--Discord-meta-color);
   content: var(--Discord-discriminator);
@@ -32,6 +34,7 @@
   color: var(--Discord-meta-color);
   content: var(--Discord-mention);
 }
+*/
 
 #oneko{
   filter: var(--OnekoCat-filter);
