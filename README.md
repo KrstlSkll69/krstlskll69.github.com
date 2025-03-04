@@ -36,7 +36,7 @@ CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ 
     6(b). [Privacy Policy](https://discord.com/privacy) </br>
     6(c). [Community Guidelines](https://discord.com/guidelines) </br>
 
-7. [SerStar](https://github.com/SerStars) for his 'RealBadgesAPI'</br>
+7. [SerStars](https://github.com/SerStars) for his 'RealBadgesAPI'</br>
 
 8. Discord Client Mod badges: </br>
     8(a). Vencord is licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/Vendicated/Vencord </br>
