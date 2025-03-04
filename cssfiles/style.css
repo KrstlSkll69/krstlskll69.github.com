@@ -20,6 +20,7 @@
 
   --Discord-discriminator: '#9236';
   --Revolt-discriminator: '#2238';
+  --Mastodon-Web: "@social.poketube.fun";
   --Discord-mention: '@';
   --Discord-meta-color: oklch(64.39% 0 0);
 }
@@ -37,6 +38,10 @@
 
 .RevoltUsername::after{
   content: var(--Revolt-discriminator);
+}
+
+.MastodonHref::after{
+  content: var(--Mastodon-Web);
 }
 
 #oneko{
