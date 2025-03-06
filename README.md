@@ -40,6 +40,7 @@ CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ 
 
 8. Discord Client Mod badges: </br>
     8(a). Vencord is licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/Vendicated/Vencord </br>
+    &nbsp; &nbsp; &nbsp; 8(i). ReviewDB can be found @ https://reviewdb.mantikafasi.dev/ </br>
     8(b). Equicord *(A Vencord fork)* is licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/Equicord/Equicord </br>
     8(c). Nekocord is licensed under [GNU Affero](https://www.gnu.org/licenses/agpl-3.0.en.html) and can be found @ https://github.com/nekocord-mod </br>
         &nbsp; &nbsp; &nbsp; 8(i). Nekocord is currently closed source. </br> 
