@@ -62,6 +62,7 @@
   width: fit-content;
   margin: auto;
 }
+
 .blue-label{
   background: var(--blue-label);
   color: var(--black-100);
@@ -72,7 +73,6 @@
   width: fit-content;
   margin: auto;
 }
-
 
 .logocenter{
   margin-top: -8px;
@@ -513,27 +513,6 @@ a {
 }
 
 /*------------Custom Panels------------*/
-.vencordPanel{
-  text-align: center;
-  padding: 0.5rem;
-  background-color: rgb(255,182,193);
-  color: oklch(0% 0 0);
-  border-radius: 1rem;
-  &:hover {scale: 0.95; background-color: rgb(252,108,133); z-index: 99999999; }
-  &:active {scale: 1.05; }
-  transition: scale 0.6s cubic-bezier(0.34, 1.54, 0.64, 1);
-}
-
-.equicordPanel{
-  text-align: center;
-  padding: 0.5rem;
-  background-color: rgb(166,231,255);
-  color: oklch(0% 0 0);
-  border-radius: 1rem;
-  &:hover {scale: 0.95; background-color: rgb(0,183,235); z-index: 99999999; }
-  &:active {scale: 1.05; }
-  transition: scale 0.6s cubic-bezier(0.34, 1.54, 0.64, 1);
-}
 
 .badge-item {
     position: relative;
