@@ -20,30 +20,29 @@ CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ 
 
 ## Special Thanks
 
-1. BlobCat is licensed under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) and can be found @ https://blobs.gg/
+1. BlobCat is &copy; under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) and can be found @ https://blobs.gg/
 
-2. PronounDB is licensed under [BSD-3-Clause](https://raw.githubusercontent.com/cyyynthia/pronoundb.org/refs/heads/mistress/LICENSE) and can be found @ https://github.com/cyyynthia/pronoundb.org
+2. PronounDB is &copy; under [BSD-3-Clause](https://raw.githubusercontent.com/cyyynthia/pronoundb.org/refs/heads/mistress/LICENSE) and can be found @ https://github.com/cyyynthia/pronoundb.org
 
-3. Oneko is licensed under [MIT](https://raw.githubusercontent.com/adryd325/oneko.js/refs/heads/main/LICENSE) and can be found @ https://github.com/adryd325/oneko.js </br>
+3. Oneko is &copy; under [MIT](https://raw.githubusercontent.com/adryd325/oneko.js/refs/heads/main/LICENSE) and can be found @ https://github.com/adryd325/oneko.js </br>
     3(a). Oneko Pet Edition can be found @ https://github.com/tylxr59/oneko.js
 
-4. Lanyard is licensed under [MIT](https://raw.githubusercontent.com/Phineas/lanyard/refs/heads/main/LICENSE) and can be found @ https://github.com/Phineas/lanyard
+4. Lanyard is &copy; under [MIT](https://raw.githubusercontent.com/Phineas/lanyard/refs/heads/main/LICENSE) and can be found @ https://github.com/Phineas/lanyard
 
-5. Decor is licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/decor-discord
+5. Decor is licen&copy;sed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/decor-discord
 
-6. Discord: </br>
+6. Discord is &reg; of Discord Inc. (Formerly known as Hammer & Chisel, Inc.): </br>
     6(a). [Terms of Service](https://discord.com/terms/) </br>
     6(b). [Privacy Policy](https://discord.com/privacy) </br>
-    6(c). [Community Guidelines](https://discord.com/guidelines) </br>
 
 7. [SerStars](https://github.com/SerStars) for his 'RealBadgesAPI'</br>
 
 8. Discord Client Mod badges: </br>
-    8(a). Vencord is licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/Vendicated/Vencord </br>
+    8(a). Vencord is &copy; under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/Vendicated/Vencord </br>
     &nbsp; &nbsp; &nbsp; 8(i). ReviewDB can be found @ https://reviewdb.mantikafasi.dev/ </br>
     8(b). Equicord *(A Vencord fork)* is licensed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/Equicord/Equicord </br>
-    8(c). Nekocord is licensed under [GNU Affero](https://www.gnu.org/licenses/agpl-3.0.en.html) and can be found @ https://github.com/nekocord-mod </br>
+    8(c). Nekocord is &copy; under [GNU Affero](https://www.gnu.org/licenses/agpl-3.0.en.html) and can be found @ https://github.com/nekocord-mod </br>
         &nbsp; &nbsp; &nbsp; 8(i). Nekocord is currently closed source. </br> 
-    8(d). ClientModBadges-API is licensed under *null* and can be found @ https://github.com/Equicord/ClientModBadges-API </br>
+    8(d). ClientModBadges-API is &copy; under *null* and can be found @ https://github.com/Equicord/ClientModBadges-API </br>
 
 8. BG can be found @ https://Website-BG.dny.wtf/s/JXqkH
