@@ -31,6 +31,8 @@
   --Mastodon-Web-2: "@bsky.brid.gy"; 
 
   --Martix-Web: ":matrix.org";
+
+  --BlueSky-Web: ".github.io";
 }
 
 #oneko{
@@ -588,4 +590,8 @@ a {
 
 .MatrixHref::after{
   content: var(--Martix-Web);
+}
+
+.BlueSkyHref::after{
+  content: var(--BlueSky-Web);
 }
