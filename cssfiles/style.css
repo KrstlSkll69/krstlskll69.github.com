@@ -17,13 +17,20 @@
   --green-label: oklch(80.2% 0.1398 145.16);
   --blue-label: oklch(81.34% 0.0795 199.75);
   --black-100: oklch(0% 0 0);
-
-  --Discord-discriminator: '#9236';
-  --Revolt-discriminator: '#2238';
-  --Mastodon-Web: "@social.poketube.fun";
-  --Martix-Web: ":matrix.org";
-  --Discord-mention: '@';
+  
   --Discord-meta-color: oklch(64.39% 0 0);
+  --Discord-mention: '@';
+  --Discord-discriminator: '#0000';
+  --Old-Discord-discriminator: '#9236';
+  --Discord-discriminator-shorthand: '#0';  
+
+  --Revolt-discriminator: '#2238';
+
+  --Mastodon-Web: "@social.poketube.fun";
+  /*-- https://fed.brid.gy/bsky/krstlskll69.github.io --*/
+  --Mastodon-Web-2: "@bsky.brid.gy"; 
+
+  --Martix-Web: ":matrix.org";
 }
 
 #oneko{
