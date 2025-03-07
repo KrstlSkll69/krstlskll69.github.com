@@ -3,7 +3,7 @@
     --white-100: oklch(100% 0 0);
 }
 
-.maxwell::after{
+.stickers::after{
     content: "";
     width: 50px;
     height: 65px;
@@ -15,7 +15,7 @@
     filter: drop-shadow(0px 0px 5px var(--white-100) );
 }
 
-.maxwell::before{
+.stickers::before{
     content: "";
     width: 50px;
     height: 65px;
