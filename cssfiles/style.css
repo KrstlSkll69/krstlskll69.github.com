@@ -617,10 +617,30 @@ a {
   content: var(--Mastodon-Web);
 }
 
+.MastodonHref::before{
+  content: var(--Discord-mention);
+}
+
 .MatrixHref::after{
   content: var(--Martix-Web);
 }
 
+.MatrixHref::before{
+  content: var(--Discord-mention);
+}
+
 .BlueSkyHref::after{
   content: var(--BlueSky-Web);
+}
+
+.BlueSkyHref::before{
+  content: var(--Discord-mention);
+}
+
+.InstagramHref::before{
+  content: var(--Discord-mention);
+}
+
+.TwitterHref::before{
+  content: var(--Discord-mention);
 }
