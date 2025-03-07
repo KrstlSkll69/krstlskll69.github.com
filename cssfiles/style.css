@@ -585,6 +585,10 @@ a {
 }
 */
 
+.DiscordHover::before{
+  content: var(--Discord-mention);
+}
+
 .RevoltUsername::after{
   content: var(--Revolt-discriminator);
 }
