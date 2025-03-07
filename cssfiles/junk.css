@@ -5,14 +5,16 @@
 
 .stickers::after{
     content: "";
-    width: 50px;
-    height: 65px;
-    left: 40px;
-    margin-top: -72px;
+    width: 135px;
+    height: 130px;
+    left: -20px;
+    margin-top: -135px;
     position: absolute;
-    background-image: url('https://cdn.nest.rip/uploads/68a291dc-6740-480a-a902-7e88fe102d68 ');
+    background-image: url('https://cdn.nest.rip/uploads/be0fb333-2e0e-4581-8dd3-17c6aad26763.png');
     mask-repeat: no-repeat;
     filter: drop-shadow(0px 0px 5px var(--white-100) );
+
+    z-index: -999;
 }
 
 .stickers::before{
