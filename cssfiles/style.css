@@ -46,9 +46,7 @@
   --MT-Icon: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAABCAQAAACx6dw/AAAAC0lEQVR42mNkAAMAAA4AAjOwv9wAAAAASUVORK5CYII=);
 }
 
-#oneko{
-  filter: var(--OnekoCat-filter);
-}
+
 
 .labels{
   display: inline;
@@ -94,7 +92,11 @@
 }
 
 div[id*=oneko]{
-  cursor: pointer;
+  cursor: grab;
+}
+
+#oneko{
+  filter: var(--OnekoCat-filter);
 }
 
 body {
