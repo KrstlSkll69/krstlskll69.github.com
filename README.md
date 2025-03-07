@@ -49,3 +49,16 @@ CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ 
 
 10. Background Astolfo and Mai Stickers is &copy; under [MIT](https://raw.githubusercontent.com/doki-theme/doki-theme-github/refs/heads/master/LICENSE) and can be found @ https://github.com/doki-theme </br>
     10(a). Assests can be found @ https://github.com/doki-theme/doki-theme-assets
+
+11. Icons/SVGs used: </br>
+    11(a). Font-Awesome is &copy; under [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/) and can be found @ https://fontawesome.com/ </br>
+    11(b). Devicon is &copy; under [MIT](https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/LICENSE) and can be found @ https://devicon.dev/ </br>
+    11(c). Material Design Icons is &copy; under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) and can be found @ https://developers.google.com/fonts/docs/material_icons &  https://pictogrammers.com/library/mdi/</br>
+    11(d). Simple Icons is &copy; under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) and can be found @ https://simpleicons.org/ </br>
+    11(e). Octicons is &copy; under [MIT](https://raw.githubusercontent.com/primer/octicons/refs/heads/main/LICENSE) and can found @ https://primer.style/foundations/icons/ </br>
+    11(f). IconPark is &copy; under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) and can found @ http://iconpark.bytedance.com/ </br>
+    11(g). Weui Icons is %copy; under [MIT]() and can found @ https://github.com/weui/weui-icon </br>
+    11(h). Bytesize Icons is &copy; under [MIT](https://raw.githubusercontent.com/danklammer/bytesize-icons/refs/heads/master/LICENSE.md) and can be found @ https://danklammer.com/bytesize-icons/ </br>
+    11(i). Flowbite Icons is &copy; under [MIT](https://raw.githubusercontent.com/themesberg/flowbite-icons/refs/heads/main/LICENSE) and can be found @ https://flowbite.com/icons/ </br>
+    11(j). UWI Icons is &copy; under [MIT](https://raw.githubusercontent.com/uiwjs/icons/refs/heads/master/LICENSE) and can be found @ https://uiwjs.github.io/icons/ </br>
+    11(k). Typicons is &copy; under [BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and can be found @ https://www.s-ings.com/typicons/
