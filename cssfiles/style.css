@@ -24,9 +24,10 @@
   
   --Discord-meta-color: oklch(64.39% 0 0);
   --Discord-mention: '@';
-  --Discord-discriminator: '#0000';
-  --Old-Discord-discriminator: '#9236';
+  --Discord-discriminator: '#0000';  
   --Discord-discriminator-shorthand: '#0';  
+  --Old-Discord-discriminator: '#9236';
+
 
   --Revolt-discriminator: '#2238';
 
