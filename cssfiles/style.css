@@ -1,7 +1,7 @@
-/*--- BG made by/ can be found @ https://github.com/doki-theme */
+
 :root {
   color-scheme: dark !important;
-  
+  /*--- BG made by/ can be found @ https://github.com/doki-theme */
   background: url(https://cdn.nest.rip/uploads/6e45fc8f-c010-4f17-ba72-9b1d2e4a9a5b.png), var(--bisexual-repeating-gradient);
   background-position: center;
   background-repeat: no-repeat;
