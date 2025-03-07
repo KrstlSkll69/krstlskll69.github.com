@@ -29,13 +29,6 @@
   }
 
   const nekoSpeed = 10,
-    variants = [
-      ["classic", "Classic"],
-      ["dog", "Dog"],
-      ["tora", "Tora"],
-      ["maia", "Maia (maia.crimew.gay)"],
-      ["vaporwave", "Vaporwave (nya.rest)"],
-    ],
     spriteSets = {
       idle: [[-3, -3]],
       alert: [[-7, -3]],
@@ -157,10 +150,6 @@
     kuroNeko = prefersDarkMode ? false : true;
     localStorage.setItem("oneko:kuroneko", JSON.stringify(kuroNeko));
 
-    if (!variants.some((v) => v[0] === variant)) {
-      variant = "classic";
-    }
-
     nekoEl.id = "oneko";
     nekoEl.style.width = "32px";
     nekoEl.style.height = "32px";
@@ -249,7 +238,7 @@
       nekoEl.style.filter = kuroNeko ? "invert(100%)" : "none";
     });
 
-    nekoEl.addEventListener("dblclick", sleep);
+    //nekoEl.addEventListener("dblclick", sleep);
 
     window.onekoInterval = setInterval(frame, 100);
   }
