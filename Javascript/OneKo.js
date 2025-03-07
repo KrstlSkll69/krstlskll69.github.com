@@ -367,7 +367,8 @@
           font-size: 2em;
           animation: heartBurst 1s ease-out;
           animation-fill-mode: forwards;
-          color: #ab9df2;
+		      color:  var(--OnekoHearts);
+          filter: var(--OnekoHearts-filter);
       }
   `;
 
