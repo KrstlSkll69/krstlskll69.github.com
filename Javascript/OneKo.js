@@ -502,10 +502,6 @@
       return div;
     }
 
-    for (const variant of variants) {
-      container.appendChild(variantButton(variant));
-    }
-
     return container;
   }
 
