@@ -1,17 +1,21 @@
 /*--- BG made by/ can be found @ https://github.com/doki-theme */
 :root {
   color-scheme: dark !important;
-  height: 100%;
-  background: url('https://cdn.nest.rip/uploads/d817d6b5-29e9-4c25-8012-2b766389723d.jpg');
+  
+  background: url(https://cdn.nest.rip/uploads/6e45fc8f-c010-4f17-ba72-9b1d2e4a9a5b.png), var(--bisexual-repeating-gradient);
   background-position: center;
-  background-size: 30rem;
+  background-repeat: no-repeat;
+  background-size: cover;
 
   --OnekoHearts:  oklch(65.49% 0.2613 356.94);
   --OnekoHearts-filter: drop-shadow(10px 10px 14px var(--black-100));
   --OnekoCat-filter: drop-shadow(0px 12px 11px var(--black-100));;
 
   --bisexual-gradient: linear-gradient(90deg, rgba(208,0,112,1) 0%, rgba(140,71,153,1) 44%, rgba(0,50,160,1) 100%);
-  --trans-gradient: linear-gradient(90deg, rgba(91,206,250,1) 0%, rgba(255,255,255,1) 44%, rgba(245,169,184,1) 100%) ; 
+  --bisexual-repeating-gradient: repeating-linear-gradient(to bottom,rgb(208, 0, 112) 0%,rgb(140, 71, 153) 44%,rgb(0, 50, 160) 100%);
+
+  --trans-gradient: linear-gradient(90deg, rgba(91,206,250,1) 0%, rgba(255,255,255,1) 44%, rgba(245,169,184,1) 100%);
+  --trans-repeating-gradient: repeating-linear-gradient(to bottom,rgb(91, 206, 250) 0%,rgb(255, 255, 255) 44%,rgb(245, 169, 184) 100%);;
 
   --red-label: oklch(65.39% 0.1926 25.14);
   --green-label: oklch(80.2% 0.1398 145.16);
