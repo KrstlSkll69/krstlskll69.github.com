@@ -475,7 +475,7 @@ async function fetchBadgesFallback() {
                     if (equicordBadges[userId] && Array.isArray(equicordBadges[userId])) {
                         return equicordBadges[userId].map(badge => ({
                             name: badge.tooltip,
-                            tooltip: `Equicord: ${badge.tooltip}`,
+                            tooltip: `${badge.tooltip}`,
                             icon: badge.badge,
                             type: 'equicord'
                         }));
