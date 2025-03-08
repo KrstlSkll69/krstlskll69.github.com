@@ -1,4 +1,5 @@
-/* Oneko.js: https://github.com/adryd325/oneko.js
+/* 
+*  Oneko.js: https://github.com/adryd325/oneko.js
 *  Pet the cat version: https://github.com/tylxr59/oneko.js
 *  Spicetify version: https://github.com/kyrie25/spicetify-oneko
 */
