@@ -291,28 +291,28 @@ d4{
 }
 
 .status-online {
-  content: url('https://cdn.nest.rip/uploads/4bc76bbc-296a-4657-a04f-df95d5e74b58.svg');
+  content: url('https://cdn.nest.rip/uploads/44c84b7c-5710-4d8c-9b46-52c4bc6508cf.gif');
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(32px) !important;  
   padding: 3px;
 }
 
 .status-idle {
-  content: url('https://cdn.nest.rip/uploads/0b68c744-7543-431e-96c9-cd13c076702f.svg');
+  content: url('https://cdn.nest.rip/uploads/20244c93-a1df-48f6-9dd8-f6eb638c0b37.gif');
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(32px) !important;  
   padding: 3px;
 }
 
 .status-dnd {
-  content: url('https://cdn.nest.rip/uploads/a001bf5c-26ec-47a8-bd92-81e8fd5acdcb.svg');
+  content: url('https://cdn.nest.rip/uploads/34a4143e-2480-496d-9d3c-589298e8ab12.gif');
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(32px) !important;  
   padding: 3px;
 }
 
 .status-offline {
-  content: url('https://cdn.nest.rip/uploads/ddaa722c-c6ab-4f22-bf76-088546968447.svg');
+  content: url('https://cdn.nest.rip/uploads/fafab584-53e0-47ef-a83f-975e17a11c65.gif');
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(32px) !important;  
   padding: 3px;
