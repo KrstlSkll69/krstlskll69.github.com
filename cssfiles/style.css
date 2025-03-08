@@ -104,7 +104,7 @@ body {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  backdrop-filter: brightness(75%);
+  backdrop-filter: brightness(75%) blur(5px);
 }
 
 ul {
