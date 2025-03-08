@@ -329,7 +329,7 @@
     for (let i = 0; i < 10; i++) {
       const heart = document.createElement('div');
       heart.className = 'heart';
-      heart.textContent = '❤';
+      heart.textContent = '';
       // Add a random offset to the position
       const offsetX = (Math.random() - 0.5) * 50;
       const offsetY = (Math.random() - 0.5) * 50;
