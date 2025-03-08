@@ -29,11 +29,11 @@
   --Discord-discriminator-shorthand: '#0';  
   --Old-Discord-discriminator: '#9236';
 
-
   --Revolt-discriminator: '#2238';
 
   --Mastodon-Web: "@social.poketube.fun";
   /*-- https://fed.brid.gy/bsky/krstlskll69.github.io --*/
+
   --Mastodon-Web-2: "@bsky.brid.gy"; 
 
   --Martix-Web: ":matrix.org";
@@ -611,48 +611,12 @@ a {
 }
 */
 
-.DiscordHover::before{
-  content: var(--Discord-mention);
-}
-
 /*
 .DiscordHover::after{
   content: var(--Discord-discriminator);
 }
 */
 
-.RevoltUsername::after{
-  content: var(--Revolt-discriminator);
-}
-
-.MastodonHref::after{
-  content: var(--Mastodon-Web);
-}
-
-.MastodonHref::before{
-  content: var(--Discord-mention);
-}
-
-.MatrixHref::after{
-  content: var(--Martix-Web);
-}
-
-.MatrixHref::before{
-  content: var(--Discord-mention);
-}
-
-.BlueSkyHref::after{
-  content: var(--BlueSky-Web);
-}
-
-.BlueSkyHref::before{
-  content: var(--Discord-mention);
-}
-
-.InstagramHref::before{
-  content: var(--Discord-mention);
-}
-
-.TwitterHref::before{
+.DiscordHover::before{
   content: var(--Discord-mention);
 }
