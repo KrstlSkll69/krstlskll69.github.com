@@ -143,6 +143,7 @@ a {
 
   background-color: rgba(0, 0, 0, 0.5) !important;
   backdrop-filter: blur(32px) !important;
+  filter: drop-shadow(10px 10px 10px oklch(0% 0 0 / 46%));
   width: 20rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
