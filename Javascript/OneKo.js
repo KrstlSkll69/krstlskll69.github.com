@@ -1,5 +1,7 @@
-// oneko.js ~~ https://github.com/adryd325/oneko.js
-// Pet the cat version ~~ https://github.com/tylxr59/oneko.js/tree/main
+/* Oneko.js: https://github.com/adryd325/oneko.js
+*  Pet the cat version: https://github.com/tylxr59/oneko.js
+*  Spicetify version: https://github.com/kyrie25/spicetify-oneko
+*/
 
 (async function oneko() {
   const nekoEl = document.createElement("div");
@@ -14,9 +16,7 @@
     forceSleep = false,
     grabbing = false,
     grabStop = true,
-    nudge = false,
-    kuroNeko = false,
-    variant = "classic";
+    nudge = false;
 
   function parseLocalStorage(key, fallback) {
     try {
@@ -90,65 +90,12 @@
         [-1, 0],
         [-1, -1],
       ],
-    }, // Get keys with 2 or more sprites
-    keys = Object.keys(spriteSets).filter((key) => spriteSets[key].length > 1),
-    usedKeys = new Set();
-
-  function sleep() {
-    forceSleep = !forceSleep;
-    nudge = false;
-    localStorage.setItem("oneko:forceSleep", forceSleep);
-    if (!forceSleep) {
-      resetIdleAnimation();
-      return;
     }
-
-    // If Full App Display is on, sleep on its progress bar instead
-    const fullAppDisplay = document.getElementById("fad-progress");
-    if (fullAppDisplay) {
-      mousePosX = fullAppDisplay.getBoundingClientRect().right - 16;
-      mousePosY = fullAppDisplay.getBoundingClientRect().top - 12;
-      return;
-    }
-
-    // Get the far right and top of the progress bar
-    const progressBar = document.querySelector(".main-nowPlayingBar-center .playback-progressbar");
-    const progressBarRight = progressBar.getBoundingClientRect().right;
-    const progressBarTop = progressBar.getBoundingClientRect().top;
-    const progressBarBottom = progressBar.getBoundingClientRect().bottom;
-
-    // Make the cat sleep on the progress bar
-    mousePosX = progressBarRight - 16;
-    mousePosY = progressBarTop - 8;
-
-    // Get the position of the remaining time
-    const remainingTime = document.querySelector(".main-playbackBarRemainingTime-container");
-    const remainingTimeLeft = remainingTime.getBoundingClientRect().left;
-    const remainingTimeBottom = remainingTime.getBoundingClientRect().bottom;
-    const remainingTimeTop = remainingTime.getBoundingClientRect().top;
-
-    // Get the position of elapsed time
-    const elapsedTime = document.querySelector(".playback-bar__progress-time-elapsed");
-    const elapsedTimeRight = elapsedTime.getBoundingClientRect().right;
-    const elapsedTimeLeft = elapsedTime.getBoundingClientRect().left;
-
-    // If the remaining time is on top right of the progress bar, make the cat sleep to the a little bit to the left of the remaining time
-    // Theme compatibility
-    if (remainingTimeLeft < progressBarRight && remainingTimeTop < progressBarBottom && progressBarTop - remainingTimeBottom < 32) {
-      mousePosX = remainingTimeLeft - 16;
-
-      // Move the cat to the left of elapsed time if it is too close to the remaining time (Nord theme)
-      if (remainingTimeLeft - elapsedTimeRight < 32) {
-        mousePosX = elapsedTimeLeft - 16;
-      }
-    }
-  }
 
   function create() {
     variant = parseLocalStorage("variant", "classic");
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     kuroNeko = prefersDarkMode ? false : true;
-    localStorage.setItem("oneko:kuroneko", JSON.stringify(kuroNeko));
 
     nekoEl.id = "oneko";
     nekoEl.style.width = "32px";
@@ -237,8 +184,6 @@
       localStorage.setItem("oneko:kuroneko", kuroNeko);
       nekoEl.style.filter = kuroNeko ? "invert(100%)" : "none";
     });
-
-    //nekoEl.addEventListener("dblclick", sleep);
 
     window.onekoInterval = setInterval(frame, 100);
   }
@@ -356,7 +301,7 @@
           font-size: 2em;
           animation: heartBurst 1s ease-out;
           animation-fill-mode: forwards;
-		      color:  var(--OnekoHearts);
+          color:  var(--OnekoHearts);
           filter: var(--OnekoHearts-filter);
       }
   `;
@@ -422,93 +367,4 @@
 
   create();
 
-  function getRandomSprite() {
-    let unusedKeys = keys.filter((key) => !usedKeys.has(key));
-    if (unusedKeys.length === 0) {
-      usedKeys.clear();
-      unusedKeys = keys;
-    }
-    const index = Math.floor(Math.random() * unusedKeys.length);
-    const key = unusedKeys[index];
-    usedKeys.add(key);
-    return [getSprite(key, 0), getSprite(key, 1)];
-  }
-
-  function setVariant(arr) {
-    console.log(arr);
-
-    variant = arr[0];
-    localStorage.setItem("oneko:variant", `"${variant}"`);
-    nekoEl.style.backgroundImage = `url('https://i.chenna.me/oneko/oneko-${variant}.gif')`;
-  }
-
-  // Popup modal to choose variant
-  function pickerModal() {
-    const container = document.createElement("div");
-    container.className = "oneko-variant-container";
-
-    const style = document.createElement("style");
-    // Each variant is a 64x64 sprite
-    style.innerHTML = `
-      .oneko-variant-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-      }
-      .oneko-variant-button {
-        width: 64px;
-        height: 64px;
-        margin: 8px;
-        cursor: pointer;
-        background-size: 800%;
-        border-radius: 25%;
-        transition: background-color 0.2s ease-in-out;
-        background-position: var(--idle-x) var(--idle-y);
-        image-rendering: pixelated;
-      }
-      .oneko-variant-button:hover, .oneko-variant-button-selected {
-        background-color: var(--spice-main-elevated);
-      }
-      .oneko-variant-button:hover {
-        background-position: var(--active-x) var(--active-y);
-      }
-    `;
-    container.appendChild(style);
-
-    const [idle, active] = getRandomSprite();
-
-    function variantButton(variantEnum) {
-      const div = document.createElement("div");
-
-      div.className = "oneko-variant-button";
-      div.id = variantEnum[0];
-      div.style.backgroundImage = `url('https://i.chenna.me/oneko/oneko-${variantEnum[0]}.gif')`;
-      div.style.setProperty("--idle-x", `${idle[0] * 64}px`);
-      div.style.setProperty("--idle-y", `${idle[1] * 64}px`);
-      div.style.setProperty("--active-x", `${active[0] * 64}px`);
-      div.style.setProperty("--active-y", `${active[1] * 64}px`);
-
-      div.onclick = () => {
-        setVariant(variantEnum);
-        document.querySelector(".oneko-variant-button-selected")?.classList.remove("oneko-variant-button-selected");
-        div.classList.add("oneko-variant-button-selected");
-      };
-
-      if (variantEnum[0] === variant) {
-        div.classList.add("oneko-variant-button-selected");
-      }
-
-      return div;
-    }
-
-    return container;
-  }
-
-  if (parseLocalStorage("forceSleep", false)) {
-    while (!document.querySelector(".main-nowPlayingBar-center .playback-progressbar")) {
-      await new Promise((r) => setTimeout(r, 100));
-    }
-    sleep();
-  }
 })();
