@@ -247,6 +247,7 @@ d4{
   width: 8rem;
   border-radius: 50%;
   position: relative;
+  z-index: 1;
 }
 
 #avatar-decoration {
@@ -276,7 +277,7 @@ d4{
   position: relative;
   margin-bottom: -2.4rem !important;
   margin-left: 1rem;
-  z-index: 1 !important;
+
 }
 
 .status-indicator {
