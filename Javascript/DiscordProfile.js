@@ -391,7 +391,7 @@ async function fetchBadges() {
         const badgesResponse = await fetch(`https://therealbadgesapi.serstars.workers.dev/?userid=${userId}`,
         {
             method: "GET",
-            mode: "no-cors"
+            mode: "cors"
         });
         const response = await badgesResponse.json();
         
