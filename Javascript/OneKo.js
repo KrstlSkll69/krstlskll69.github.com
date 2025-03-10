@@ -366,6 +366,7 @@
     nekoEl.style.top = `${nekoPosY - 16}px`;
   }
 
+  console.log("OneK0 loaded")
   create();
 
 })();
