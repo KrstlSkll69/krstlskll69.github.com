@@ -87,6 +87,7 @@
 #oneko{
   filter: var(--OnekoCat-filter) !important;
   cursor: grab;
+  z-index: 9999;
 }
 
 .heart::after{
