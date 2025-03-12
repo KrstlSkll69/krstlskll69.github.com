@@ -366,7 +366,7 @@ const DISCORD_BADGE_DETAILS = {
         icon: "https://cdn.discordapp.com/badge-icons/6bdc42827a38498929a4920da12695d9.png"
     },
     NITRO: {
-        tooltip: "Nitro",
+        tooltip: "Nitro Subscriber",
         icon: "https://cdn.discordapp.com/badge-icons/2ba85e8026a8614b640c2837bcdfe21b.png"
     },
     QUEST: {
