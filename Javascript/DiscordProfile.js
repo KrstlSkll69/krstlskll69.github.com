@@ -364,12 +364,41 @@ const DISCORD_BADGE_DETAILS = {
     ACTIVE_DEVELOPER: {
         tooltip: "Active Developer",
         icon: "https://cdn.discordapp.com/badge-icons/6bdc42827a38498929a4920da12695d9.png"
+    },
+    NITRO: {
+        tooltip: "Nitro",
+        icon: "https://cdn.discordapp.com/badge-icons/2ba85e8026a8614b640c2837bcdfe21b.png"
+    },
+    QUEST: {
+        tooltip: "Completed a Quest",
+        icon: "https://cdn.discordapp.com/badge-icons/7d9ae358c8c5e118768335dbe68b4fb8.png"
+    },
+    ORBS: {
+        tooltip: "Orbs",
+        icon: "https://cdn.discordapp.com/emojis/1344158517803745321.png"
+    },
+    CLOWN: {
+        tooltip: "A Fucking Clown 🤡",
+        icon: "https://cdn.discordapp.com/emojis/1349512970589306902.png"
     }
 };
 
 // Fetch Discord Badges and add them to the profile
 function fetchDiscordBadges(flags) {
     const badges = [];
+    // am lazy to fix this
+    // Check Lanyard KV store for additional badges
+    if (userData?.data?.kv) {
+        if (userData.data.kv.nitro === "true") {
+            badges.push({
+                name: DISCORD_BADGE_DETAILS.NITRO.tooltip,
+                tooltip: DISCORD_BADGE_DETAILS.NITRO.tooltip,
+                icon: DISCORD_BADGE_DETAILS.NITRO.icon,
+                type: 'discord'
+            });
+        }
+
+    // Check for Discord badges
     for (const [flag, bitwise] of Object.entries(DISCORD_BADGES)) {
         if (flags & bitwise) {
             const badge = DISCORD_BADGE_DETAILS[flag];
@@ -377,6 +406,34 @@ function fetchDiscordBadges(flags) {
                 name: badge.tooltip,
                 tooltip: badge.tooltip,
                 icon: badge.icon,
+                type: 'discord'
+            });
+        }
+    }
+
+    if (userData.data.kv.quests === "true") {
+            badges.push({
+                name: DISCORD_BADGE_DETAILS.QUEST.tooltip,
+                tooltip: DISCORD_BADGE_DETAILS.QUEST.tooltip,
+                icon: DISCORD_BADGE_DETAILS.QUEST.icon,
+                type: 'discord'
+            });
+        }
+
+        if (userData.data.kv.orbs === "true") {
+            badges.push({
+                name: DISCORD_BADGE_DETAILS.ORBS.tooltip,
+                tooltip: DISCORD_BADGE_DETAILS.ORBS.tooltip,
+                icon: DISCORD_BADGE_DETAILS.ORBS.icon,
+                type: 'discord'
+            });
+        }
+
+        if (userData.data.kv.clown === "true") {
+            badges.push({
+                name: DISCORD_BADGE_DETAILS.CLOWN.tooltip,
+                tooltip: DISCORD_BADGE_DETAILS.CLOWN.tooltip,
+                icon: DISCORD_BADGE_DETAILS.CLOWN.icon,
                 type: 'discord'
             });
         }
@@ -622,14 +679,38 @@ async function updateUsername() {
         }
 
         const username = userData.data.discord_user.username;
+        const isBot = userData.data.discord_user.bot === true;
         const usernameContainer = document.getElementById('username-container');
         if (!usernameContainer) {
             console.log('Username container not found in DOM');
             return;
         }
 
-        // Update username
-        usernameContainer.textContent = `@${username}#0000`;
+        const style = document.createElement('style');
+        style.textContent = `
+            .bot-badge {
+                background-color: #5865F2;
+                color: white;
+                padding: 0px 4px;
+                border-radius: 3px;
+                font-size: 0.8em;
+                margin-left: 4px;
+                font-weight: 500;
+            }
+            .user-indicator {
+                color: #72767d;
+                font-size: 0.8em;
+                display: block;
+                text-align: center;
+                margin-top: 2px;
+            }
+        `;
+        document.head.appendChild(style);
+
+        usernameContainer.innerHTML = `
+            @${username}#0000${isBot ? ' <span class="bot-badge">✔︎ BOT</span>' : ''}
+            <span class="user-indicator">${isBot ? '' : '(not a bot lol)'}</span>
+        `;
 
         // Fetch and add pronouns
         const pronounData = await fetchPronouns(userId);
@@ -641,7 +722,7 @@ async function updateUsername() {
                 pronounsElement = document.createElement('d3');
                 pronounsElement.id = 'pronouns-container';
                 pronounsElement.style.cssText = `
-                    margin-top: 5px; 
+                    margin-top: 5px;
                     display: flex;
                     justify-content: center;
                     width: 100%;
@@ -651,7 +732,7 @@ async function updateUsername() {
             pronounsElement.innerHTML = `<span>${pronouns}</span>`;
         }
 
-        console.log('Username and pronouns updated successfully');
+        console.log('Username, bot status, and pronouns updated successfully');
     } catch (error) {
         console.error(`Error updating username and pronouns: ${error.message}`);
     }
