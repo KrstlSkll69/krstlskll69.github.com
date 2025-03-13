@@ -231,7 +231,7 @@ async function updateAvatarDecoration() {
             if (decorApi.ok) {
                 const decorData = await decorApi.json();
                 if (decorData.decorationHash) {
-                    decorationUrl = `https://ugc.decor.fieryflames.dev/a_${decorData.decorationHash}.png`
+                    decorationUrl = `https://ugc.decor.fieryflames.dev/${decorData.decorationHash}.png?animated=true`
                 }
             }
         }
