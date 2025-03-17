@@ -5,7 +5,7 @@
 
 .stickers::after{
     content: "";
-    width: 106px;
+    width: 114px;
     height: 150px;
     left: -20px;
     margin-top: -158px;
@@ -19,7 +19,7 @@
 
 .stickers::before{
     content: "";
-    width: 106px;
+    width: 114px;
     height: 150px;
     left: 243px;
     margin-top: -158px;

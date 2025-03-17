@@ -12,7 +12,7 @@ https://krstlskll69.pages.gay/
 This work is dual-licensed under licensed-BY-NC-ND-4.0 and GPL 3.0 (or any later version).
 
 All code is held under GPL 3.0 </br>
-PFP and `KRSTLSKLL` banner is held under licensed-BY-NC-ND-4.0, and shall not be used without my permission
+Old PFP and`KRSTLSKLL` banner is held under licensed-BY-NC-ND-4.0, and shall not be used without my permission
 
 
 CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ </br>
@@ -31,7 +31,7 @@ CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ 
 
 5. Lanyard is &copy; under [MIT](https://raw.githubusercontent.com/Phineas/lanyard/refs/heads/main/LICENSE) and can be found @ https://github.com/Phineas/lanyard
 
-6. Decor is licen&copy;sed under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/decor-discord
+6. Decor is &copy; under [GPL-3.0](https://www.gnu.org/licenses/gpl-3.0.en.html) and can be found @ https://github.com/decor-discord
 
 7. Discord is &reg; of Discord Inc. (Formerly known as Hammer & Chisel, Inc.): </br>
     7(a). [Terms of Service](https://discord.com/terms/) </br>

@@ -477,6 +477,9 @@ async function fetchBadges() {
                 if (badge.source === 'reviewdb' && badge.name === 'Donor') {
                     tooltip = `ReviewDB: ${badge.tooltip}`;
                 }
+                if (badge.source === 'nekocord' && badge.name === 'Early Public Tester') {
+                    tooltip = `Nekocord: ${badge.tooltip}`;
+                }
 
                 return {
                     name: badge.name,
