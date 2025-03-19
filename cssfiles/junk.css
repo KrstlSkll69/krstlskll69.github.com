@@ -67,8 +67,8 @@ body::after {
 
     position: absolute;
     font-family: 'Noto Sans';
-    color: white;
-    opacity: 0.6;
+    color: var(--white-100);
+    opacity: 0.3;
     bottom: 40px;
     right: 145px;
     pointer-events: none;
@@ -80,8 +80,8 @@ body::before {
     content: "Go to settings to activate Windows.";
     position: absolute;
     font-family: 'Noto Sans';
-    color: white;
-    opacity: 0.6;
+    color: var(--white-100);
+    opacity: 0.3;
     bottom: 20px;
     right: 25px;
     pointer-events: none;
