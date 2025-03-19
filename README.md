@@ -3,9 +3,9 @@
 
 ----
 
-https://krstlskll69.github.io/
+https://indi.is-a-skid.cc/
 
-https://krstlskll69.pages.gay/
+https://krstlskll69.github.io/
 
 ## License
 

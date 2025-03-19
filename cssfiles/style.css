@@ -504,6 +504,14 @@ d4{
   .opener{
     display: none !important;
   }
+
+  body::before{
+    display: none !important;
+  }
+
+  body::after{
+    display: none !important;
+  }
 }
 
 /*------------Discord Server(s) Panel------------*/
