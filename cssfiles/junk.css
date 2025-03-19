@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:wght@320&display=swap');
+
 :root{
     --black-100: oklch(0% 0 0);
     --white-100: oklch(100% 0 0);
@@ -57,4 +59,31 @@
     -webkit-user-select: none; /* Safari */
     -ms-user-select: none; /* IE 10 and IE 11 */
     user-select: none; /* Standard syntax */
+}
+
+body::after {
+    font-size: 15px;
+    content: "Active Windows ";
+
+    position: absolute;
+    font-family: 'Noto Sans';
+    color: white;
+    opacity: 0.6;
+    bottom: 40px;
+    right: 145px;
+    pointer-events: none;
+    text-shadow: 2px 2px var(--black-100);
+
+}
+body::before {
+    font-size: 14px;
+    content: "Go to settings to activate Windows.";
+    position: absolute;
+    font-family: 'Noto Sans';
+    color: white;
+    opacity: 0.6;
+    bottom: 20px;
+    right: 25px;
+    pointer-events: none;
+    text-shadow: 2px 2px var(--black-100);
 }
