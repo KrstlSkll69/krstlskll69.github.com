@@ -374,10 +374,17 @@ const DISCORD_BADGE_DETAILS = {
         tooltip: "Completed a Quest",
         icon: "https://cdn.discordapp.com/badge-icons/7d9ae358c8c5e118768335dbe68b4fb8.png"
     },
+    // Orbs Badge Datamine Icon
     ORBS: {
         tooltip: "Orbs",
         icon: "https://cdn.discordapp.com/emojis/1344158517803745321.png"
     },
+    // Newst version of Orbs discord might be using
+    ORBSTWO: {
+        tooltip: "Orbs",
+        icon: "https://cdn.discordapp.com/emojis/1352008036486610954.png"
+    },
+    // Include this because why not ~~ SRC: https://youtu.be/cc2-4ci4G84
     CLOWN: {
         tooltip: "A Fucking Clown 🤡",
         icon: "https://cdn.discordapp.com/emojis/1349512970589306902.png"
@@ -426,6 +433,14 @@ function fetchDiscordBadges(flags) {
                 name: DISCORD_BADGE_DETAILS.ORBS.tooltip,
                 tooltip: DISCORD_BADGE_DETAILS.ORBS.tooltip,
                 icon: DISCORD_BADGE_DETAILS.ORBS.icon,
+                type: 'discord'
+            });
+        }
+        if (userData.data.kv.orbstwo === "true") {
+            badges.push({
+                name: DISCORD_BADGE_DETAILS.ORBSTWO.tooltip,
+                tooltip: DISCORD_BADGE_DETAILS.ORBSTWO.tooltip,
+                icon: DISCORD_BADGE_DETAILS.ORBSTWO.icon,
                 type: 'discord'
             });
         }
