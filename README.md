@@ -20,7 +20,7 @@ CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ 
 
 ## Special Thanks
 
-1. Assest hosted on https://nest.rip/
+1. *most* Assest hosted on https://nest.rip/
 
 2. BlobCat is &copy; under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) and can be found @ https://blobs.gg/
 
@@ -62,3 +62,5 @@ CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ 
     11(i). Flowbite Icons is &copy; under [MIT](https://raw.githubusercontent.com/themesberg/flowbite-icons/refs/heads/main/LICENSE) and can be found @ https://flowbite.com/icons/ </br>
     11(j). UWI Icons is &copy; under [MIT](https://raw.githubusercontent.com/uiwjs/icons/refs/heads/master/LICENSE) and can be found @ https://uiwjs.github.io/icons/ </br>
     11(k). Typicons is &copy; under [BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and can be found @ https://www.s-ings.com/typicons/
+
+12. Kitten in the bottom left is &copy; under [GNU Affero](https://www.gnu.org/licenses/agpl-3.0.en.html) and can be found @ https://cortex.rest/

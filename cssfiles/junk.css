@@ -90,3 +90,17 @@ body::before {
     pointer-events: none;
     text-shadow: 2px 2px var(--black-100);
 }
+
+.cortexKitty{
+    content: "";
+    width: 115px;
+    height: 87px;
+    left: 0px;
+    bottom: 0px;
+    position: absolute;
+    background-image: url('/assets/images/c7fb4aad-b5c7-4c3e-8468-5051487a93ba.gif');
+    background-size: 7rem;
+    mask-repeat: no-repeat;
+    filter: drop-shadow(0px 0px 5px var(--black-100) );
+    z-index: 999 !important;
+}

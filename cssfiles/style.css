@@ -512,6 +512,10 @@ d4{
   body::after{
     display: none !important;
   }
+
+  .cortexKitty{
+    display: none !important;
+  }
 }
 
 /*------------Discord Server(s) Panel------------*/
