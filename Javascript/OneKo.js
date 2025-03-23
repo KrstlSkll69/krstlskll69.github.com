@@ -1,8 +1,8 @@
-/* 
-*  Oneko.js: https://github.com/adryd325/oneko.js
-*  Pet the cat version: https://github.com/tylxr59/oneko.js
-*  Spicetify version: https://github.com/kyrie25/spicetify-oneko
-*/
+/*
+ *  Oneko.js: https://github.com/adryd325/oneko.js
+ *  Pet the cat version: https://github.com/tylxr59/oneko.js
+ *  Spicetify version: https://github.com/kyrie25/spicetify-oneko
+ */
 
 (async function oneko() {
   const nekoEl = document.createElement("div");
@@ -91,11 +91,13 @@
         [-1, 0],
         [-1, -1],
       ],
-    }
+    };
 
   function create() {
     variant = parseLocalStorage("variant", "classic");
-    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const prefersDarkMode =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
     kuroNeko = prefersDarkMode ? false : true;
 
     nekoEl.id = "oneko";
@@ -148,7 +150,12 @@
           setSprite(deltaY > 0 ? "scratchWallN" : "scratchWallS", frameCount);
         }
 
-        if (grabStop || absDeltaX > 10 || absDeltaY > 10 || Math.sqrt(deltaX ** 2 + deltaY ** 2) > 10) {
+        if (
+          grabStop ||
+          absDeltaX > 10 ||
+          absDeltaY > 10 ||
+          Math.sqrt(deltaX ** 2 + deltaY ** 2) > 10
+        ) {
           grabStop = false;
           clearTimeout(grabInterval);
           grabInterval = setTimeout(() => {
@@ -207,7 +214,11 @@
     idleTime += 1;
 
     // every ~ 20 seconds
-    if (idleTime > 10 && Math.floor(Math.random() * 200) == 0 && idleAnimation == null) {
+    if (
+      idleTime > 10 &&
+      Math.floor(Math.random() * 200) == 0 &&
+      idleAnimation == null
+    ) {
       let avalibleIdleAnimations = ["sleeping", "scratchSelf"];
       if (nekoPosX < 32) {
         avalibleIdleAnimations.push("scratchWallW");
@@ -221,7 +232,10 @@
       if (nekoPosY > window.innerHeight - 32) {
         avalibleIdleAnimations.push("scratchWallS");
       }
-      idleAnimation = avalibleIdleAnimations[Math.floor(Math.random() * avalibleIdleAnimations.length)];
+      idleAnimation =
+        avalibleIdleAnimations[
+          Math.floor(Math.random() * avalibleIdleAnimations.length)
+        ];
     }
 
     if (forceSleep) {
@@ -264,24 +278,26 @@
     idleAnimationFrame += 1;
   }
 
-  // Heart expolsion on Click 
+  // Heart expolsion on Click
   function explodeHearts() {
-    console.log('explodeHearts');
+    console.log("explodeHearts");
     const parent = nekoEl.parentElement;
     const rect = nekoEl.getBoundingClientRect();
     const centerX = rect.left + rect.width / 2;
     const centerY = rect.top + rect.height / 2;
 
     for (let i = 0; i < 10; i++) {
-      const heart = document.createElement('div');
-      heart.className = 'heart';
-      heart.textContent = '';
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.textContent = "";
       // Add a random offset to the position
       const offsetX = (Math.random() - 0.5) * 50;
       const offsetY = (Math.random() - 0.5) * 50;
       heart.style.left = `${centerX + offsetX - 16}px`;
       heart.style.top = `${centerY + offsetY - 16}px`;
-      heart.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`;
+      heart.style.transform = `translate(-50%, -50%) rotate(${
+        Math.random() * 360
+      }deg)`;
       parent.appendChild(heart);
 
       // Remove the heart after the animation finishes
@@ -291,7 +307,7 @@
     }
   }
 
-  const style = document.createElement('style');
+  const style = document.createElement("style");
   style.innerHTML = `
       @keyframes heartBurst {
           0% { transform: scale(0); opacity: 1; }
@@ -308,7 +324,7 @@
   `;
 
   document.head.appendChild(style);
-  nekoEl.addEventListener('click', explodeHearts);
+  nekoEl.addEventListener("click", explodeHearts);
 
   function frame() {
     frameCount += 1;
@@ -323,7 +339,11 @@
     const distance = Math.sqrt(diffX ** 2 + diffY ** 2);
 
     // Cat has to sleep on top of the progress bar
-    if (forceSleep && Math.abs(diffY) < nekoSpeed && Math.abs(diffX) < nekoSpeed) {
+    if (
+      forceSleep &&
+      Math.abs(diffY) < nekoSpeed &&
+      Math.abs(diffX) < nekoSpeed
+    ) {
       // Make the cat sleep exactly on the top of the progress bar
       nekoPosX = mousePosX;
       nekoPosY = mousePosY;
@@ -366,7 +386,6 @@
     nekoEl.style.top = `${nekoPosY - 16}px`;
   }
 
-  console.log("OneK0 loaded")
+  console.log("OneK0 loaded");
   create();
-
 })();

@@ -225,27 +225,26 @@
       }">
       -->
 
-        <!-- Is not included in resuffle -->
-        <li class="discord">
-          <a target="_blank" rel="noreferrer" href="https://www.instagram.com/ngrioffical">
-            <img src="https://cdn.nest.rip/uploads/ee04f34c-a0d3-4681-8cc6-08fd96a19908.jpg"
-              alt="VideBiveOffcial Instagram">
-            VideBive (ngrioffical)</a>
-          <span>Instagram</span>
+      <!-- Is not included in resuffle -->
+      <li class="discord">
+        <a target="_blank" rel="noreferrer" href="https://www.instagram.com/ngrioffical">
+          <img src="https://cdn.nest.rip/uploads/ee04f34c-a0d3-4681-8cc6-08fd96a19908.jpg"
+            alt="VideBiveOffcial Instagram">
+          VideBive (ngrioffical)</a>
+        <span>Instagram</span>
+      </li>
+
+      <!-- resuffle main code -->
+      <template x-for="friend in _.shuffle(friends2)">
+        <li>
+          <a target="_blank" rel="noreferrer" :href="friend.url">
+            <img :src="friend.img" :alt="friend.alt">
+            <span x-text="friend.name"></span>
+          </a>
         </li>
-        
+      </template>
 
-        <!-- resuffle main code -->
-        <template x-for="friend in _.shuffle(friends2)">
-          <li>
-            <a target="_blank" rel="noreferrer" :href="friend.url">
-              <img :src="friend.img" :alt="friend.alt">
-              <span x-text="friend.name"></span>
-            </a>
-          </li>
-        </template>
-
-        </u1>
+      </u1>
   </div>
 
   <div class="backPanel">
