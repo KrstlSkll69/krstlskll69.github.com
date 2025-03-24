@@ -1,12 +1,15 @@
-# This is just the stuff for my Website
+# This is just the stuff for my Website. </br>
 
-🗣️GE-‼️‼️‼️
+### Build Status: </br>
+[![pages-build-deployment](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/pages/pages-build-deployment)
 
----
+### Current Domains:
 
-https://indi.is-a-skid.cc/
+Default Github: </br>
+https://krstlskll69.github.io/ </br>
 
-https://krstlskll69.github.io/
+Custom Domain: </br>
+https://indi.is-a-skid.cc/ </br>
 
 ## License
 
