@@ -12,8 +12,9 @@ https://krstlskll69.github.io/
 
 This work is dual-licensed under licensed-BY-NC-ND-4.0 and GPL 3.0 (or any later version).
 
-All code is held under GPL 3.0 </br>
-Old PFP and`KRSTLSKLL` banner is held under licensed-BY-NC-ND-4.0, and shall not be used without my permission
+All code is held under [GPL 3.0](/LICENSE.GPL3) </br>
+PFP and`KRSTLSKLL` 88x31 badges(s) is held under [licensed-BY-NC-ND-4.0](/LICENSE.NCND), and shall not be used without my permission. </br>
+Please see [BadgesInfo.md](/assets/88x31/BadgesInfo.md) more info regarding said badges.</br> 
 
 CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ </br>
 `SPDX-License-Identifier: CC-BY-NC-ND-4.0 OR GPL-3.0-or-later`
@@ -64,3 +65,5 @@ CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ 
     11(k). Typicons is &copy; under [BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and can be found @ https://www.s-ings.com/typicons/
 
 12. Kitten in the bottom left is &copy; under [GNU Affero](https://www.gnu.org/licenses/agpl-3.0.en.html) and can be found @ https://cortex.rest/
+
+13. [Rushii](https://rushii.dev/) & [Byeoon](https://byeoon.dev/) for their help regarding the 88x31 badges.
