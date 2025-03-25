@@ -1,5 +1,5 @@
 /*
- * This does nothing more then leave an easter egg in the console
+ * This does nothing more then leave an easter egg in the console.
  */
 
 console.log(
