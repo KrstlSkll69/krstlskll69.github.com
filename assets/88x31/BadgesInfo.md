@@ -7,32 +7,32 @@ If you wish to add my badge, please avoid directly embedding it; hyperlink it in
 You may use which ever you prefer *(although the first is preferred)*.
 
 ---
-<img width="88" height="31" alt="Krystal's site" src="https://indi.is-a-skid.cc/assets/88x31/9928cb62-df3e-48ee-8a58-c43900e8889c.gif"/> </br>
+<img width="88" height="31" alt="Krystal's site" src="https://krstlskll69.github.io/assets/88x31/9928cb62-df3e-48ee-8a58-c43900e8889c.gif"/> </br>
 
 
 ```html
-<a rel="noreferrer" referrerpolicy="strict-origin" target="_blank" href="https://indi.is-a-skid.cc/">
+<a rel="noreferrer" referrerpolicy="strict-origin" target="_blank" href="https://krstlskll69.github.io/">
 	<img width="88"
 	     height="31"
 	     alt="Krystal's site"
 	     style="max-width: none; max-height: none; image-rendering: pixelated;"
-	     src="https://indi.is-a-skid.cc/assets/88x31/9928cb62-df3e-48ee-8a58-c43900e8889c.gif"
+	     src="https://krstlskll69.github.io/assets/88x31/9928cb62-df3e-48ee-8a58-c43900e8889c.gif"
 	/>
 </a>
 ```
 
 ---
 
-<img width="88" height="31" alt="Krystal's site" src="https://indi.is-a-skid.cc/assets/88x31/678552e0-b2f0-441c-af7b-483a23360645.gif"/> </br>
+<img width="88" height="31" alt="Krystal's site" src="https://krstlskll69.github.io/assets/88x31/678552e0-b2f0-441c-af7b-483a23360645.gif"/> </br>
 
 
 ```html
-<a rel="noreferrer" referrerpolicy="strict-origin" target="_blank" href="https://indi.is-a-skid.cc/">
+<a rel="noreferrer" referrerpolicy="strict-origin" target="_blank" href="https://krstlskll69.github.io/">
 	<img width="88"
 	     height="31"
 	     alt="Krystal's site"
 	     style="max-width: none; max-height: none; image-rendering: pixelated;"
-	     src="https://indi.is-a-skid.cc/assets/88x31/678552e0-b2f0-441c-af7b-483a23360645.gif"
+	     src="https://krstlskll69.github.io/assets/88x31/678552e0-b2f0-441c-af7b-483a23360645.gif"
 	/>
 </a>
 ```
