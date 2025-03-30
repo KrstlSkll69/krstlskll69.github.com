@@ -38,6 +38,7 @@ function connectWebSocket() {
             case 0: {
                 userData = { data: d };
                 // await updateClanBadge();
+                await updateAvatar();
                 await updateAvatarDecoration();
                 await updateBadges();
                 
@@ -261,6 +262,31 @@ async function updateAvatarDecoration() {
         }
     } catch (error) {
         console.error(`Error updating avatar decoration:`, error);
+    }
+}
+
+async function updateAvatar() {
+    try {
+        if (!userData?.data?.discord_user?.avatar) {
+            console.log('No avatar data found');
+            return;
+        }
+
+        const avatarHash = userData.data.discord_user.avatar;
+        const avatarUrl = `https://cdn.discordapp.com/avatars/${userId}/${avatarHash}?size=256`;
+        
+        const profilePic = document.getElementById('profile-picture');
+        if (!profilePic) {
+            console.log('Profile picture element not found');
+            return;
+        }
+
+        // Convert to base64 to prevent CORS issues
+        const avatarBase64 = await encodeBase64(avatarUrl);
+        profilePic.src = `data:image/png;base64,${avatarBase64}`;
+        console.log('Avatar updated successfully');
+    } catch (error) {
+        console.error('Error updating avatar:', error);
     }
 }
 
