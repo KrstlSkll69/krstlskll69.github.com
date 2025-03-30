@@ -20,12 +20,15 @@ let previousActivity = null;
 const userId = "929208515883569182";
 
 // Connect to Lanayrd WebSocket
-function connectWebSocket() {
+function connectWebSocket(useBackup = false) {
     // Currently using 'SelfHosted' Lanyard instance main can be found @ wss://api.lanyard.rest/socket
-    ws = new WebSocket("wss://lanyard.vmohammad.dev/socket");
+    const primaryWss = "wss://lanyard.creations.works/socket";
+    const backupWss = "wss://lanyard.vmohammad.dev/socket";
+
+    ws = new WebSocket(useBackup ? backupWss : primaryWss);
 
     ws.onopen = () => {
-        console.log("WebSocket Connected");
+        console.log(`WebSocket Connected to ${useBackup ? 'backup' : 'primary'} server`);
         ws.send(JSON.stringify({
             op: 2,
             d: { subscribe_to_id: userId }
@@ -38,6 +41,7 @@ function connectWebSocket() {
             case 0: {
                 userData = { data: d };
                 // await updateClanBadge();
+                await updateAvatar();
                 await updateAvatarDecoration();
                 await updateBadges();
                 
@@ -142,8 +146,19 @@ function connectWebSocket() {
         }
     };
 
-    ws.onclose = () => setTimeout(connectWebSocket, 3000);
-    ws.onerror = (error) => console.error('WebSocket error:', error);
+    ws.onclose = () => {
+        if (!useBackup) {
+            console.log('Primary WebSocket failed, trying backup...');
+            setTimeout(() => connectWebSocket(true), 1000);
+        } else {
+            console.log('Backup WebSocket failed, retrying in 3s...');
+            setTimeout(() => connectWebSocket(false), 3000);
+        }
+    };
+
+    ws.onerror = (error) => {
+        console.error(`WebSocket error on ${useBackup ? 'backup' : 'primary'} server:`, error);
+    };
 }
 
 // Initialize with WebSocket only
@@ -261,6 +276,31 @@ async function updateAvatarDecoration() {
         }
     } catch (error) {
         console.error(`Error updating avatar decoration:`, error);
+    }
+}
+
+async function updateAvatar() {
+    try {
+        if (!userData?.data?.discord_user?.avatar) {
+            console.log('No avatar data found');
+            return;
+        }
+
+        const avatarHash = userData.data.discord_user.avatar;
+        const avatarUrl = `https://cdn.discordapp.com/avatars/${userId}/${avatarHash}?size=256`;
+        
+        const profilePic = document.getElementById('profile-picture');
+        if (!profilePic) {
+            console.log('Profile picture element not found');
+            return;
+        }
+
+        // Convert to base64 to prevent CORS issues
+        const avatarBase64 = await encodeBase64(avatarUrl);
+        profilePic.src = `data:image/png;base64,${avatarBase64}`;
+        console.log('Avatar updated successfully');
+    } catch (error) {
+        console.error('Error updating avatar:', error);
     }
 }
 
