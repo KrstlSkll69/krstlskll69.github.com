@@ -20,12 +20,15 @@ let previousActivity = null;
 const userId = "929208515883569182";
 
 // Connect to Lanayrd WebSocket
-function connectWebSocket() {
+function connectWebSocket(useBackup = false) {
     // Currently using 'SelfHosted' Lanyard instance main can be found @ wss://api.lanyard.rest/socket
-    ws = new WebSocket("wss://lanyard.vmohammad.dev/socket");
+    const primaryWss = "wss://lanyard.creations.works/socket";
+    const backupWss = "wss://lanyard.vmohammad.dev/socket";
+
+    ws = new WebSocket(useBackup ? backupWss : primaryWss);
 
     ws.onopen = () => {
-        console.log("WebSocket Connected");
+        console.log(`WebSocket Connected to ${useBackup ? 'backup' : 'primary'} server`);
         ws.send(JSON.stringify({
             op: 2,
             d: { subscribe_to_id: userId }
@@ -143,8 +146,19 @@ function connectWebSocket() {
         }
     };
 
-    ws.onclose = () => setTimeout(connectWebSocket, 3000);
-    ws.onerror = (error) => console.error('WebSocket error:', error);
+    ws.onclose = () => {
+        if (!useBackup) {
+            console.log('Primary WebSocket failed, trying backup...');
+            setTimeout(() => connectWebSocket(true), 1000);
+        } else {
+            console.log('Backup WebSocket failed, retrying in 3s...');
+            setTimeout(() => connectWebSocket(false), 3000);
+        }
+    };
+
+    ws.onerror = (error) => {
+        console.error(`WebSocket error on ${useBackup ? 'backup' : 'primary'} server:`, error);
+    };
 }
 
 // Initialize with WebSocket only
