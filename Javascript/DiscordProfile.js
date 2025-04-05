@@ -22,8 +22,8 @@ const userId = "929208515883569182";
 // Connect to Lanayrd WebSocket
 function connectWebSocket(useBackup = false) {
     // Currently using 'SelfHosted' Lanyard instance main can be found @ wss://api.lanyard.rest/socket
-    const primaryWss = "wss://lanyard.creations.works/socket";
-    const backupWss = "wss://lanyard.vmohammad.dev/socket";
+    const primaryWss = "wss://lanyard.vmohammad.dev/socket";
+    const backupWss = "wss://lanyard.creations.works/socket";
 
     ws = new WebSocket(useBackup ? backupWss : primaryWss);
 
