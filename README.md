@@ -21,7 +21,7 @@ Github PFP and`KRSTLSKLL` 88x31 badges(s) is held under [licensed-BY-NC-ND-4.0](
 Please see [BadgesInfo.md](/assets/88x31/BadgesInfo.md) more info regarding said badges.</br> 
 
 CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ </br>
-`SPDX-License-Identifier: CC-BY-NC-ND-4.0 OR GPL-3.0-or-later`
+`SPDX-License-Identifier: CC-BY-NC-ND-4.0 OR AGPL-3.0-or-later`
 
 ## Special Thanks
 
