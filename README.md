@@ -1,6 +1,7 @@
 # This is just the stuff for my Website. </br>
 
 ### Build Status: </br>
+
 [![pages-build-deployment](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/pages/pages-build-deployment)
 
 ### Current Domains:
@@ -18,7 +19,7 @@ This work is dual-licensed under licensed-BY-NC-ND-4.0 and AGPL 3.0 (or any late
 
 All code is held under [AGPL 3.0](/LICENSE.AGPL3) </br>
 Github PFP and`KRSTLSKLL` 88x31 badges(s) is held under [licensed-BY-NC-ND-4.0](/LICENSE.NCND), and shall not be used without my permission. </br>
-Please see [BadgesInfo.md](/assets/88x31/BadgesInfo.md) more info regarding said badges.</br> 
+Please see [BadgesInfo.md](/assets/88x31/BadgesInfo.md) more info regarding said badges.</br>
 
 CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ </br>
 `SPDX-License-Identifier: CC-BY-NC-ND-4.0 OR AGPL-3.0-or-later`
