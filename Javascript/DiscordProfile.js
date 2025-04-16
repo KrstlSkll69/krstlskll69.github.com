@@ -89,7 +89,7 @@ function connectWebSocket(useBackup = false) {
                                     };
                                     ${
                                         d.spotify.album_art_url
-                                            ? "border: solid 0.5px #222;"
+                                            ? "border: solid 0.5px oklch(0.25 0 0);"
                                             : ""
                                     }
                                 ">
@@ -842,7 +842,7 @@ async function updateUsername() {
         const style = document.createElement("style");
         style.textContent = `
             .bot-badge {
-                background-color: #5865F2;
+                background-color: oklch(0.58 0.2091 273.85);
                 color: white;
                 padding: 0px 4px;
                 border-radius: 3px;
@@ -851,7 +851,7 @@ async function updateUsername() {
                 font-weight: 500;
             }
             .user-indicator {
-                color: #72767d;
+                color: oklch(0.56 0.0118 261.77);
                 font-size: 0.8em;
                 display: block;
                 text-align: center;
@@ -922,10 +922,10 @@ async function updatePlatformIndicator() {
 
         // Define status colors
         const statusColors = {
-            online: "#3ba55c",
-            idle: "#faa61a",
-            dnd: "#ed4245",
-            offline: "#747f8d",
+            online: "oklch(0.64 0.1451 150.39)",
+            idle: "oklch(0.79 0.1641 71.84)",
+            dnd: "oklch(0.63 0.2075 24.57)",
+            offline: "oklch(0.59 0.0251 254.48)",
         };
 
         const statusColor = statusColors[discordStatus] || statusColors.offline;

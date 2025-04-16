@@ -22,11 +22,11 @@
   --green-label: oklch(80.2% 0.1398 145.16);
   --blue-label: oklch(81.34% 0.0795 199.75);
   --black-100: oklch(0% 0 0);
-  
+
   --Discord-meta-color: oklch(64.39% 0 0);
   --Discord-mention: '@';
-  --Discord-discriminator: '#0000';  
-  --Discord-discriminator-shorthand: '#0';  
+  --Discord-discriminator: '#0000';
+  --Discord-discriminator-shorthand: '#0';
   --Old-Discord-discriminator: '#9236';
 
   --Revolt-discriminator: '#2238';
@@ -142,11 +142,6 @@ a {
   width: 20rem;
   padding: 0.5rem;
   border-radius: 0.5rem;
-  
-  /*
-  border-style: solid;
-  border-color: #0f0a0c;
-  */
 
   max-width: 20rem;
 }
@@ -290,28 +285,28 @@ d4{
 .status-online {
   content: url('https://cdn.nest.rip/uploads/44c84b7c-5710-4d8c-9b46-52c4bc6508cf.gif');
   background-color: rgba(0, 0, 0, 0.63);
-  backdrop-filter: blur(32px) !important;  
+  backdrop-filter: blur(32px) !important;
   padding: 3px;
 }
 
 .status-idle {
   content: url('https://cdn.nest.rip/uploads/20244c93-a1df-48f6-9dd8-f6eb638c0b37.gif');
   background-color: rgba(0, 0, 0, 0.63);
-  backdrop-filter: blur(32px) !important;  
+  backdrop-filter: blur(32px) !important;
   padding: 3px;
 }
 
 .status-dnd {
   content: url('https://cdn.nest.rip/uploads/34a4143e-2480-496d-9d3c-589298e8ab12.gif');
   background-color: rgba(0, 0, 0, 0.63);
-  backdrop-filter: blur(32px) !important;  
+  backdrop-filter: blur(32px) !important;
   padding: 3px;
 }
 
 .status-offline {
   content: url('https://cdn.nest.rip/uploads/fafab584-53e0-47ef-a83f-975e17a11c65.gif');
   background-color: rgba(0, 0, 0, 0.63);
-  backdrop-filter: blur(32px) !important;  
+  backdrop-filter: blur(32px) !important;
   padding: 3px;
 }
 
@@ -345,7 +340,7 @@ d4{
 .activity-large-img img {
     width: 70px;
     height: 70px;
-    border: solid 0.5px #222;
+    border: solid 0.5px oklch(0.25 0 0);
     border-radius: 10px;
 }
 
@@ -366,7 +361,7 @@ d4{
 
 .activity-text {
     flex-grow: 1;
-    color: #ffffff;
+    color: oklch(1 0 0);
     padding: .9rem;
 }
 
