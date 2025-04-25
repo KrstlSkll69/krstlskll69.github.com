@@ -703,7 +703,7 @@ async function fetchBadgesFallback() {
             },
             {
                 promise: fetch(
-                    `https://globalbadges.equicord.fyi/users/${userId}`
+                    `https://globalbadges.equicord.org/users/${userId}`
                 ),
                 handler: async (response) => {
                     const data = await response.json();
@@ -714,7 +714,7 @@ async function fetchBadgesFallback() {
                             badges.push({
                                 name: badge,
                                 tooltip: `Enmity: ${badge}`,
-                                icon: `https://globalbadges.equicord.fyi/badges/Enmity/${badge}`,
+                                icon: `https://globalbadges.equicord.org/badges/Enmity/${badge}`,
                                 type: "enmity",
                             });
                         });
@@ -727,7 +727,7 @@ async function fetchBadgesFallback() {
                                 badges.push({
                                     name: badge,
                                     tooltip: `Equicord: ${badge}`,
-                                    icon: `https://globalbadges.equicord.fyi/badges/Equicord/${badge}`,
+                                    icon: `https://globalbadges.equicord.org/badges/Equicord/${badge}`,
                                     type: "equicord",
                                 });
                             }
