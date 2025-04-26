@@ -586,9 +586,14 @@ a {
 .eightyeightthirtyoneBUTTONS{
   display: flex;
 }
+
 .eightyeightthirtyone{
-  margin-top: 5px;
-  padding-left: 5px;
+    margin-top: 5px;
+    padding-left: 5px;
+
+    &:hover{
+        filter: brightness(60%)
+    }
 }
 
 /*
