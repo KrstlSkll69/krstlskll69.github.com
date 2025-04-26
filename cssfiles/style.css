@@ -279,34 +279,34 @@ d4{
   box-sizing: content-box;
   z-index: 3;
   border: 2px solid var(--bg-color);
-}
 
-.status-online {
+  &.online {
   content: url('https://cdn.nest.rip/uploads/44c84b7c-5710-4d8c-9b46-52c4bc6508cf.gif');
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(32px) !important;
   padding: 3px;
 }
 
-.status-idle {
-  content: url('https://cdn.nest.rip/uploads/20244c93-a1df-48f6-9dd8-f6eb638c0b37.gif');
-  background-color: rgba(0, 0, 0, 0.63);
-  backdrop-filter: blur(32px) !important;
-  padding: 3px;
-}
-
-.status-dnd {
+  &.dnd {
   content: url('https://cdn.nest.rip/uploads/34a4143e-2480-496d-9d3c-589298e8ab12.gif');
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(32px) !important;
   padding: 3px;
 }
 
-.status-offline {
+  &.idle {
+  content: url('https://cdn.nest.rip/uploads/20244c93-a1df-48f6-9dd8-f6eb638c0b37.gif');
+  background-color: rgba(0, 0, 0, 0.63);
+  backdrop-filter: blur(32px) !important;
+  padding: 3px;
+}
+
+  &.offline {
   content: url('https://cdn.nest.rip/uploads/fafab584-53e0-47ef-a83f-975e17a11c65.gif');
   background-color: rgba(0, 0, 0, 0.63);
   backdrop-filter: blur(32px) !important;
   padding: 3px;
+}
 }
 
 #activities-list {

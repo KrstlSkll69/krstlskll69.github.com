@@ -54,7 +54,7 @@ function connectWebSocket(useBackup = false) {
                     previousStatus = d.discord_status;
                     const statusIndicator =
                         document.querySelector(".status-indicator");
-                    statusIndicator.className = `status-indicator status-${d.discord_status}`;
+                    statusIndicator.className = `status-indicator ${d.discord_status}`;
                     console.log("Status updated successfully");
                 }
 
