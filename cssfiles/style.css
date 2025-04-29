@@ -16,12 +16,15 @@
   --bisexual-repeating-gradient: repeating-linear-gradient(to bottom,rgb(208, 0, 112) 0%,rgb(140, 71, 153) 44%,rgb(0, 50, 160) 100%);
 
   --trans-gradient: linear-gradient(90deg, rgba(91,206,250,1) 0%, rgba(255,255,255,1) 44%, rgba(245,169,184,1) 100%);
-  --trans-repeating-gradient: repeating-linear-gradient(to bottom,rgb(91, 206, 250) 0%,rgb(255, 255, 255) 44%,rgb(245, 169, 184) 100%);;
+  --trans-repeating-gradient: repeating-linear-gradient(to bottom,rgb(91, 206, 250) 0%,rgb(255, 255, 255) 44%,rgb(245, 169, 184) 100%);
+  --pink-trans: oklch(0.82 0.0885 6.75);
+  --blue-trans: oklch(0.81 0.1208 226.33);
 
   --red-label: oklch(65.39% 0.1926 25.14);
   --green-label: oklch(80.2% 0.1398 145.16);
   --blue-label: oklch(81.34% 0.0795 199.75);
   --black-100: oklch(0% 0 0);
+
 
   --Discord-meta-color: oklch(64.39% 0 0);
   --Discord-mention: '@';
@@ -31,8 +34,23 @@
 
   --Revolt-discriminator: '#2238';
 
+  overflow-x: hidden;
+
 
   /*cursor: url(/ImagesV2/cursor.cur) 1 1, auto !important;*/
+}
+
+::-webkit-scrollbar {
+    width: .5em;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--blue-trans);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--pink-trans);
+    border-radius: 1em;
 }
 
 .labels{
@@ -588,6 +606,8 @@ a {
         filter: brightness(60%)
     }
 }
+
+
 
 /*
 #username-container::after{
