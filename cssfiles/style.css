@@ -41,16 +41,15 @@
 }
 
 ::-webkit-scrollbar {
-    width: .5em;
+    display: none;
 }
 
 ::-webkit-scrollbar-track {
-    background-color: var(--blue-trans);
+    display: none;
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: var(--pink-trans);
-    border-radius: 1em;
+    display: none;
 }
 
 .labels{
