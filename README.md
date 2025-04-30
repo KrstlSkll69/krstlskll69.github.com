@@ -59,10 +59,9 @@ CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ 
     10(a). Assests can be found @ https://github.com/doki-theme/doki-theme-assets
 
 12. Icons/SVGs used: </br>
-    12(1). Bootstrap Icons is &copy; under [MIT](https://raw.githubusercontent.com/twbs/icons/refs/heads/main/LICENSE) and can be found @ https://icons.getbootstrap.com/ <br>
-    12(b). MaterialDesign is &copy; under [Pictogrammers Free License](https://raw.githubusercontent.com/Templarian/MaterialDesign/refs/heads/master/LICENSE) and can be found @ https://pictogrammers.com/library/mdi/ </br>
-    12(c). Font-Awesome is &copy; under [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/) and can be found @ https://fontawesome.com/ </br>
-    12(d). Font-Awesome is &copy; under [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/) and can be found @ https://simpleicons.org/ </br>
+    12(a). Bootstrap Icons is &copy; under [MIT](https://raw.githubusercontent.com/twbs/icons/refs/heads/main/LICENSE) and can be found @ https://icons.getbootstrap.com/ <br>
+    12(b). Font-Awesome is &copy; under [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/) and can be found @ https://fontawesome.com/ </br>
+    12(d). Simple Icons is &copy; under [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/) and can be found @ https://simpleicons.org/ </br>
 
 13. Kitten in the bottom left is &copy; under [GNU Affero](https://www.gnu.org/licenses/agpl-3.0.en.html) and can be found @ https://cortex.rest/
 
