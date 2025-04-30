@@ -59,17 +59,10 @@ CreativeCommon Canonical URL https://creativecommons.org/licenses/by-nc-nd/4.0/ 
     10(a). Assests can be found @ https://github.com/doki-theme/doki-theme-assets
 
 12. Icons/SVGs used: </br>
-    12(a). Font-Awesome is &copy; under [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/) and can be found @ https://fontawesome.com/ </br>
-    12(b). Devicon is &copy; under [MIT](https://raw.githubusercontent.com/devicons/devicon/refs/heads/master/LICENSE) and can be found @ https://devicon.dev/ </br>
-    12(c). Material Design Icons is &copy; under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) and can be found @ https://developers.google.com/fonts/docs/material_icons & https://pictogrammers.com/library/mdi/</br>
-    12(d). Simple Icons is &copy; under [CC0 1.0](https://creativecommons.org/publicdomain/zero/1.0/) and can be found @ https://simpleicons.org/ </br>
-    12(e). Octicons is &copy; under [MIT](https://raw.githubusercontent.com/primer/octicons/refs/heads/main/LICENSE) and can found @ https://primer.style/foundations/icons/ </br>
-    12(f). IconPark is &copy; under [Apache 2.0](https://www.apache.org/licenses/LICENSE-2.0.html) and can found @ http://iconpark.bytedance.com/ </br>
-    12(g). Weui Icons is &copy; under [MIT]() and can found @ https://github.com/weui/weui-icon </br>
-    12(h). Bytesize Icons is &copy; under [MIT](https://raw.githubusercontent.com/danklammer/bytesize-icons/refs/heads/master/LICENSE.md) and can be found @ https://danklammer.com/bytesize-icons/ </br>
-    12(i). Flowbite Icons is &copy; under [MIT](https://raw.githubusercontent.com/themesberg/flowbite-icons/refs/heads/main/LICENSE) and can be found @ https://flowbite.com/icons/ </br>
-    12(j). UWI Icons is &copy; under [MIT](https://raw.githubusercontent.com/uiwjs/icons/refs/heads/master/LICENSE) and can be found @ https://uiwjs.github.io/icons/ </br>
-    12(k). Typicons is &copy; under [BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/) and can be found @ https://www.s-ings.com/typicons/
+    12(1). Bootstrap Icons is &copy; under [MIT](https://raw.githubusercontent.com/twbs/icons/refs/heads/main/LICENSE) and can be found @ https://icons.getbootstrap.com/ <br>
+    12(b). MaterialDesign is &copy; under [Pictogrammers Free License](https://raw.githubusercontent.com/Templarian/MaterialDesign/refs/heads/master/LICENSE) and can be found @ https://pictogrammers.com/library/mdi/ </br>
+    12(c). Font-Awesome is &copy; under [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/) and can be found @ https://fontawesome.com/ </br>
+    12(d). Font-Awesome is &copy; under [CC BY 4.0 License](https://creativecommons.org/licenses/by/4.0/) and can be found @ https://simpleicons.org/ </br>
 
 13. Kitten in the bottom left is &copy; under [GNU Affero](https://www.gnu.org/licenses/agpl-3.0.en.html) and can be found @ https://cortex.rest/
 
