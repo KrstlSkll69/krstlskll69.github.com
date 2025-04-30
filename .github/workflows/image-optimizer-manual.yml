@@ -16,7 +16,7 @@ jobs:
         id: compress-images
         uses: cadamsdev/image-optimizer-action@v1
         with:
-          github-token: ${{ GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create New Pull Request If Needed
         if: steps.compress-images.outputs.markdown_report != ''
