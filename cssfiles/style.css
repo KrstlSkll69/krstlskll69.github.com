@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Source+Code+Pro:wght@320&display=swap');
 
 :root {
   color-scheme: dark !important;
@@ -24,6 +25,7 @@
   --green-label: oklch(80.2% 0.1398 145.16);
   --blue-label: oklch(81.34% 0.0795 199.75);
   --black-100: oklch(0% 0 0);
+  --white-100: oklch(100% 0 0);
 
 
   --Discord-meta-color: oklch(64.39% 0 0);
@@ -38,18 +40,6 @@
 
 
   /*cursor: url(/ImagesV2/cursor.cur) 1 1, auto !important;*/
-}
-
-::-webkit-scrollbar {
-    display: none;
-}
-
-::-webkit-scrollbar-track {
-    display: none;
-}
-
-::-webkit-scrollbar-thumb {
-    display: none;
 }
 
 .labels{
@@ -606,25 +596,15 @@ a {
     }
 }
 
-
-
-/*
-#username-container::after{
-  color: var(--Discord-meta-color);
-  content: var(--Discord-discriminator);
+::-webkit-scrollbar {
+    display: none;
 }
 
-#username-container::before{
-  color: var(--Discord-meta-color);
-  content: var(--Discord-mention);
+.prevent-select {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
-*/
-
-/*
-.DiscordHover::after{
-  content: var(--Discord-discriminator);
-}
-*/
 
 .DiscordHover::before{
   content: var(--Discord-mention);
