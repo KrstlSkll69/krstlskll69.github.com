@@ -15,7 +15,7 @@ https://indi.is-a-skid.cc/ </br>
 ## License
 
 This work is dual-licensed under licensed-BY-NC-ND-4.0 and AGPL 3.0 (or any later version).</br>
-![AGPL-3.0](/assets/images/6b02eaab-97d5-4f9d-a415-26c0b32f8fc3.png) ![BY-BY-NC-ND-4.0](/assets/images/1f31c351-c2f1-496a-840c-68df52ebaca1.png) </br>
+![AGPL-3.0](/assets/88x31/license/6b02eaab-97d5-4f9d-a415-26c0b32f8fc3.png) ![BY-BY-NC-ND-4.0](/assets/88x31/license/1f31c351-c2f1-496a-840c-68df52ebaca1.png) </br>
 
 All code is held under [AGPL 3.0](/LICENSE.AGPL3) </br>
 Github PFP and`KRSTLSKLL` 88x31 badges(s) is held under [licensed-BY-NC-ND-4.0](/LICENSE.NCND), and shall not be used without my permission. </br>
