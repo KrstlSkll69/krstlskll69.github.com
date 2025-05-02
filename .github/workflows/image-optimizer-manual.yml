@@ -1,6 +1,12 @@
 name: Compress Images (Manual)
 
-on: workflow_dispatch
+on:
+  workflow_dispatch:
+  schedule:
+    # For daily runs at midnight UTC, use:
+    # - cron: '0 0 * * *'
+    # For weekly runs (e.g., every Sunday at midnight UTC), use:
+    - cron: '0 0 * * 0'
 
 jobs:
     build:
