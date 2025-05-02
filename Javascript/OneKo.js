@@ -315,19 +315,19 @@
 
     const style = document.createElement("style");
     style.innerHTML = `
-      @keyframes heartBurst {
-          0% { transform: scale(0); opacity: 1; }
-          100% { transform: scale(1); opacity: 0; }
-      }
-      .heart {
-          position: absolute;
-          font-size: 2em;
-          animation: heartBurst 1s ease-out;
-          animation-fill-mode: forwards;
-          color:  var(--OnekoHearts);
-          filter: var(--OnekoHearts-filter);
-      }
-  `;
+        @keyframes heartBurst {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+        .heart {
+            position: absolute;
+            font-size: 2em;
+            animation: heartBurst 1s ease-out;
+            animation-fill-mode: forwards;
+            color:  var(--OnekoHearts);
+            filter: var(--OnekoHearts-filter);
+        }
+        `;
 
     document.head.appendChild(style);
     nekoEl.addEventListener("click", explodeHearts);
