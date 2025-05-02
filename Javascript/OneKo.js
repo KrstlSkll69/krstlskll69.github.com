@@ -208,9 +208,8 @@
 
     function setSprite(name, frame) {
         const sprite = getSprite(name, frame);
-        nekoEl.style.backgroundPosition = `${sprite[0] * 32}px ${
-            sprite[1] * 32
-        }px`;
+        nekoEl.style.backgroundPosition = `${sprite[0] * 32}px ${sprite[1] * 32
+            }px`;
     }
 
     function resetIdleAnimation() {
@@ -242,7 +241,7 @@
             }
             idleAnimation =
                 avalibleIdleAnimations[
-                    Math.floor(Math.random() * avalibleIdleAnimations.length)
+                Math.floor(Math.random() * avalibleIdleAnimations.length)
                 ];
         }
 
@@ -303,9 +302,8 @@
             const offsetY = (Math.random() - 0.5) * 50;
             heart.style.left = `${centerX + offsetX - 16}px`;
             heart.style.top = `${centerY + offsetY - 16}px`;
-            heart.style.transform = `translate(-50%, -50%) rotate(${
-                Math.random() * 360
-            }deg)`;
+            heart.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360
+                }deg)`;
             parent.appendChild(heart);
 
             // Remove the heart after the animation finishes

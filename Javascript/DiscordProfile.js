@@ -101,16 +101,14 @@ function connectWebSocket(useBackup = false) {
                                     border-radius: 10px;
                                     margin: 0 15px;
                                     object-fit: cover;
-                                    display: ${
-                                        d.spotify.album_art_url
-                                            ? "block"
-                                            : "none"
-                                    };
-                                    ${
-                                        d.spotify.album_art_url
-                                            ? "border: solid 0.5px oklch(0.25 0 0);"
-                                            : ""
-                                    }
+                                    display: ${d.spotify.album_art_url
+                            ? "block"
+                            : "none"
+                        };
+                                    ${d.spotify.album_art_url
+                            ? "border: solid 0.5px oklch(0.25 0 0);"
+                            : ""
+                        }
                                 ">
                         </div>
                         <div class="activity-text">
@@ -249,25 +247,25 @@ async function updateActivities() {
         // Large image
         let largeImageSrc = activity.assets?.large_image
             ? await encodeBase64(
-                  activity.assets.large_image.startsWith("mp:external/")
-                      ? `https://media.discordapp.net/external/${activity.assets.large_image.replace(
-                            "mp:external/",
-                            ""
-                        )}`
-                      : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`
-              )
+                activity.assets.large_image.startsWith("mp:external/")
+                    ? `https://media.discordapp.net/external/${activity.assets.large_image.replace(
+                        "mp:external/",
+                        ""
+                    )}`
+                    : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.large_image}.webp`
+            )
             : "";
 
         // Small image
         let smallImageSrc = activity.assets?.small_image
             ? await encodeBase64(
-                  activity.assets.small_image.startsWith("mp:external/")
-                      ? `https://media.discordapp.net/external/${activity.assets.small_image.replace(
-                            "mp:external/",
-                            ""
-                        )}`
-                      : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}.webp`
-              )
+                activity.assets.small_image.startsWith("mp:external/")
+                    ? `https://media.discordapp.net/external/${activity.assets.small_image.replace(
+                        "mp:external/",
+                        ""
+                    )}`
+                    : `https://cdn.discordapp.com/app-assets/${activity.application_id}/${activity.assets.small_image}.webp`
+            )
             : "";
 
         const listItem = document.createElement("li");
@@ -277,9 +275,8 @@ async function updateActivities() {
         listItem.innerHTML = `
             <div class="activity-info">
                 <div class="activity-large-img">
-                    <img src="data:image/png;base64,${largeImageSrc}" alt="${
-            activity.name
-        }">
+                    <img src="data:image/png;base64,${largeImageSrc}" alt="${activity.name
+            }">
                 </div>
                 <div class="activity-text">
                     <h4>${activity.name}</h4>
@@ -288,9 +285,8 @@ async function updateActivities() {
                 </div>
             </div>
             <div class="activity-small-img">
-                <img src="data:image/png;base64,${smallImageSrc}" alt="${
-            activity.name
-        }">
+                <img src="data:image/png;base64,${smallImageSrc}" alt="${activity.name
+            }">
             </div>
         `;
         activitiesList.appendChild(listItem);
@@ -880,11 +876,9 @@ async function updateUsername() {
         document.head.appendChild(style);
 
         usernameContainer.innerHTML = `
-            @${username}#0000${
-            isBot ? ' <span class="bot-badge">✔︎ BOT</span>' : ""
-        }
-            <span class="user-indicator">${
-                isBot ? "" : "(not a bot lol)"
+            @${username}#0000${isBot ? ' <span class="bot-badge">✔︎ BOT</span>' : ""
+            }
+            <span class="user-indicator">${isBot ? "" : "(not a bot lol)"
             }</span>
         `;
 
