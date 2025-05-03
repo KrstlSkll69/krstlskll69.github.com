@@ -1,5 +1,4 @@
 # https://github.com/GitGuardian
-# https://github.com/GitGuardian/ggshield-action
 # https://github.com/GitGuardian/ggshield-action/issues/22 -- Post findings too webhook coming soon *(hopefully)*
 
 name: GitGuardian scan
