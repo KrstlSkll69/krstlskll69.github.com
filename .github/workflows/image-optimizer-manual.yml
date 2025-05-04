@@ -15,7 +15,7 @@ jobs:
     build:
         name: cadamsdev/image-optimizer-action
         permissions: write-all
-        runs-on: windows-2022
+        runs-on: ubuntu-latest # https://cdn.nest.rip/uploads/d87fca33-79bc-4da9-a43f-66d930a54368.png
 
         steps:
             - name: Checkout Repo

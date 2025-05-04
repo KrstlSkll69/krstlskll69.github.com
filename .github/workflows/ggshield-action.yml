@@ -11,7 +11,7 @@ on:
 jobs:
   scanning:
     name: GitGuardian scan
-    runs-on: windows-2022
+    runs-on: ubuntu-latest # https://cdn.nest.rip/uploads/ccb5db80-8949-4bff-b691-33c9e40ef775.png
     permissions:
       contents: read
     steps:
