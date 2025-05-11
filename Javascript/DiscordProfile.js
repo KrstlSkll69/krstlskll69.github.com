@@ -1,6 +1,6 @@
 /*
 * krstlskll69.github.com
-* Copyright (C) 2023-Present, KrstlSkll69/krystalskullofficial (Krystal/Juniper/Macintosh) and contributors
+* Copyright (C) 2023-Present, KrstlSkll69/krystalskullofficial (Krystal/Juniper/Macintosh), Serstars and contributors
 * SPDX-License-Identifier: AGPL-3.0-or-later
 *
 * This program is free software: you can redistribute it and/or modify
