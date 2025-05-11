@@ -1,6 +1,6 @@
 /*
 * krstlskll69.github.com
-* Copyright (C) 2023-Present, KrstlSkll69/krystalskullofficial (Krystal/Juniper/Macintosh) and contributors
+* Copyright (C) 2023-Present, KrstlSkll69/krystalskullofficial (Krystal/Juniper/Macintosh), SerStars and contributors
 * SPDX-License-Identifier: AGPL-3.0-or-later
 *
 * This program is free software: you can redistribute it and/or modify
@@ -42,7 +42,7 @@ const userId = "929208515883569182";
 function connectWebSocket(useBackup = false) {
     // Currently using 'SelfHosted' Lanyard instance main can be found @ wss://api.lanyard.rest/socket
     const primaryWss = "wss://lanyard.vmohammad.dev/socket";
-    const backupWss = "wss://lanyard.creations.works/socket";
+    const backupWss = "wss://lanyard.atums.world/socket";
 
     ws = new WebSocket(useBackup ? backupWss : primaryWss);
 
