@@ -28,14 +28,7 @@
     --black-100: oklch(0% 0 0);
     --white-100: oklch(100% 0 0);
 
-
-    --Discord-meta-color: oklch(64.39% 0 0);
     --Discord-mention: '@';
-    --Discord-discriminator: '#0000';
-    --Discord-discriminator-shorthand: '#0';
-    --Old-Discord-discriminator: '#9236';
-
-    --Revolt-discriminator: '#2238';
 
     overflow-x: hidden;
 

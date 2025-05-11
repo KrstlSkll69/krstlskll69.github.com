@@ -876,7 +876,7 @@ async function updateUsername() {
         document.head.appendChild(style);
 
         usernameContainer.innerHTML = `
-            @${username}#0000${isBot ? ' <span class="bot-badge">✔︎ BOT</span>' : ""
+            @${username}${isBot ? ' <span class="bot-badge">✔︎ BOT</span>' : ""
             }
             <span class="user-indicator">${isBot ? "" : "(not a bot lol)"
             }</span>
