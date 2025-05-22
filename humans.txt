@@ -1,0 +1,15 @@
+/* TEAM */
+    KrstlSkll69
+    SerStars
+
+
+/* THANKS */
+    see readme for more info
+    https://github.com/KrstlSkll69/krstlskll69.github.com/blob/main/README.md
+		
+
+/* SITE */
+	Last update:2025/5/22
+	Language: English
+	Doctype:HTML5
+	IDE: Vscode, Notepad++
