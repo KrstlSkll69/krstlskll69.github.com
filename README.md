@@ -2,7 +2,9 @@
 
 ### Build Status: </br>
 
-[![pages-build-deployment](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/pages/pages-build-deployment) [![GitGuardian scan](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/ggshield-action.yml/badge.svg)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/ggshield-action.yml) [![Compress Images (Manual)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/image-optimizer-manual.yml/badge.svg)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/image-optimizer-manual.yml)
+[![pages-build-deployment](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/pages/pages-build-deployment) [![GitGuardian scan](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/ggshield-action.yml/badge.svg)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/ggshield-action.yml) [![Compress Images (Manual)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/image-optimizer-manual.yml/badge.svg)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/image-optimizer-manual.yml) </br>
+
+[![Humans.txt](https://humanstxt.org/img/oficial-logos/humanstxt-isolated-blank.gif)](https://humanstxt.org/)
 
 ### Current Domains:
 
