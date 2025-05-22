@@ -2,7 +2,7 @@
 
 ### Build Status: </br>
 
-[![pages-build-deployment](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/pages/pages-build-deployment)
+[![pages-build-deployment](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/pages/pages-build-deployment) [![GitGuardian scan](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/ggshield-action.yml/badge.svg)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/ggshield-action.yml) [![Compress Images (Manual)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/image-optimizer-manual.yml/badge.svg)](https://github.com/KrstlSkll69/krstlskll69.github.com/actions/workflows/image-optimizer-manual.yml)
 
 ### Current Domains:
 
@@ -11,6 +11,18 @@ https://krstlskll69.github.io/ </br>
 
 Custom Domain: </br>
 https://indi.is-a-skid.cc/ </br>
+
+https://krstlskll.ipv4.army </br>
+https://krstlskll.vmohammad.dev </br>
+
+bannana.me: - (https://git.creations.works/creations/pages) </br>
+https://krstlskll69.bannana.me </br>
+
+codeberg.page: - (https://codeberg.page/) </br>
+https://krstlskll69.codeberg.page
+
+pages.gay: - (https://pages.gay/) </br>
+https://krstlskll69.pages.gay </br>
 
 ## License
 
