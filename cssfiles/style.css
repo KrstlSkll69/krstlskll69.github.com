@@ -3,10 +3,12 @@
 :root {
     color-scheme: dark !important;
     /*--- BG made by/ can be found @ https://github.com/doki-theme */
-    background: url(https://cdn.nest.rip/uploads/6e45fc8f-c010-4f17-ba72-9b1d2e4a9a5b.png), var(--bisexual-repeating-gradient);
+    background: url(https://cdn.nest.rip/uploads/4588644e-9a80-4dd9-9450-217c6b09c3c8.png), var(--red-white-blue-repeating-gradient);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+
 
     --OnekoHearts: oklch(65.49% 0.2613 356.94);
     --OnekoHearts-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2.5em' height='2.5em' viewBox='0 0 24 24'%3E%3Cpath fill='%23f00' d='m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z'/%3E%3C/svg%3E");
@@ -22,6 +24,9 @@
     --pink-trans: oklch(0.82 0.0885 6.75);
     --blue-trans: oklch(0.81 0.1208 226.33);
 
+    --red-white-blue-gradient: linear-gradient(90deg,rgba(155, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(0, 40, 255, 1) 100%);
+    --red-white-blue-repeating-gradient: repeating-linear-gradient(to bottom,rgb(255, 0, 0) -0.1%,rgb(255, 255, 255) 50%,rgb(0, 0, 255) 100%);
+
     --red-label: oklch(65.39% 0.1926 25.14);
     --green-label: oklch(80.2% 0.1398 145.16);
     --blue-label: oklch(81.34% 0.0795 199.75);
@@ -32,6 +37,10 @@
 
     overflow-x: hidden;
 
+
+    @media (max-width: 600px){
+    background: var(--red-white-blue-repeating-gradient) !important;
+    };
 
     /*cursor: url(/ImagesV2/cursor.cur) 1 1, auto !important;*/
 }
