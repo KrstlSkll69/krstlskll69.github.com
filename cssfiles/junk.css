@@ -1,4 +1,4 @@
-.stickers::before {
+/*.stickers::before {
     content: "";
     width: 105px;
     height: 105px;
@@ -12,7 +12,7 @@
     z-index: 999 !important;
 }
 
-/*------------*/
+------------*/
 
 .nerd-face {
     display: inline-block;
