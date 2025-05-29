@@ -146,7 +146,7 @@ function connectWebSocket(useBackup = false) {
                 // }
 
                 // Update Clan Badge (only if changed)
-                if (d?.discord_user?.clan) {
+                if (d?.discord_user?.primary_guild) {
                     await updateClanBadge();
                 }
 
@@ -377,12 +377,12 @@ async function updateAvatar() {
 async function updateClanBadge() {
     try {
         // Check if the user has clan data
-        if (!userData?.data?.discord_user?.clan?.tag) {
+        if (!userData?.data?.discord_user?.primary_guild?.tag) {
             console.log("No clan data found");
             return;
         }
 
-        const clan = userData.data.discord_user.clan;
+        const clan = userData.data.discord_user.primary_guild;
         const clanContainer = document.getElementById("clan-container");
         if (!clanContainer) {
             console.log("Clan container not found in DOM");
