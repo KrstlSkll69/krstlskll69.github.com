@@ -483,12 +483,7 @@ const DISCORD_BADGE_DETAILS = {
         tooltip: "Completed a Quest",
         icon: "https://cdn.discordapp.com/badge-icons/7d9ae358c8c5e118768335dbe68b4fb8.png",
     },
-    // Orbs Badge Datamine Icon
-    ORBS: {
-        tooltip: "Orbs",
-        icon: "https://cdn.discordapp.com/emojis/1344158517803745321.png",
-    },
-    // Newst version of Orbs discord might be using
+    // Newest version of Orbs discord might be using
     ORBSTWO: {
         tooltip: "Orbs",
         icon: "https://cdn.discordapp.com/emojis/1352008036486610954.png",
