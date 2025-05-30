@@ -38,7 +38,7 @@ let previousActivity = null;
 // Discord User ID of the person you want to track
 const userId = "929208515883569182";
 
-// Connect to Lanayrd WebSocket
+// Connect to Lanyard WebSocket
 function connectWebSocket(useBackup = false) {
     // Currently using 'SelfHosted' Lanyard instance main can be found @ wss://api.lanyard.rest/socket
     const primaryWss = "wss://lanyard.atums.world/socket";
