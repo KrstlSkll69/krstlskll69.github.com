@@ -373,19 +373,19 @@ async function updateAvatar() {
     }
 }
 
-// Clan Badge Updater
+// Clan/Guild Badge Updater
 async function updateClanBadge() {
     try {
         // Check if the user has clan data
         if (!userData?.data?.discord_user?.primary_guild?.tag) {
-            console.log("No clan data found");
+            console.log("No Clan/Guild data found");
             return;
         }
 
         const clan = userData.data.discord_user.primary_guild;
         const clanContainer = document.getElementById("clan-container");
         if (!clanContainer) {
-            console.log("Clan container not found in DOM");
+            console.log("Clan/Guild container not found in DOM");
             return;
         }
 
@@ -398,10 +398,10 @@ async function updateClanBadge() {
             <span style="white-space: nowrap;">${clan.tag}</span>
         `;
         clanContainer.style.display = "inline-flex";
-        console.log("Clan badge updated successfully");
+        console.log("Clan/Guild badge updated successfully");
     } catch (error) {
         // Error...
-        console.error(`Error updating clan badge: ${error.message}`);
+        console.error(`Error updating Clan/Guild badge: ${error.message}`);
     }
 }
 
