@@ -38,6 +38,10 @@ let previousActivity = null;
 // Discord User ID of the person you want to track
 const userId = "929208515883569182";
 
+// For now this is unused
+// PronounDB ID of the person you want to track - https://pronoundb.org/
+// const pronounDBid = "";
+
 // Connect to Lanyard WebSocket
 function connectWebSocket(useBackup = false) {
     // Currently using 'SelfHosted' Lanyard instance main can be found @ wss://api.lanyard.rest/socket
