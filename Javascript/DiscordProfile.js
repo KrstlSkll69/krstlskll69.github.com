@@ -566,8 +566,7 @@ async function fetchBadges() {
     try {
         // Fetch from the RealBadgesAPI (the name is a joke) by @SerStars
         const badgesResponse = await fetch(
-            // Temp disable until Badges are fixed
-            //`https://therealbadgesapi.serstars.workers.dev/?userid=${userId}`,
+            `https://therealbadgesapi.serstars.workers.dev/?userid=${userId}`,
             {
                 method: "GET",
                 mode: "cors",
