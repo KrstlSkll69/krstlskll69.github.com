@@ -6,7 +6,9 @@ name: GitGuardian scan
 on: 
   push:
   pull_request:
-  workflow_dispatch: # Edited base file too able to run it manually 
+  workflow_dispatch: # Edited base file too able to run it manually
+  schedule: #Every 5 minutes
+    - cron: "*/5 * * * *"
 
 jobs:
   scanning:
