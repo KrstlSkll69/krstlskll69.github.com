@@ -38,9 +38,11 @@ let previousActivity = null;
 // Discord User ID of the person you want to track
 const userId = "929208515883569182";
 
-// For now this is unused
+// For now this is unused 
 // PronounDB ID of the person you want to track - https://pronoundb.org/
 // const pronounDBid = "";
+
+// TODO: *Maybe* add TimezoneDB - https://git.creations.works/creations/timezoneDB
 
 // Connect to Lanyard WebSocket
 function connectWebSocket(useBackup = false) {
