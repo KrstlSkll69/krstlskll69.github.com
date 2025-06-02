@@ -842,6 +842,7 @@ async function updateUsername() {
         }
 
         const username = userData.data.discord_user.username;
+        const discriminator = userData.data.discord_user.discriminator;
         const isBot = userData.data.discord_user.bot === true;
         const usernameContainer = document.getElementById("username-container");
         if (!usernameContainer) {
@@ -871,7 +872,7 @@ async function updateUsername() {
         document.head.appendChild(style);
 
         usernameContainer.innerHTML = `
-            @${username}${isBot ? ' <span class="bot-badge">✔︎ BOT</span>' : ""
+            ${username}#${discriminator}${isBot ? ' <span class="bot-badge">✔︎ BOT</span>' : ""
             }
             <span class="user-indicator">${isBot ? "" : "(not a bot lol)"
             }</span>
