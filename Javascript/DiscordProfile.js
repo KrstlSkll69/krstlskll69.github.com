@@ -40,7 +40,7 @@ const userId = "929208515883569182";
 
 // For now this is unused 
 // PronounDB ID of the person you want to track - https://pronoundb.org/
-// const pronounDBid = "";
+// const pronounDBId = "";
 
 // TODO: *Maybe* add TimezoneDB - https://git.creations.works/creations/timezoneDB
 
@@ -188,7 +188,8 @@ function connectWebSocket(useBackup = false) {
                 if (
                     d?.active_on_discord_web !== undefined ||
                     d?.active_on_discord_desktop !== undefined ||
-                    d?.active_on_discord_mobile !== undefined
+                    d?.active_on_discord_mobile !== undefined ||
+                    d?.active_on_discord_embedded !== undefined
                 ) {
                     await updatePlatformIndicator();
                 }
@@ -918,6 +919,7 @@ async function updatePlatformIndicator() {
         const webActive = userData?.data?.active_on_discord_web;
         const desktopActive = userData?.data?.active_on_discord_desktop;
         const mobileActive = userData?.data?.active_on_discord_mobile;
+        const consoleActive = userData?.data?.active_on_discord_embedded;
         const discordStatus = userData?.data?.discord_status;
 
         const platformIndicatorContainer = document.getElementById(
@@ -981,6 +983,19 @@ async function updatePlatformIndicator() {
                             style="height: 14px; width: 14px; filter: brightness(0) invert(1);">
                     </div>
                     <span class="platform-tooltip">Active on Mobile</span>
+                </div>
+            `;
+        }
+
+        if (consoleActive) {
+            platformIconsHTML += `
+                <div class="platform-icon">
+                    <div style="background-color: ${statusColor}; padding: 4px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                        <img src="https://cdn.nest.rip/uploads/e36343fb-c0bf-4972-b4c3-295ac8fef408.svg"
+                            alt="Active on console"
+                            style="height: 14px; width: 14px; filter: brightness(0) invert(1);">
+                    </div>
+                    <span class="platform-tooltip">Active on console</span>
                 </div>
             `;
         }
