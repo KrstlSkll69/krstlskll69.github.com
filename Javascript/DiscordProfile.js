@@ -415,7 +415,8 @@ async function updateClanBadge() {
 // Discord Badges Math
 const DISCORD_BADGES = {
     // We cannot get the Nitro badges due limitations
-    // But you can add an function to check if the user has an animated profile picture and add the Nitro badge
+    // However, you can guess if someone has Nitro via whether or not, they have an animated avatar *(see line 522)*
+    // KV data method for giving nitro badge is also possible *(see line 514)*
     DISCORD_EMPLOYEE: 1 << 0,
     PARTNERED_SERVER_OWNER: 1 << 1,
     HYPESQUAD_EVENTS: 1 << 2,
@@ -502,9 +503,11 @@ const DISCORD_BADGE_DETAILS = {
     },
 };
 
+
 // Fetch Discord Badges and add them to the profile
 function fetchDiscordBadges(flags) {
     const badges = [];
+
     // am lazy to fix this
     // Check Lanyard KV store for additional badges
     if (userData?.data?.kv) {
@@ -514,6 +517,15 @@ function fetchDiscordBadges(flags) {
                 tooltip: DISCORD_BADGE_DETAILS.NITRO.tooltip,
                 icon: DISCORD_BADGE_DETAILS.NITRO.icon,
                 type: "discord",
+            });
+        }
+
+        // Borrowed from https://git.creations.works/creations/badgeAPI/src/branch/main/src/helpers/badges.ts#L153
+        if (userData.data.discord_user.avatar.startsWith("a_")) {
+            badges.push({
+                name: DISCORD_BADGE_DETAILS.NITRO.tooltip,
+                tooltip: DISCORD_BADGE_DETAILS.NITRO.tooltip,
+                icon: DISCORD_BADGE_DETAILS.NITRO.icon,
             });
         }
 
