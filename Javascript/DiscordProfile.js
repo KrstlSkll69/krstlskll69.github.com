@@ -521,6 +521,7 @@ function fetchDiscordBadges(flags) {
         }
 
         // Borrowed from https://git.creations.works/creations/badgeAPI/src/branch/main/src/helpers/badges.ts#L153
+        // Uses whether or not someone has an animated PFP to give a nitro badge
         if (userData.data.discord_user.avatar.startsWith("a_")) {
             badges.push({
                 name: DISCORD_BADGE_DETAILS.NITRO.tooltip,
