@@ -43,6 +43,7 @@ const userId = "929208515883569182";
 // const pronounDBId = "";
 
 // TODO: *Maybe* add TimezoneDB - https://git.creations.works/creations/timezoneDB
+// https://timezone.creations.works/get?id=<discord_user_id>
 
 // Connect to Lanyard WebSocket
 function connectWebSocket(useBackup = false) {
