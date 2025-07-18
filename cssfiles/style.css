@@ -3,7 +3,7 @@
 :root {
     color-scheme: dark !important;
     /*--- BG made by/ can be found @ https://github.com/doki-theme */
-    background: url(https://cdn.nest.rip/uploads/4588644e-9a80-4dd9-9450-217c6b09c3c8.png), var(--red-white-blue-repeating-gradient);
+    background: url(), var(--black-green-repeating-gradient);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -14,7 +14,7 @@
     --OnekoHearts-img: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='2.5em' height='2.5em' viewBox='0 0 24 24'%3E%3Cpath fill='%23f00' d='m12 21.35l-1.45-1.32C5.4 15.36 2 12.27 2 8.5C2 5.41 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08C13.09 3.81 14.76 3 16.5 3C19.58 3 22 5.41 22 8.5c0 3.77-3.4 6.86-8.55 11.53z'/%3E%3C/svg%3E");
     --OnekoHearts-filter: drop-shadow(10px 10px 14px var(--black-100));
     --OnekoCat-filter: drop-shadow(0px 12px 11px var(--black-100));
-    ;
+    
 
     --bisexual-gradient: linear-gradient(90deg, rgba(208, 0, 112, 1) 0%, rgba(140, 71, 153, 1) 44%, rgba(0, 50, 160, 1) 100%);
     --bisexual-repeating-gradient: repeating-linear-gradient(to bottom, rgb(208, 0, 112) 0%, rgb(140, 71, 153) 44%, rgb(0, 50, 160) 100%);
@@ -26,6 +26,9 @@
 
     --red-white-blue-gradient: linear-gradient(90deg,rgba(155, 0, 0, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(0, 40, 255, 1) 100%);
     --red-white-blue-repeating-gradient: repeating-linear-gradient(to bottom,rgb(255, 0, 0) -0.1%,rgb(255, 255, 255) 50%,rgb(0, 0, 255) 100%);
+
+    --black-green-gradient: linear-gradient(180deg,rgba(0, 0, 0, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(0, 0, 0, 1) 100%);
+    --black-green-repeating-gradient: repeating-linear-gradient(to bottom,rgba(0, 0, 0, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(0, 0, 0, 1) 100%);
 
     --red-label: oklch(65.39% 0.1926 25.14);
     --green-label: oklch(80.2% 0.1398 145.16);
