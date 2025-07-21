@@ -206,48 +206,6 @@
     </ul>
   </div>
 
-  <!---->
-  <div class="panel">
-    <h2>
-      <h3>Secondary</d3>
-    </h2>
-    <ul>
-
-      <!-- This is meant for secondary websites -->
-      <!-- See line 33 for rules and info about image hosting
-      <ul x-data="{
-        friends2:[
-        {
-          url: '',
-          img: '',
-          alt: '',
-          name: '',
-        },
-        ]
-    }">
-    -->
-
-      <!-- Is not included in resuffle -->
-      <li class="discord">
-        <a target="_blank" rel="noreferrer" href="">
-          <img src="" alt="">
-          </a>
-        <span>Instagram</span>
-      </li>
-
-      <!-- resuffle main code -->
-      <template x-for="friend in _.shuffle(friends2)">
-        <li>
-          <a target="_blank" rel="noreferrer" :href="friend.url">
-            <img :src="friend.img" :alt="friend.alt">
-            <span x-text="friend.name"></span>
-          </a>
-        </li>
-      </template>
-
-      </u1>
-  </div>
-
   <div class="backPanel">
     <ul>
       <!-- links back to main index.html-->
