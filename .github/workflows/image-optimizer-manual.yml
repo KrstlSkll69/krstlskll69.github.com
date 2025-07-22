@@ -27,6 +27,9 @@ jobs:
               with:
                   github-token: ${{ secrets.GITHUB_TOKEN }}
                   debug: true
+                  export-avif: true
+                  ignore-paths: |
+                    assets/88x31/**
 
             - name: Create New Pull Request If Needed
               if: steps.compress-images.outputs.markdown_report != ''
