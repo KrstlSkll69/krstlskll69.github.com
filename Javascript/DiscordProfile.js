@@ -486,7 +486,7 @@ const DISCORD_BADGE_DETAILS = {
     // These use Lanyard's KV data to manage these badges
     NITRO: {
         tooltip: "Nitro Subscriber",
-        icon: "https://cdn.discordapp.com/badge-icons/2ba85e8026a8614b640c2837bcdfe21b.png",
+        icon: "/assets/images/misc/19beb204-3e6c-4392-964f-d962bf0757fa.svg",
     },
     QUEST: {
         tooltip: "Completed a Quest",
