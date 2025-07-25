@@ -38,13 +38,6 @@ let previousActivity = null;
 // Discord User ID of the person you want to track
 const userId = "929208515883569182";
 
-// For now this is unused 
-// PronounDB ID of the person you want to track - https://pronoundb.org/
-// const pronounDBId = "";
-
-// TODO: *Maybe* add TimezoneDB - https://git.creations.works/creations/timezoneDB
-// https://timezone.creations.works/get?id=<discord_user_id>
-
 // Connect to Lanyard WebSocket
 function connectWebSocket(useBackup = false) {
     // Currently using 'SelfHosted' Lanyard instance
@@ -283,8 +276,7 @@ async function updateActivities() {
         listItem.innerHTML = `
             <div class="activity-info">
                 <div class="activity-large-img">
-                    <img src="data:image/png;base64,${largeImageSrc}" alt="${activity.name
-            }">
+                    <img src="data:image/png;base64,${largeImageSrc}" alt="${activity.name}">
                 </div>
                 <div class="activity-text">
                     <h4>${activity.name}</h4>
@@ -893,10 +885,8 @@ async function updateUsername() {
         document.head.appendChild(style);
 
         usernameContainer.innerHTML = `
-            ${username}#${discriminator}${isBot ? ' <span class="bot-badge">✔︎ BOT</span>' : ""
-            }
-            <span class="user-indicator">${isBot ? "" : "(not a bot lol)"
-            }</span>
+            ${username}#${discriminator}${isBot ? ' <span class="bot-badge">✔︎ BOT</span>' : ""}
+            <span class="user-indicator">${isBot ? "" : "(not a bot lol)"}</span>
         `;
 
         // Fetch and add pronouns
@@ -922,9 +912,53 @@ async function updateUsername() {
             pronounsElement.innerHTML = `<span>${pronouns}</span>`;
         }
 
-        console.log("Username, bot status, and pronouns updated successfully");
+        // Fetch and add current time based on user's timezone
+        const timezoneRes = await fetch(`https://timezone.creations.works/get?id=${userId}`);
+        if (timezoneRes.ok) {
+            const timezoneData = await timezoneRes.json();
+            const timeZone = timezoneData.timezone;
+
+            if (timeZone) {
+                const now = new Date();
+                const formatter = new Intl.DateTimeFormat("en-US", {
+                    timeZone,
+                    hour: "2-digit",
+                    minute: "2-digit",
+                    hour12: true,
+                });
+                const timeString = formatter.format(now);
+
+                let timeElement = document.getElementById("timezone-time-container");
+                if (!timeElement) {
+                    timeElement = document.createElement("d3");
+                    timeElement.id = "timezone-time-container";
+                    timeElement.style.cssText = `
+                        display: flex;
+                        justify-content: center;
+                        width: 100%;
+                    `;
+                    const pronounsElement = document.getElementById("pronouns-container");
+                    if (pronounsElement) {
+                        pronounsElement.parentNode.insertBefore(timeElement, pronounsElement.nextSibling);
+                    } else {
+                        usernameContainer.parentNode.insertBefore(timeElement, usernameContainer.nextSibling);
+                    }
+                }
+
+                timeElement.innerHTML = `<span>${timeString}</span>`;
+                // or timeElement.innerHTML = `<span>${timeString} (${timeZone.replace(/_/g, " ")})</span>`;
+
+                // Live update the time every minute
+                setInterval(() => {
+                    const current = new Date();
+                    timeElement.innerHTML = `<span>${formatter.format(current)}</span>`; // or <span>${formatter.format(current)} (${timeZone.replace(/_/g, " ")})</span>
+                }, 60000);
+            }
+        }
+
+        console.log("Username, bot status, pronouns, and time updated successfully");
     } catch (error) {
-        console.error(`Error updating username and pronouns: ${error.message}`);
+        console.error(`Error updating username, pronouns and time: ${error.message}`);
     }
 }
 
