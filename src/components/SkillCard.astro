@@ -1,0 +1,25 @@
+---
+import type { Skill } from '@/types'
+
+interface Props extends Skill {}
+
+const { text, subtext, progress } = Astro.props
+
+const progressStyle = `width: ${progress}%;`
+---
+
+<div class="flex flex-col gap-1">
+    <span class="font-medium text-neutral-800 dark:text-neutral-200">
+        {text}
+    </span>
+
+    <p class="text-xs text-neutral-500 dark:text-neutral-400">{subtext}</p>
+
+    <div class="h-6 w-full rounded-lg bg-zinc-400 dark:bg-zinc-950">
+        <div
+            style={progressStyle}
+            class="h-full rounded-lg bg-gradient-to-r from-sky-600 to-sky-500"
+        >
+        </div>
+    </div>
+</div>

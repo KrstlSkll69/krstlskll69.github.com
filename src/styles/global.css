@@ -1,0 +1,10 @@
+@import 'tailwindcss';
+
+@theme {
+    /* Fonts */
+    --font-sans: 'Inter', sans-serif;
+}
+
+body {
+    @apply mx-auto max-w-6xl bg-zinc-950 text-zinc-100;
+}

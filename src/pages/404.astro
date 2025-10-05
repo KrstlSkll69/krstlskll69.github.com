@@ -1,0 +1,19 @@
+---
+import Empty from '../layouts/Empty.astro'
+import { BadgeAlert, Undo } from '@lucide/astro'
+---
+
+<Empty>
+    <div class="flex h-dvh w-full flex-col items-center justify-center gap-2">
+        <span class="flex items-center gap-1 font-medium text-red-400">
+            <BadgeAlert size={20} /> The page you're looking for cannot be found!
+        </span>
+
+        <a
+            href="/"
+            class="flex items-center gap-1 rounded-lg bg-red-400 px-3 py-2 font-semibold text-zinc-950 hover:opacity-80"
+        >
+            <Undo size={20} /> Return
+        </a>
+    </div>
+</Empty>
