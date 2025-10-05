@@ -56,15 +56,15 @@ const user = await fetchUserData();
 
         {user.customStatus && (
             <span class="flex items-center gap-1 font-medium text-neutral-200">
-                <MiscIcons.BookOpen size="18" fill="white" />
-                {user.customStatus}
+                <MiscIcons.BookOpen size="18" fill="#ffffff10" class="shrink-0" />
+                <span class="truncate">{user.customStatus}</span>
             </span>
         )}
 
         {user.activity && (
             <span class="flex items-center gap-1 font-medium text-neutral-200">
-                <MiscIcons.ListMusic size="18" fill="white" />
-                {user.activity}
+                <MiscIcons.ListMusic size="18" fill="#ffffff10" class="shrink-0" />
+                <span class="truncate">{user.activity}</span>
             </span>
         )}
         

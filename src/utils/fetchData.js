@@ -33,7 +33,7 @@ export async function fetchUserData() {
             userData.clanBadge = clanBadge;
             userData.clanName = clan?.tag;
 
-            userData.customStatus = customStatus?.state?.slice(0, 10) + "...";
+            userData.customStatus = customStatus?.state;
             userData.activity = activity?.details ?? activity?.name;
 
             userData.active_on_discord_web = lanyardData?.active_on_discord_web;
