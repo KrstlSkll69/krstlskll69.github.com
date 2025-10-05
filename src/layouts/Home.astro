@@ -1,0 +1,26 @@
+---
+import '@/styles/global.css'
+import Head from '@/components/Head.astro'
+import Aside from '@/components/Aside.astro'
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <Head
+            title="KrystalSkull"
+            description="Known as 'Indi/Indiana Jone' within the Discord Client Modding Community."
+        />
+        <link rel="icon" type="image/png" href="/favicon.png" />
+    </head>
+    <body>
+        <main
+            class="flex flex-col items-start gap-3 px-3 pt-16 md:flex-row md:gap-6 md:pt-40"
+        >
+            <Aside />
+            <div class="flex flex-col gap-3">
+                <slot />
+            </div>
+        </main>
+    </body>
+</html>

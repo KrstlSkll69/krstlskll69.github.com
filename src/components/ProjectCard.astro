@@ -1,0 +1,29 @@
+---
+import type { Project } from '@/types'
+import { Calendar } from '@lucide/astro'
+import Box from '@/components/Box.astro'
+
+interface Props extends Project {}
+
+const { start, end, title, description, url } = Astro.props
+---
+
+<a href={url} target="_blank" class="transition-transform active:scale-[.98]">
+    <Box>
+        <div class="flex flex-col gap-1">
+            <h4
+                class="flex items-center gap-2 font-medium text-neutral-800 dark:text-neutral-200"
+            >
+                {title}
+                <span class="flex items-center gap-1 text-sm">
+                    <Calendar size={16} fill="#ffffff10" />
+                    {end ? `${start} - ${end}` : `Since ${start}`}
+                </span>
+            </h4>
+
+            <p class="text-xs text-neutral-500 dark:text-neutral-400">
+                {description}
+            </p>
+        </div>
+    </Box>
+</a>

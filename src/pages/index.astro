@@ -1,0 +1,72 @@
+---
+import Layout from '@/layouts/Home.astro'
+import { UserCircle, Users, Notebook, Star } from '@lucide/astro'
+import { Friends, shuffle, Skills, Projects } from '@/consts'
+
+import Box from '@/components/Box.astro'
+import SkillCard from '@/components/SkillCard.astro'
+import ProjectCard from '@/components/ProjectCard.astro'
+import Footer from '@/components/Footer.astro'
+const randomizedFriends = shuffle(Friends)
+---
+
+<Layout>
+    <div class="flex flex-col md:flex-row gap-6">
+        <div class="flex-1 space-y-4">
+            <!-- Me -->
+            <span class="flex items-center gap-1 text-sm font-medium text-neutral-400">
+                <UserCircle size="18" fill="#ffffff10" /> Me
+            </span>
+
+            <Box>
+                Hi! I'm Krystal! Known as 'Indi/Indiana Jone' within the Discord Client Modding Community. I'm proficient in Markdown, Sass, CSS, HTML, Javascript, Typescript.
+            </Box>
+
+            <!-- Skills -->
+            <span class="flex items-center gap-1 text-sm font-medium text-neutral-400">
+                <Star size="18" fill="#ffffff10" /> Skills
+            </span>
+
+            <Box>
+                {Skills.map((skill) => <SkillCard {...skill} />)}
+            </Box>
+
+            <!-- Projects -->
+            <span class="flex items-center gap-1 text-sm font-medium text-neutral-400">
+                <Notebook size="18" fill="#ffffff10" /> Projects
+            </span>
+
+            <div class="flex w-full flex-col gap-2 rounded-2xl text-neutral-300">
+                {Projects.map((project) => <ProjectCard {...project} />)}
+            </div>
+        </div>
+
+        <aside class="w-full md:w-64 space-y-4">
+            <span class="flex items-center gap-1 text-sm font-medium text-neutral-400">
+                <Users size="18" fill="#ffffff10" /> Friends
+            </span>
+            <Box>
+                <ul class="grid grid-cols-2 gap-4">
+                    <a href="https://twitter.com/videbive" target="_blank" rel="noreferrer" class="flex flex-col items-center text-center gap-1" >
+                        <img src="/assets/images/friends/076ae8bb-c75e-43d4-a7de-5f1e8d48cf96.avif" alt="VideBive" class="size-10 rounded-full object-cover"/>
+                        <span class="text-xs text-neutral-300 truncate">VideBive</span>
+                    </a>
+                    <a href="https://www.youtube.com/@mamearcadeplaythroughs" target="_blank" rel="noreferrer" class="flex flex-col items-center text-center gap-1" >
+                        <img src="/assets/images/friends/02628142-cb33-4108-bbf2-6a5368f08678.avif" alt="Adonis" class="size-10 rounded-full object-cover"/>
+                        <span class="text-xs text-neutral-300 truncate">Adonis</span>
+                    </a>
+                    {randomizedFriends.map((friend) => (
+                        <li class="min-w-0 overflow-hidden">
+                            <a href={friend.url} target="_blank" rel="noreferrer" class="flex flex-col items-center text-center gap-1" >
+                                <img src={friend.img} alt={friend.alt} class="size-10 rounded-full object-cover"/>
+                                <span class="text-xs text-neutral-300 truncate">{friend.name}</span>
+                            </a>
+                        </li>
+                    ))}
+                </ul>
+            </Box>
+        </aside>
+    </div>
+</Layout>
+
+<Footer />

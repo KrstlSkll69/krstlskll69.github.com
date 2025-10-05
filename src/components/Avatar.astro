@@ -1,0 +1,63 @@
+---
+import { fetchUserStatus } from '@/utils/fetchData'
+
+interface Props {
+    size: number
+}
+
+const { size } = Astro.props
+let avatar = ''
+let decor = ''
+let status: 'online' | 'idle' | 'dnd' | 'offline' = 'offline'
+
+// Fetch user data
+const userData = await fetchUserStatus()
+avatar = userData.avatar
+decor = userData.decor
+status = userData.status
+
+// Map status to color
+const statusColorMap = {
+  online: '#23a55a',
+  idle: '#f0b232',
+  dnd: '#f23f43',
+  offline: '#949ba4'
+}
+
+const statusColor = statusColorMap[status] || '#949ba4'
+---
+
+<div style="position: relative; display: inline-block; width: {size}px; height: {size}px;">
+    <img
+        src={avatar}
+        class="rounded-full border border-zinc-800 bg-zinc-900 shadow select-none"
+        width={size}
+        height={size}
+        draggable={false}
+        alt="Discord Avatar"
+    />
+
+    <img
+        src={decor}
+        draggable={false}
+        alt="Discord Decor"
+        width={size}
+        height={size}
+        style="
+            position: absolute;
+            inset: 0;
+            z-index: 15;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: scale(1.20);
+        "
+    />
+
+  <span
+        style={`z-index: 30; position: absolute; bottom: 4px; right: 4px; width: 60px; height: 60px; border-radius: 50%; border: 4px solid #1a1a1a; background-color: ${statusColor};`}
+        title={status} 
+    >
+    </span>
+</div>
