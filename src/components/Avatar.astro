@@ -1,35 +1,15 @@
 ---
-import { fetchUserStatus } from '@/utils/fetchData'
-
 interface Props {
     size: number
 }
 
 const { size } = Astro.props
-let avatar = ''
-let decor = ''
-let status: 'online' | 'idle' | 'dnd' | 'offline' = 'offline'
-
-// Fetch user data
-const userData = await fetchUserStatus()
-avatar = userData.avatar
-decor = userData.decor
-status = userData.status
-
-// Map status to color
-const statusColorMap = {
-  online: '#23a55a',
-  idle: '#f0b232',
-  dnd: '#f23f43',
-  offline: '#949ba4'
-}
-
-const statusColor = statusColorMap[status] || '#949ba4'
 ---
 
 <div style="position: relative; display: inline-block; width: {size}px; height: {size}px;">
     <img
-        src={avatar}
+        id="user-avatar"
+        src=""
         class="rounded-full border border-zinc-800 bg-zinc-900 shadow select-none"
         width={size}
         height={size}
@@ -38,11 +18,13 @@ const statusColor = statusColorMap[status] || '#949ba4'
     />
 
     <img
-        src={decor}
+        id="user-decor"
+        src=""
         draggable={false}
         alt="Discord Decor"
         width={size}
         height={size}
+        class="hidden"
         style="
             position: absolute;
             inset: 0;
@@ -55,9 +37,71 @@ const statusColor = statusColorMap[status] || '#949ba4'
         "
     />
 
-  <span
-        style={`z-index: 30; position: absolute; bottom: 4px; right: 4px; width: 60px; height: 60px; border-radius: 50%; border: 4px solid #1a1a1a; background-color: ${statusColor};`}
-        title={status} 
+    <span
+        id="user-status-indicator"
+        style="z-index: 30; position: absolute; bottom: 4px; right: 4px; width: 60px; height: 60px; border-radius: 50%; border: 4px solid #1a1a1a; background-color: #949ba4;"
+        title="offline"
     >
     </span>
 </div>
+
+<script define:vars={{ size }}>
+  const userId = "929208515883569182";
+
+  const statusColorMap = {
+    online: '#23a55a',
+    idle: '#f0b232',
+    dnd: '#f23f43',
+    offline: '#949ba4'
+  };
+
+  async function fetchUserStatus() {
+    try {
+      const lanyardResponse = await fetch(`https://lanyard.atums.world/v1/users/${userId}`);
+      if (!lanyardResponse.ok) throw new Error('Lanyard fetch failed');
+
+      const lanyardJson = await lanyardResponse.json();
+      const lanyardData = lanyardJson?.data;
+      const user = lanyardData?.discord_user;
+
+      const avatarEl = document.getElementById('user-avatar');
+      if (avatarEl && user?.id && user?.avatar) {
+        avatarEl.src = `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png?size=240`;
+      }
+
+      const decorEl = document.getElementById('user-decor');
+      const decorationData = user?.avatar_decoration_data;
+
+      if (decorationData?.asset) {
+        if (decorEl) {
+          decorEl.src = `https://cdn.discordapp.com/avatar-decoration-presets/${decorationData.asset}.png?size=64&passthrough=true`;
+          decorEl.classList.remove('hidden');
+        }
+      } else {
+        try {
+          const decorApi = await fetch(`https://decor.fieryflames.dev/api/users/${userId}`);
+          if (decorApi.ok) {
+            const decorData = await decorApi.json();
+            if (decorData.decorationHash && decorEl) {
+              decorEl.src = `https://ugc.decor.fieryflames.dev/${decorData.decorationHash}.png?animated=true`;
+              decorEl.classList.remove('hidden');
+            }
+          }
+        } catch (e) {
+          console.error('Decor API error:', e);
+        }
+      }
+
+      const status = lanyardData?.discord_status || 'offline';
+      const statusEl = document.getElementById('user-status-indicator');
+      if (statusEl) {
+        statusEl.style.backgroundColor = statusColorMap[status] || statusColorMap.offline;
+        statusEl.title = status;
+      }
+    } catch (error) {
+      console.error("Error fetching user status:", error);
+    }
+  }
+
+  fetchUserStatus();
+</script>

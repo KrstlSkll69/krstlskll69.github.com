@@ -2,9 +2,6 @@
 import { Information, MiscIcons, Platforms, Socials } from '@/consts'
 import Avatar from '@/components/Avatar.astro'
 import Box from '@/components/Box.astro'
-import { fetchUserData } from '@/utils/fetchData'
-
-const user = await fetchUserData();
 ---
 
 <aside class="flex w-full flex-col items-center gap-4 md:max-w-[240px]">
@@ -16,34 +13,19 @@ const user = await fetchUserData();
         <div class="flex items-center gap-2">
             <span class="text-sm font-medium text-neutral-400">Badges</span>
 
-            {user.clanName && user.clanBadge && (
-                <div class="flex items-center gap-1 bg-zinc-800 px-2 py-1 rounded-md">
-                    <img src={user.clanBadge} alt="Clan Badge" class="w-3 h-3" />
-                    <span class="text-xs text-neutral-200">{user.clanName}</span>
-                </div>
-            )}
+            <div id="clan-badge-container" class="hidden items-center gap-1 bg-zinc-800 px-2 py-1 rounded-md">
+                <img id="clan-badge-img" src="" alt="Clan Badge" class="w-3 h-3" />
+                <span id="clan-badge-name" class="text-xs text-neutral-200"></span>
+            </div>
         </div>
 
-        <div class="flex flex-wrap gap-2 mt-1">
-            {user.badges.map((badge) => (
-                <img
-                    src={badge.icon}
-                    alt={badge.tooltip}
-                    title={badge.tooltip}
-                    class="size-4 rounded"
-                />
-            ))}
-        </div>
+        <div id="badges-container" class="flex flex-wrap gap-2 mt-1"></div>
     </Box>
 
     <Box>
         <div class="flex items-center gap-2">
             <span class="text-sm font-medium text-neutral-400"> About </span>
-
-                {user.active_on_discord_web && <Platforms.Web fill="white" class="size-4" /> }
-                {user.active_on_discord_mobile && <Platforms.Mobile fill="white" class="size-4" /> }
-                {user.active_on_discord_desktop && <Platforms.Desktop fill="white" class="size-4" /> }
-                {user.active_on_discord_embedded && <Platforms.Embedded fill="white" class="size-4" /> }
+            <div id="platform-icons"></div>
         </div>
 
         <span class="flex items-center gap-1 font-medium text-neutral-200">
@@ -53,22 +35,18 @@ const user = await fetchUserData();
 
         <span class="flex items-center gap-1 font-medium text-neutral-200">
             <MiscIcons.User size="18"fill="white" />
-            {user.pronouns}
+            <span id="user-pronouns">She/Her, It/Its</span>
         </span>
 
-        {user.customStatus && (
-            <span class="flex items-center gap-1 font-medium text-neutral-200">
-                <MiscIcons.BookOpen size="18" fill="#ffffff10" class="shrink-0" />
-                <span class="truncate">{user.customStatus}</span>
-            </span>
-        )}
+        <span id="custom-status-container" class="hidden items-center gap-1 font-medium text-neutral-200">
+            <MiscIcons.BookOpen size="18" fill="#ffffff10" class="shrink-0" />
+            <span id="custom-status-text" class="truncate"></span>
+        </span>
 
-        {user.activity && (
-            <span class="flex items-center gap-1 font-medium text-neutral-200">
-                <MiscIcons.ListMusic size="18" fill="#ffffff10" class="shrink-0" />
-                <span class="truncate">{user.activity}</span>
-            </span>
-        )}
+        <span id="activity-container" class="hidden items-center gap-1 font-medium text-neutral-200">
+            <MiscIcons.ListMusic size="18" fill="#ffffff10" class="shrink-0" />
+            <span id="activity-text" class="truncate"></span>
+        </span>
         
         {
             Information.map((info) => (
@@ -98,13 +76,218 @@ const user = await fetchUserData();
 </aside>
 
 <script>
+  const userId = "929208515883569182";
+
+  const platformIcons = {
+    web: '<svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>',
+    mobile: '<svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M17 1.01L7 1c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-1.99-2-1.99zM17 19H7V5h10v14z"/></svg>',
+    desktop: '<svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M21 2H3c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h7v2H8v2h8v-2h-2v-2h7c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H3V4h18v12z"/></svg>',
+    embedded: '<svg width="16" height="16" fill="white" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm-5 14H4v-4h11v4zm0-5H4V9h11v4zm5 5h-4V9h4v9z"/></svg>'
+  };
+
+  async function fetchUserData() {
+    try {
+      const lanyardRes = await fetch(`https://lanyard.atums.world/v1/users/${userId}`);
+      if (!lanyardRes.ok) throw new Error('Lanyard fetch failed');
+
+      const lanyardJson = await lanyardRes.json();
+      const lanyardData = lanyardJson?.data;
+      const user = lanyardData?.discord_user;
+      const clan = user?.primary_guild;
+
+      if (clan?.tag && clan?.identity_guild_id && clan?.badge) {
+        const clanBadgeContainer = document.getElementById('clan-badge-container');
+        const clanBadgeImg = document.getElementById('clan-badge-img');
+        const clanBadgeName = document.getElementById('clan-badge-name');
+
+        if (clanBadgeContainer && clanBadgeImg && clanBadgeName) {
+          clanBadgeImg.src = `https://cdn.discordapp.com/clan-badges/${clan.identity_guild_id}/${clan.badge}.png?size=16`;
+          clanBadgeName.textContent = clan.tag;
+          clanBadgeContainer.classList.remove('hidden');
+          clanBadgeContainer.classList.add('flex');
+        }
+      }
+
+      const platformIconsContainer = document.getElementById('platform-icons');
+      if (platformIconsContainer) {
+        let iconsHTML = '';
+        if (lanyardData?.active_on_discord_web) iconsHTML += platformIcons.web;
+        if (lanyardData?.active_on_discord_mobile) iconsHTML += platformIcons.mobile;
+        if (lanyardData?.active_on_discord_desktop) iconsHTML += platformIcons.desktop;
+        if (lanyardData?.active_on_discord_embedded) iconsHTML += platformIcons.embedded;
+        platformIconsContainer.innerHTML = iconsHTML;
+      }
+
+      const customStatus = lanyardData?.activities?.find((a) => a.type === 4);
+      if (customStatus?.state) {
+        const customStatusContainer = document.getElementById('custom-status-container');
+        const customStatusText = document.getElementById('custom-status-text');
+        if (customStatusContainer && customStatusText) {
+          customStatusText.textContent = customStatus.state;
+          customStatusContainer.classList.remove('hidden');
+          customStatusContainer.classList.add('flex');
+        }
+      }
+
+      const activity = lanyardData?.activities?.find((a) => a.type !== 4);
+      if (activity) {
+        const activityContainer = document.getElementById('activity-container');
+        const activityText = document.getElementById('activity-text');
+        if (activityContainer && activityText) {
+          activityText.textContent = activity?.details || activity?.name || '';
+          activityContainer.classList.remove('hidden');
+          activityContainer.classList.add('flex');
+        }
+      }
+
+      await fetchBadges(lanyardData);
+
+      await fetchPronouns();
+    } catch (error) {
+      console.error("Error fetching user data:", error);
+    }
+  }
+
+  async function fetchBadges(lanyardData) {
+    try {
+      const badges = [];
+
+      const flags = lanyardData?.discord_user?.public_flags;
+      const DISCORD_BADGES = {
+        HOUSE_BRAVERY: 1 << 6,
+        ACTIVE_DEVELOPER: 1 << 22,
+      };
+      const DISCORD_BADGE_DETAILS = {
+        HOUSE_BRAVERY: {
+          tooltip: "HypeSquad Bravery",
+          icon: "https://cdn.discordapp.com/badge-icons/8a88d63823d8a71cd5e390baa45efa02.png",
+        },
+        ACTIVE_DEVELOPER: {
+          tooltip: "Active Developer",
+          icon: "https://cdn.discordapp.com/badge-icons/6bdc42827a38498929a4920da12695d9.png",
+        },
+        NITRO: {
+          tooltip: "Nitro Subscriber",
+          icon: "/assets/images/misc/19beb204-3e6c-4392-964f-d962bf0757fa.png",
+        },
+        QUEST: {
+          tooltip: "Completed a Quest",
+          icon: "https://cdn.discordapp.com/badge-icons/7d9ae358c8c5e118768335dbe68b4fb8.png",
+        },
+        ORBS: {
+          tooltip: "Orbs",
+          icon: "https://cdn.discordapp.com/emojis/1352008036486610954.png",
+        },
+        CLOWN: {
+          tooltip: "A Fucking Clown 🤡",
+          icon: "https://cdn.discordapp.com/emojis/1349512970589306902.png",
+        },
+      };
+
+      if (lanyardData?.kv) {
+        if (lanyardData?.kv?.nitro === "true" || lanyardData?.discord_user?.avatar?.startsWith("a_")) {
+          badges.push({
+            tooltip: DISCORD_BADGE_DETAILS.NITRO.tooltip,
+            icon: DISCORD_BADGE_DETAILS.NITRO.icon,
+          });
+        }
+
+        for (const [flag, bitwise] of Object.entries(DISCORD_BADGES)) {
+          if (flags & bitwise) {
+            const badge = DISCORD_BADGE_DETAILS[flag];
+            badges.push({
+              tooltip: badge.tooltip,
+              icon: badge.icon,
+            });
+          }
+        }
+
+        if (lanyardData?.kv?.quests === "true") {
+          badges.push({
+            tooltip: DISCORD_BADGE_DETAILS.QUEST.tooltip,
+            icon: DISCORD_BADGE_DETAILS.QUEST.icon,
+          });
+        }
+
+        if (lanyardData?.kv?.orbstwo === "true") {
+          badges.push({
+            tooltip: DISCORD_BADGE_DETAILS.ORBS.tooltip,
+            icon: DISCORD_BADGE_DETAILS.ORBS.icon,
+          });
+        }
+
+        if (lanyardData?.kv?.clown === "true") {
+          badges.push({
+            tooltip: DISCORD_BADGE_DETAILS.CLOWN.tooltip,
+            icon: DISCORD_BADGE_DETAILS.CLOWN.icon,
+          });
+        }
+      }
+
+      const badgeRes = await fetch(`https://badges.equicord.org/${userId}?seperated=true&capitalize=true&exclude=badgevault,discord`);
+      if (badgeRes.ok) {
+        const badgeData = await badgeRes.json();
+        if (badgeData?.badges) {
+          Object.entries(badgeData.badges).forEach(([type, badgeList]) => {
+            if (Array.isArray(badgeList)) {
+              badgeList.forEach((badge) => {
+                if (badge?.badge) {
+                  badges.push({
+                    tooltip: `${type}: ${badge.tooltip}`,
+                    icon: badge.badge,
+                  });
+                }
+              });
+            }
+          });
+        }
+      }
+
+      const badgesContainer = document.getElementById('badges-container');
+      if (badgesContainer && badges.length > 0) {
+        badgesContainer.innerHTML = badges.map(badge =>
+          `<img src="${badge.icon}" alt="${badge.tooltip}" title="${badge.tooltip}" class="size-4 rounded" />`
+        ).join('');
+      }
+    } catch (error) {
+      console.error("Error fetching badges:", error);
+    }
+  }
+
+  async function fetchPronouns() {
+    try {
+      const pronoundbRes = await fetch(`https://pronoundb.org/api/v2/lookup?platform=discord&ids=${userId}`);
+      if (pronoundbRes.ok) {
+        const pronoundbData = await pronoundbRes.json();
+        const pronounData = pronoundbData[userId];
+        const pronounMap = {
+          he: "He/Him",
+          it: "It/Its",
+          she: "She/Her",
+          they: "They/Them",
+          any: "Any pronouns",
+          ask: "Ask me my pronouns",
+          avoid: "Use my name",
+          other: "Other pronouns",
+        };
+
+        const pronounsEl = document.getElementById('user-pronouns');
+        if (pronounsEl && pronounData?.sets?.en) {
+          pronounsEl.textContent = pronounData.sets.en.map((p) => pronounMap[p] || p).join(", ");
+        }
+      }
+    } catch (error) {
+      console.error("Error fetching pronouns:", error);
+    }
+  }
+
   async function fetchTimezone() {
-    const timezoneRes = await fetch(`https://timezone.creations.works/get?id=929208515883569182`);
+    const timezoneRes = await fetch(`https://timezone.creations.works/get?id=${userId}`);
     if (timezoneRes.ok) {
       const timezoneData = await timezoneRes.json();
-      return timezoneData.timezone || timezone;
+      return timezoneData.timezone || 'America/New_York';
     }
-    return timezone;
+    return 'America/New_York';
   }
 
   function initTimezoneClock(timezone, elementId) {
@@ -127,6 +310,7 @@ const user = await fetchUserData();
   }
 
   (async () => {
+    await fetchUserData();
     const tz = await fetchTimezone();
     initTimezoneClock(tz, "user-timezone-text");
   })();
