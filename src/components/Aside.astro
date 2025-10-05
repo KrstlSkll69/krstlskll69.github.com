@@ -4,7 +4,6 @@ import Avatar from '@/components/Avatar.astro'
 import Box from '@/components/Box.astro'
 import { fetchUserData } from '@/utils/fetchData'
 
-export const prerender = false;
 const user = await fetchUserData();
 ---
 
