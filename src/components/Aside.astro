@@ -4,6 +4,7 @@ import Avatar from '@/components/Avatar.astro'
 import Box from '@/components/Box.astro'
 import { fetchUserData } from '@/utils/fetchData'
 
+export const prerender = false;
 const user = await fetchUserData();
 ---
 
@@ -97,7 +98,7 @@ const user = await fetchUserData();
     </Box>
 </aside>
 
-<script type="module">
+<script>
   async function fetchTimezone() {
     const timezoneRes = await fetch(`https://timezone.creations.works/get?id=929208515883569182`);
     if (timezoneRes.ok) {
