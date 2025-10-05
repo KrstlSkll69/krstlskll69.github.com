@@ -138,7 +138,7 @@ export async function fetchUserStatus() {
 
 function fetchDiscordBadges(userData) {
     const badges = [];
-    const flags = userData?.data?.discord_user?.public_flags;
+    const flags = userData?.discord_user?.public_flags;
 
     if (userData?.kv) {
         if (userData?.kv?.nitro === "true") {
