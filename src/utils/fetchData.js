@@ -104,7 +104,7 @@ export async function fetchUserStatus() {
     };
 
     try {
-        const lanyardResponse = await fetch(`https://lanyard.equicord.org/v1/users/${userId}`);
+        const lanyardResponse = await fetch(`https://lanyard.atums.world/v1/users/${userId}`);
         if (lanyardResponse.ok) {
             const lanyardJson = await lanyardResponse.json();
             const lanyardData = lanyardJson?.data;
