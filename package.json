@@ -1,27 +1,24 @@
 {
-  "name": "website",
-  "type": "module",
-  "version": "1.0.0",
-  "scripts": {
-    "format": "prettier --write .",
-    "dev": "astro dev",
-    "build": "astro build",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@lucide/astro": "^0.525.0",
-    "@tailwindcss/vite": "^4.1.11",
-    "astro": "^5.12.1",
-    "lucide-svelte": "^0.536.0",
-    "tailwindcss": "^4.1.11",
-    "typescript": "^5.9.2"
-  },
-  "devDependencies": {
-    "prettier": "^3.6.2",
-    "prettier-plugin-astro": "^0.14.1",
-    "prettier-plugin-tailwindcss": "^0.6.14"
-  },
-  "workspaces": [
-    "**"
-  ]
+	"name": "website",
+	"type": "module",
+	"version": "1.0.0",
+	"scripts": {
+		"format": "prettier --write .",
+		"dev": "astro dev",
+		"build": "astro build",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@lucide/astro": "^0.525.0",
+		"@tailwindcss/vite": "^4.1.11",
+		"astro": "^5.12.1",
+		"lucide-svelte": "^0.536.0",
+		"tailwindcss": "^4.1.11",
+		"typescript": "^5.9.2"
+	},
+	"devDependencies": {
+		"prettier": "^3.6.2",
+		"prettier-plugin-astro": "^0.14.1",
+		"prettier-plugin-tailwindcss": "^0.6.14"
+	}
 }
