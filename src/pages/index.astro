@@ -1,13 +1,12 @@
 ---
 import Layout from '@/layouts/Home.astro'
 import { UserCircle, Users, Notebook, Star } from '@lucide/astro'
-import { Friends, shuffle, Skills, Projects } from '@/consts'
+import { Friends, Skills, Projects } from '@/consts'
 
 import Box from '@/components/Box.astro'
 import SkillCard from '@/components/SkillCard.astro'
 import ProjectCard from '@/components/ProjectCard.astro'
 import Footer from '@/components/Footer.astro'
-const randomizedFriends = shuffle(Friends)
 ---
 
 <Layout>
@@ -46,23 +45,7 @@ const randomizedFriends = shuffle(Friends)
                 <Users size="18" fill="#ffffff10" /> Friends
             </span>
             <Box>
-                <ul class="grid grid-cols-2 gap-4">
-                    <a href="https://twitter.com/videbive" target="_blank" rel="noreferrer" class="flex flex-col items-center text-center gap-1" >
-                        <img src="/assets/images/friends/076ae8bb-c75e-43d4-a7de-5f1e8d48cf96.avif" alt="VideBive" class="size-10 rounded-full object-cover"/>
-                        <span class="text-xs text-neutral-300 truncate">VideBive</span>
-                    </a>
-                    <a href="https://www.youtube.com/@mamearcadeplaythroughs" target="_blank" rel="noreferrer" class="flex flex-col items-center text-center gap-1" >
-                        <img src="/assets/images/friends/02628142-cb33-4108-bbf2-6a5368f08678.avif" alt="Adonis" class="size-10 rounded-full object-cover"/>
-                        <span class="text-xs text-neutral-300 truncate">Adonis</span>
-                    </a>
-                    {randomizedFriends.map((friend) => (
-                        <li class="min-w-0 overflow-hidden">
-                            <a href={friend.url} target="_blank" rel="noreferrer" class="flex flex-col items-center text-center gap-1" >
-                                <img src={friend.img} alt={friend.alt} class="size-10 rounded-full object-cover"/>
-                                <span class="text-xs text-neutral-300 truncate">{friend.name}</span>
-                            </a>
-                        </li>
-                    ))}
+                <ul id="friends-list" class="grid grid-cols-2 gap-4">
                 </ul>
             </Box>
         </aside>
@@ -70,3 +53,176 @@ const randomizedFriends = shuffle(Friends)
 </Layout>
 
 <Footer />
+
+<script>
+    const fixedFriends = [
+        {
+            url: "https://twitter.com/videbive",
+            img: "/assets/images/friends/076ae8bb-c75e-43d4-a7de-5f1e8d48cf96.avif",
+            alt: "VideBive",
+            name: "VideBive"
+        },
+        {
+            url: "https://www.youtube.com/@mamearcadeplaythroughs",
+            img: "/assets/images/friends/02628142-cb33-4108-bbf2-6a5368f08678.avif",
+            alt: "Adonis",
+            name: "Adonis"
+        }
+    ];
+
+    const allFriends = [
+        {
+            url: "https://www.thororen.com",
+            img: "https://www.thororen.com/assets/thororen.png",
+            alt: "thororen",
+            name: "thororen",
+        },
+        {
+            url: "https://creations.works",
+            img: "https://creations.works/public/assets/pfp.png",
+            alt: "creations",
+            name: "creations",
+        },
+        {
+            url: "https://alphexo.dev/",
+            img: "/assets/images/friends/753e891b-422b-405b-b8b1-4d167821f651.avif",
+            alt: "Alphexo",
+            name: "Alphexo",
+        },
+        {
+            url: "https://catboys.zip/",
+            img: "/assets/images/friends/784be1d3-8a78-4a9f-b308-7f372f22f8ce.avif",
+            alt: "ToastedPotato",
+            name: "Toast",
+        },
+        {
+            url: "https://tesk.page/",
+            img: "https://tesk.page/assets/logo-512x512.webp",
+            alt: "EvilSkeleton",
+            name: "EvilSkeleton",
+        },
+        {
+            url: "https://zaynedrift.com/",
+            img: "/assets/images/friends/10e5f8de-3492-4723-acc4-462a4e3d6c2d.avif",
+            alt: "Zaynedrift",
+            name: "Zayne",
+        },
+        {
+            url: "https://shoritsu.xyz/",
+            img: "/assets/images/friends/d76c4c47-c83b-4844-a8a1-f491f22b66e6.avif",
+            alt: "Sho",
+            name: "Sho",
+        },
+        {
+            url: "https://nin0.dev/",
+            img: "/assets/images/friends/3f5752e0-e696-4c95-9803-b04a24a14396.avif",
+            alt: "nin0 dev",
+            name: "nin0dev",
+        },
+        {
+            url: "https://github.com/Jair4x",
+            img: "/assets/images/friends/ad2f93fd-6a6b-4457-8de9-1a80dab063dd.avif",
+            alt: "Jairo",
+            name: "Jair4x",
+        },
+        {
+            url: "https://zoey-on-github.github.io/",
+            img: "/assets/images/friends/48652d6f-090f-4a07-a487-c4fc041eeaed.avif",
+            alt: "juliethefoxcoon",
+            name: "JulieFox",
+        },
+        {
+            url: "https://hhls.xyz/",
+            img: "/assets/images/friends/0f3fe256-ff47-4f3b-9d44-032f423c0d09.avif",
+            alt: "hahalosahalt",
+            name: "hahalosahalt",
+        },
+        {
+            url: "https://sadan.zip/",
+            img: "https://sadan.zip/assets/avatar.webp",
+            alt: "sadan",
+            name: "sadan",
+        },
+        {
+            url: "https://bims.sh/",
+            img: "https://bims.sh/image.png",
+            alt: "bims.sh",
+            name: "Bims",
+        },
+        {
+            url: "https://mantikafasi.dev/",
+            img: "/assets/images/friends/d2e4e58d-7276-4e0e-9e92-83d0c1086fd9.avif",
+            alt: "mantikafasi",
+            name: "mantikafasi",
+        },
+        {
+            url: "https://github.com/vmohammad24/",
+            img: "/assets/images/friends/390d8532-d10a-4e8e-8db6-7b280c959d8c.avif",
+            alt: "mohammad",
+            name: "vmohammad",
+        },
+        {
+            url: "https://cortex.rest/",
+            img: "/assets/images/friends/3f8eabe6-5225-43b5-9ca4-f9066fd168f2.avif",
+            alt: "environment.",
+            name: "Cortex",
+        },
+        {
+            url: "https://nurmarv.in/",
+            img: "/assets/images/friends/1406dbb3-8a79-42bc-be07-570edc7bdc6b.gif",
+            alt: "Marvin",
+            name: "Marvin",
+        },
+        {
+            url: "https://github.com/SerStars",
+            img: "/assets/images/friends/059f7385-40df-4312-bbab-678b3f68720a.avif",
+            alt: "SerStars_lol",
+            name: "SerStars",
+        },
+        {
+            url: "https://github.com/EepyElvyra",
+            img: "/assets/images/friends/c9c602d5-14b2-449f-b5d3-bfd4cc23ebbf.avif",
+            alt: "EepyElvyra",
+            name: "Elvyra",
+        },
+        {
+            url: "https://rushii.dev/",
+            img: "/assets/images/friends/a20cf785-fe1b-453f-b956-5303931b2add.avif",
+            alt: "Rushii",
+            name: "Rushii",
+        },
+        {
+            url: "https://mudaranrhiod.xyz/",
+            img: "/assets/images/friends/b28b3673-32da-4871-933f-452f0c5c865e.avif",
+            alt: "Mudrhiod",
+            name: "Moodle",
+        },
+    ];
+
+    function shuffle(array) {
+        return array
+            .map((value) => ({ value, sort: Math.random() }))
+            .sort((a, b) => a.sort - b.sort)
+            .map(({ value }) => value);
+    }
+
+    function renderFriends() {
+        const friendsList = document.getElementById('friends-list');
+        if (!friendsList) return;
+
+        const shuffledFriends = shuffle([...allFriends]);
+
+        const displayFriends = [...fixedFriends, ...shuffledFriends];
+
+        friendsList.innerHTML = displayFriends.map(friend => `
+            <li class="min-w-0 overflow-hidden">
+                <a href="${friend.url}" target="_blank" rel="noreferrer" class="flex flex-col items-center text-center gap-1">
+                    <img src="${friend.img}" alt="${friend.alt}" class="size-10 rounded-full object-cover"/>
+                    <span class="text-xs text-neutral-300 truncate">${friend.name}</span>
+                </a>
+            </li>
+        `).join('');
+    }
+
+    renderFriends();
+</script>
