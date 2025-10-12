@@ -1,0 +1,28 @@
+---
+import { Sun, Moon } from '@lucide/astro'
+---
+
+<button
+    id="theme-toggle"
+    class="absolute top-3 left-3 flex size-10 cursor-pointer items-center justify-center rounded-lg border border-zinc-300 bg-zinc-100 text-neutral-600 transition-transform hover:bg-zinc-300 active:scale-[.97] dark:border-zinc-800 dark:bg-zinc-900 dark:text-neutral-200 dark:hover:bg-zinc-800"
+>
+    <Sun size={16} class="hidden dark:block" />
+    <Moon size={16} class="block dark:hidden" />
+</button>
+
+<script>
+    import type { Theme } from '@/types'
+    import { getTheme, setTheme } from '@/utils/theme'
+
+    function toggleTheme(): void {
+        const current = getTheme()
+        const newTheme: Theme = current === 'dark' ? 'light' : 'dark'
+        setTheme(newTheme)
+    }
+
+    const theme = getTheme()
+    document.documentElement.setAttribute('data-theme', theme)
+
+    const button = document.getElementById('theme-toggle')
+    button?.addEventListener('click', toggleTheme)
+</script>

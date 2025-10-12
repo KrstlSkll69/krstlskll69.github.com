@@ -1,6 +1,8 @@
 ---
 import '@/styles/global.css'
+
 import Head from '@/components/Head.astro'
+import ThemeToggle from '@/components/ThemeToggle.astro'
 ---
 
 <!doctype html>
@@ -9,6 +11,7 @@ import Head from '@/components/Head.astro'
         <Head title="Krystal" description="Page not found." />
     </head>
     <body>
+        <ThemeToggle />
         <slot />
     </body>
 </html>

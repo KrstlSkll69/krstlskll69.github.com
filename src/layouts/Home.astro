@@ -1,6 +1,8 @@
 ---
 import '@/styles/global.css'
+
 import Head from '@/components/Head.astro'
+import ThemeToggle from '@/components/ThemeToggle.astro'
 import Aside from '@/components/Aside.astro'
 ---
 
@@ -14,6 +16,7 @@ import Aside from '@/components/Aside.astro'
         <link rel="icon" type="image/png" href="/favicon.png" />
     </head>
     <body>
+        <ThemeToggle />
         <main
             class="flex flex-col items-start gap-3 px-3 pt-16 md:flex-row md:gap-6"
         >

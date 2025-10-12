@@ -1,10 +1,12 @@
 @import 'tailwindcss';
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
     /* Fonts */
     --font-sans: 'Inter', sans-serif;
 }
 
 body {
-    @apply mx-auto max-w-6xl bg-zinc-950 text-zinc-100;
+    @apply mx-auto max-w-6xl bg-zinc-200 text-white dark:bg-zinc-950;
 }

@@ -3,8 +3,8 @@ import {
 	BookOpen,
 	Github,
 	ListMusic,
+	Mail,
 	Plane,
-	Printer,
 	Twitter,
 	User,
 } from "@lucide/astro";
@@ -17,9 +17,9 @@ import Mobile from "./assets/mobile.svg";
 import Steam from "./assets/steam.svg";
 import Telegram from "./assets/telegram.svg";
 import Web from "./assets/web.svg";
-import type { BaseItem, Project, Skill, Social } from "./types";
+import type { Info, Project, Skill, Social } from "./types";
 
-export const Information: BaseItem[] = [
+export const Information: Info[] = [
 	{
 		icon: Plane,
 		text: "Your Mom's House",
@@ -79,19 +79,19 @@ export const Socials: Social[] = [
 	{
 		text: "Email",
 		url: "mailto:viatico@thighjob.org",
-		icon: Printer,
+		icon: Mail,
 	},
 ];
 
 export const Skills: Skill[] = [
 	{
 		text: "Software design",
-		subtext: "Sass, CSS, & HTML",
+		description: "Sass, CSS, & HTML",
 		progress: 85,
 	},
 	{
 		text: "Software development",
-		subtext: "Visual Studio Code",
+		description: "Visual Studio Code",
 		progress: 75,
 	},
 ];
