@@ -11,18 +11,18 @@ body {
     @apply mx-auto max-w-6xl bg-zinc-200 text-white dark:bg-zinc-950;
 }
 
-iframe[id^="offen-vault"] {
-	position: fixed !important;
-	z-index: 10000 !important;
-	border: none !important;
-	outline: none !important;
-	transform: none !important;
-	right: 20px !important;
-	bottom: 20px !important;
-	top: auto !important;
-	left: auto !important;
-	width: 380px !important;
-	height: 100px !important;
-	overflow: hidden !important;
-	clip-path: inset(8px 0px 0px 0px) !important;
+iframe[id^='offen-vault'] {
+    position: fixed !important;
+    z-index: 10000 !important;
+    border: none !important;
+    outline: none !important;
+    transform: none !important;
+    right: 20px !important;
+    bottom: 20px !important;
+    top: auto !important;
+    left: auto !important;
+    width: 380px !important;
+    /*height: 150px !important;*/
+    overflow: hidden !important;
+    clip-path: inset(8px 0px 0px 0px) !important;
 }
