@@ -78,7 +78,7 @@ export const Socials: Social[] = [
 	},
 	{
 		text: "Email",
-		url: "mailto:viatico@thighjob.org",
+		url: "mailto:indianajone@nest.rip",
 		icon: Mail,
 	},
 ];
