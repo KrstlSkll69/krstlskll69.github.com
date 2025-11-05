@@ -17,7 +17,7 @@ export async function fetchUserData() {
     try {
         let userBadges = [];
 
-        const lanyardRes = await fetch(`https://lanyard.atums.world/v1/users/${userId}`);
+        const lanyardRes = await fetch(`https://lanyard.vmohammad.dev/v1/users/${userId}`);
         if (lanyardRes.ok) {
             const lanyardJson = await lanyardRes.json();
             const lanyardData = lanyardJson?.data;
