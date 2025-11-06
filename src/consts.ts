@@ -206,8 +206,8 @@ export const Friends = [
 		name: "sadan",
 	},
 	{
-		url: "https://bims.sh/",
-		img: "https://bims.sh/image.png",
+		url: "https://github.com/Bims-sh",
+		img: "https://avatars.githubusercontent.com/u/46683337",
 		alt: "bims.sh",
 		name: "Bims",
 	},
