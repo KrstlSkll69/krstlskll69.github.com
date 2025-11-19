@@ -285,7 +285,7 @@ export const Contributions = [
 		url: 'https://github.com/VendroidEnhanced/plugin',
 		img: 'https://images.equicord.org/api/undefined/files/raw/019a51d6-cc0d-7000-b8b2-e083a6a2c441',
 		alt: 'vendroidenhanced',
-		name: 'VendroidEnhanced',
+		name: 'Vendroid',
 	},
 	{
 		url: 'https://github.com/Faf4a/ThemeLibrary',
