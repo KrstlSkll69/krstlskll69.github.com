@@ -1,7 +1,7 @@
 ---
 import Layout from '@/layouts/Home.astro'
-import { UserCircle, Users, Notebook, Star } from '@lucide/astro'
-import { Friends, Skills, Projects } from '@/consts'
+import { Globe, UserCircle, Users, Notebook, Star } from '@lucide/astro'
+import { Contributions, Friends, Skills, Projects } from '@/consts'
 
 import Box from '@/components/Box.astro'
 import SkillCard from '@/components/SkillCard.astro'
@@ -38,6 +38,35 @@ import Footer from '@/components/Footer.astro'
             <div class="flex w-full flex-col gap-2 rounded-2xl text-neutral-300">
                 {Projects.map((project) => <ProjectCard {...project} />)}
             </div>
+
+            <span class="flex items-center gap-1 text-sm font-medium text-neutral-600 dark:text-neutral-400">
+                <Globe size="18" fill="#ffffff10" /> Contributions
+            </span>
+            <Box>
+                <ul class="grid grid-cols-4 gap-4">
+                    {
+                        Contributions.map((c) => (
+                            <li class="min-w-0">
+                                <a
+                                    href={c.url}
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    class="flex flex-col items-center gap-1 text-center"
+                                >
+                                    <img
+                                        src={c.img}
+                                        alt={c.alt}
+                                        class="size-10 rounded-md object-cover"
+                                    />
+                                    <span class="truncate text-xs text-neutral-700 dark:text-neutral-200">
+                                        {c.name}
+                                    </span>
+                                </a>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </Box>
         </div>
 
         <aside class="w-full md:w-64 space-y-4">
@@ -144,8 +173,8 @@ import Footer from '@/components/Footer.astro'
             name: "sadan",
         },
         {
-            url: "https://github.com/Bims-sh",
-            img: "https://avatars.githubusercontent.com/u/46683337",
+            url: "https://bims.sh/",
+            img: "https://bims.sh/image.png",
             alt: "bims.sh",
             name: "Bims",
         },

@@ -267,3 +267,30 @@ export function shuffle<T>(array: T[]): T[] {
 		.sort((a, b) => a.sort - b.sort)
 		.map(({ value }) => value);
 }
+
+export const Contributions = [
+	{
+		url: 'https://github.com/verticalsync/Suncord',
+		img: 'https://images.equicord.org/api/undefined/files/raw/0199e71a-555f-7000-9737-6dfa6651bb71',
+		alt: 'suncord',
+		name: 'Suncord',
+	},
+	{
+		url: 'https://github.com/Discord-Client-Encyclopedia-Management/Discord3rdparties',
+		img: 'https://images.equicord.org/api/undefined/files/raw/019a64a5-ae95-7000-876d-f96465798d55',
+		alt: 'discord3rdpartys',
+		name: 'Discord3rdPartys',
+	},
+	{
+		url: 'https://github.com/VendroidEnhanced/plugin',
+		img: 'https://images.equicord.org/api/undefined/files/raw/019a51d6-cc0d-7000-b8b2-e083a6a2c441',
+		alt: 'vendroidenhanced',
+		name: 'VendroidEnhanced',
+	},
+	{
+		url: 'https://github.com/Faf4a/ThemeLibrary',
+		img: 'https://images.equicord.org/api/undefined/files/raw/019a51d5-b3a1-7004-9c33-5479e9710c56',
+		alt: 'themelibrary',
+		name: 'ThemeLibrary',
+	},
+]
