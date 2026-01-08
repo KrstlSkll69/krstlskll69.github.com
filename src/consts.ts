@@ -271,25 +271,25 @@ export function shuffle<T>(array: T[]): T[] {
 export const Contributions = [
 	{
 		url: 'https://github.com/verticalsync/Suncord',
-		img: 'https://images.equicord.org/api/undefined/files/raw/0199e71a-555f-7000-9737-6dfa6651bb71',
+		img: 'https://cdn.nest.rip/uploads/fec74b2e-4b7d-4868-beff-adce0f56ac41.png',
 		alt: 'suncord',
 		name: 'Suncord',
 	},
 	{
 		url: 'https://github.com/Discord-Client-Encyclopedia-Management/Discord3rdparties',
-		img: 'https://images.equicord.org/api/undefined/files/raw/019a64a5-ae95-7000-876d-f96465798d55',
+		img: 'https://cdn.nest.rip/uploads/215cfd69-091a-4493-8bc0-c3a9b17f1cfd.png',
 		alt: 'discord3rdpartys',
 		name: 'Discord3rdPartys',
 	},
 	{
 		url: 'https://github.com/VendroidEnhanced/plugin',
-		img: 'https://images.equicord.org/api/undefined/files/raw/019a51d6-cc0d-7000-b8b2-e083a6a2c441',
+		img: 'https://cdn.nest.rip/uploads/20840b40-f93e-4bcf-a9ea-38d3a7974c73.png',
 		alt: 'vendroidenhanced',
 		name: 'Vendroid',
 	},
 	{
 		url: 'https://github.com/Faf4a/ThemeLibrary',
-		img: 'https://images.equicord.org/api/undefined/files/raw/019a51d5-b3a1-7004-9c33-5479e9710c56',
+		img: 'https://cdn.nest.rip/uploads/bcb8de4f-ad6c-4324-87ba-cc0ce1b59992.png',
 		alt: 'themelibrary',
 		name: 'ThemeLibrary',
 	},
