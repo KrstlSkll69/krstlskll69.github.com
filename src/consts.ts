@@ -33,13 +33,6 @@ export const MiscIcons = {
 	ListMusic: ListMusic,
 };
 
-export const Platforms = {
-	Web: Web,
-	Mobile: Mobile,
-	Desktop: Desktop,
-	Embedded: Embedded,
-};
-
 export const Socials: Social[] = [
 	{
 		text: "Discord",
