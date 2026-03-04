@@ -17,7 +17,7 @@ export async function fetchUserData() {
     try {
         let userBadges = [];
 
-        const lanyardRes = await fetch(`https://lanyard.vmohammad.dev/v1/users/${userId}`);
+        const lanyardRes = await fetch(`https://lanyard.creations.works/v1/users/${userId}`);
         if (lanyardRes.ok) {
             const lanyardJson = await lanyardRes.json();
             const lanyardData = lanyardJson?.data;
@@ -104,7 +104,7 @@ export async function fetchUserStatus() {
     };
 
     try {
-        const lanyardResponse = await fetch(`https://lanyard.vmohammad.dev/v1/users/${userId}`);
+        const lanyardResponse = await fetch(`https://lanyard.creations.works/v1/users/${userId}`);
         if (lanyardResponse.ok) {
             const lanyardJson = await lanyardResponse.json();
             const lanyardData = lanyardJson?.data;

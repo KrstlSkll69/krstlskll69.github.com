@@ -89,7 +89,7 @@ import Box from '@/components/Box.astro'
 
   async function fetchUserData() {
     try {
-      const lanyardRes = await fetch(`https://lanyard.vmohammad.dev/v1/users/${userId}`);
+      const lanyardRes = await fetch(`https://lanyard.creations.works/v1/users/${userId}`);
       if (!lanyardRes.ok) throw new Error('Lanyard fetch failed');
 
       const lanyardJson = await lanyardRes.json();
