@@ -128,7 +128,7 @@ export const Projects: Project[] = [
 export const Friends = [
 	{
 		url: "https://www.thororen.com",
-		img: "https://www.thororen.com/assets/thororen.png",
+		img: "https://www.thororen.com/assets/profile",
 		alt: "thororen",
 		name: "thororen",
 	},
@@ -264,25 +264,25 @@ export function shuffle<T>(array: T[]): T[] {
 export const Contributions = [
 	{
 		url: 'https://github.com/verticalsync/Suncord',
-		img: 'https://cdn.nest.rip/uploads/fec74b2e-4b7d-4868-beff-adce0f56ac41.png',
+		img: 'https://raw.githubusercontent.com/Equicord/Equibored/main/images/clientMods/suncord/logo.png',
 		alt: 'suncord',
 		name: 'Suncord',
 	},
 	{
 		url: 'https://github.com/Discord-Client-Encyclopedia-Management/Discord3rdparties',
-		img: 'https://cdn.nest.rip/uploads/215cfd69-091a-4493-8bc0-c3a9b17f1cfd.png',
+		img: 'https://avatars.githubusercontent.com/u/104919556',
 		alt: 'discord3rdpartys',
 		name: 'Discord3rdPartys',
 	},
 	{
 		url: 'https://github.com/VendroidEnhanced/plugin',
-		img: 'https://cdn.nest.rip/uploads/20840b40-f93e-4bcf-a9ea-38d3a7974c73.png',
+		img: 'https://avatars.githubusercontent.com/u/164646305',
 		alt: 'vendroidenhanced',
 		name: 'Vendroid',
 	},
 	{
 		url: 'https://github.com/Faf4a/ThemeLibrary',
-		img: 'https://cdn.nest.rip/uploads/bcb8de4f-ad6c-4324-87ba-cc0ce1b59992.png',
+		img: 'https://themes.equicord.org/favicon.ico',
 		alt: 'themelibrary',
 		name: 'ThemeLibrary',
 	},
