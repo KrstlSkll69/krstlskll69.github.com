@@ -275,7 +275,7 @@ export const Contributions = [
 		name: 'Discord3rdPartys',
 	},
 	{
-		url: 'https://github.com/VendroidEnhanced/plugin',
+		url: 'https://vendroid.nin0.dev',
 		img: 'https://avatars.githubusercontent.com/u/164646305',
 		alt: 'vendroidenhanced',
 		name: 'Vendroid',
