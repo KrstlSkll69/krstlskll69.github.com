@@ -170,7 +170,7 @@ export const Friends = [
 	},
 	{
 		url: "https://nin0.dev/",
-		img: "/assets/images/friends/3f5752e0-e696-4c95-9803-b04a24a14396.avif",
+		img: "https://git.nin0.dev/nin0/website-rs/-/raw/main/assets/nin0.png",
 		alt: "nin0 dev",
 		name: "nin0dev",
 	},
